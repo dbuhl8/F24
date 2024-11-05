@@ -1,0 +1,128 @@
+{\bf Example 2:} Solve the wave equation (\ref{eq:waveeq}) on the interval $(0,L)$ with boundary conditions $f(0) = 0$ and $f(L) = \sin(\omega_F t)$, where $\omega_F$ is some forcing frequency, and initial conditions $f(x,0) = \partial f/\partial t (x,0) = 0$.
+\\
+\\
+{\color{red} {\bf Solution: }
+\\
+$\frac{\partial^2 f}{\partial t^2} = c^2 \frac{\partial^2 f}{\partial x^2}  $ \\
+\\
+        \begin{cases}
+            f(0) = 0, \space f(L) = \sin(\omega_F t) \\
+            f (x,0) =  \partial f/\partial t (x,0) = 0\\
+        \end{cases}
+        \label{lect3:ex2}
+        \tag{\bf EX 2}
+\\
+$\implies f(x,t) = $
+\begin{proof}
+        Compose $f$ as a sum of two separate functions, $u$ and $h$. Find an $h$ that satifies our B.C.'s
+        \begin{gather*}
+        f(x,t) = u(x,t) + h(x,t).\\
+        h(x,t) = \sin(\omega_F t)*\frac{X}{L} \\
+        \end{gather*}
+
+        Now we need a $u(x,t)$ that satisfies the Wave Equation with homogeneous Dirichlet boundary conditions (f(x) = 0 at both ends). We already know the general form of f(x,t) from 2.2.5 to be:
+        \begin{gather*}
+        f(x,t) =  \sum_{n=1}^\infty \left[ a_n \cos(\omega_n t) + b_n \sin(\omega_n t)\right] \sin \left( \frac{n\pi x}{L} \right)        
+        \end{gather*}
+
+        We solved for $\omega_n = \frac{cn\pi}{L}$ and $a_n = \frac{2}{L}\int_0^L f_0(x)\sin\left(\frac{n\pi x}{L}\right)dx$
+        Substitute our decompostion $f = u + h$ back into (2.16).
+        
+        \begin{gather*}
+        \frac{\partial^2 f}{\partial t^2} = \frac{\partial^2 u}{\partial t^2} + \frac{\partial^2 h}{\partial t^2} \\
+        \frac{\partial^2 f}{\partial t^2} = \sin(\omega_F t)*\frac{x*\omega_F^2}{L} + \frac{\partial^2 h}{\partial t^2}\\
+        \end{gather*}
+
+\end{proof}
+
+}
+\\
+\\
+In this second problem, we see that the PDE itself now becomes non-homogeneous, even though we fixed the boundary conditions, which brings the next question : how to solve non-homogeneous PDEs with homogeneous boundary conditions.
+
+
+\subsection{Non-homogeneous (forced) PDEs (general considerations)}
+
+Let's now consider a generic PDE of the form
+\begin{equation}
+    \frac{\partial^2 f}{\partial x^2} = {\cal L}_t f + F(x,t)
+\end{equation}
+where $t$ here either represents time or another spatial variable,  ${\cal L}_t f $ is some linear operator in $t$ only, and $F(x,t)$ is a forcing (non-homogeneous) term that does not contain $f$. We assume that the boundary conditions in $x$ are homogeneous. 
+We see that this form can be used to represent the forced diffusion equation (with ${\cal L}_t f = \partial f/\partial t$), the forced wave equation (with ${\cal L}_t f = \partial^2 f/\partial t^2$), and the forced Laplace equation (which is really called the Poisson equation), with $t \rightarrow y$ and (with ${\cal L}_y f = - \partial^2 f/\partial y^2$). 
+
+To solve this equation, we  remember that in the method of separation of variables applied to the equivalent {\it unforced} problem (where $F = 0$), the solution $f$ was expanded as a  Fourier series which satisfied the boundary conditions. 
+So let us assume here by analogy (for now) that the actual solution $f(x,t)$ {\it can} be expanded as a Fourier Series in $x$, where the Fourier modes are chosen to be the eigenmodes of $\partial^2 f / \partial x^2$ that satisfy the homogeneous boundary conditions in $x$ (these could be sines, cosines, or both). 
+
+To focus the mind, let's assume that the domain is once again $[0,L]$ with homogeneous Dirichlet conditions. Then we know that the Fourier series only involves sine modes, of the kind $\sin ( n \pi x / L)$. The ansatz for $f$ is therefore
+\begin{equation}
+    f(x,t) = \sum_{n = 0}^{\infty} c_n(t) \sin \left( \frac{n\pi x}{L} \right) 
+\end{equation}
+ 
+Let us now substitute this ansatz into the PDE, and use linearity. We obtain
+\begin{equation}
+\sum_{n = 0}^{\infty} - \frac{n^2 \pi^2 }{L^2} c_n(t) \sin \left( \frac{n\pi x}{L} \right) =  \sum_{n = 0}^{\infty} {\cal L}_t c_n(t) \sin \left( \frac{n\pi x}{L} \right) + F(x,t)
+\label{eq:substituted}
+\end{equation}
+This would normally not be too helpful, but here once again we can use the orthogonality property of the Fourier modes, namely equation (\ref{eq:sinortho}) to project this equation onto a single Fourier mode and simplify it greatly.
+
+So, by multiplying (\ref{eq:substituted}) by $\sin(m\pi x/L)$ and taking the integral over the interval $[0,L]$, all the terms in the infinite sums disappear, leaving only 
+\begin{equation}
+ - \frac{L}{2} \frac{m^2 \pi^2 }{L^2} c_m(t) =  \frac{L}{2} {\cal L}_t c_m(t) + \int_0^L F(x,t) \sin \left( \frac{m\pi x}{L} \right) dx
+\end{equation}
+or equivalently 
+\begin{equation}
+ {\cal L}_t c_m(t) = - \frac{m^2 \pi^2 }{L^2} c_m(t) - F_m(t) 
+\end{equation}
+where 
+\begin{equation}
+     F_m (t) = \frac{2}{L} \int_0^L F(x,t) \sin \left( \frac{m\pi x}{L} \right) dx 
+\end{equation}
+To solve the problem, we then simply have to solve this relatively simple linear ODE for each of the functions $c_m(t)$! 
+
+Before we move on to some examples, let's discuss first what enabled us to so conveniently go from PDEs to ODEs, and identify a few underlying assumptions that were made (and swept under the carpet). \begin{itemize}
+\item We {\it assumed} that it is possible to expand the solution as a Fourier series, and that the series exists and converges. This turns out to be possible only because Fourier modes used form a {\it complete} basis for functions on the interval $[0,L]$.
+\item We relied {\it heavily} on the orthogonality relationship (\ref{eq:sinortho}) to project (\ref{eq:substituted}) onto each Fourier mode, and obtain a set of ODEs from the original PDE. Behind the scene, these orthogonality relationships exist because the basis is not only complete, but it is also an orthogonal basis. 
+\end{itemize} 
+
+Isn't it {\it so amazingly} advantageous that the Fourier modes not only form a complete basis of all functions in $[0,L]$, but also an orthogonal basis? Shouldn't we worry that it we move to harder problems where the sines and cosines are no longer the eigenmodes of the problem, we may lose that advantage? As it turns out, none of these properties of Fourier modes are a mere coincidence, and similar properties will be found in a large class of linear 2nd order PDEs thanks to Sturm-Liouville theory. This will be the topic of the next lecture. 
+
+In the meantime, let's now do a few examples of forced linear PDEs.
+
+\subsection{The oscillating rope}
+
+The second example of non-homogeneous boundary conditions earlier in this lecture can be viewed as a problem of a rope tied on one end, and the other end is shaken up and down with frequency $\omega_F$. Let us now finish the problem to see what the solution is. 
+\begin{itemize}
+    \item Solve the problem analytically
+    \item What is the fundamental frequency $\omega_0$ of the unforced problem? What happens when $\omega_F \gg \omega_0$? What happens when $\omega_F \ll \omega_0$?
+\end{itemize}
+\\
+\\
+{\color{red}
+ {\bf Solution:} 
+} 
+ \\
+ \\
+\subsection{The forced diffusion equation}
+
+A pub in England rings last orders at 11pm, at which point people start leaving to go home. They are all 'locals' which means they live in the same 1D street as the pub. The street has length $L$ and we assume the pub is in the middle of it. The people are quite drunk, and walk around randomly in the street, but don't leave it. They can't find their homes or their keys, which means they end up staying in the street for a long time. We model this problem mathematically using the following equations:
+\begin{eqnarray}
+    \frac{\partial p}{\partial t}  = D \frac{\partial^2 p}{\partial x^2} + S(x,t)\\
+    p(x,0) = 0 \\ 
+    \frac{\partial p}{\partial x} = 0 \mbox{ at } x = 0,L
+\end{eqnarray}
+where $p$ is the probability  density of drunk people,  $S(x,t)$ is the 'source' of drunk people per unit time coming into the street at position $x$. 
+We let $t = 0$ corresponds to 11pm. 
+
+To model the exit of the pub, we will set
+\begin{equation}
+    S(x,t) = S_0 \delta(x-L/2) e^{-t/\tau} \mbox{ for } t > 0
+\end{equation}
+where $\tau$ is some characteristic timescale.
+\begin{itemize}
+\item Use dimensional analysis to find the characteristic diffusion timescale of the problem in the absence of forcing, $\tau_D$
+\item Solve this problem using the method discussed in this section. 
+\item Plot the solution numerically to find what happens when $\tau \ll \tau_D$? What happens when $\tau \gg \tau_D$? 
+\end{itemize}
+\\
+\\
+{\color{red} {\bf Solution:}}

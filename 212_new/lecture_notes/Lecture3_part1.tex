@@ -1,0 +1,48 @@
+\section{Second order 2D linear PDEs (somewhat more complicated problems)}
+
+In this section, we now consider somewhat more complicated problems, in which some simple form of forcing is applied, either through the boundary conditions, or in the PDE itself. For the sake of simplicity, we will use examples that build on the diffusion equation, wave equation, and Laplace's equation we studied in the last lecture, though the principles described here are more generally applicable.  
+
+\subsection{Non-homogeneous boundary conditions}
+
+When dealing with a problem where the function $f$ has non-homogeneous boundary conditions, we cannot apply the method of separation of variables directly, but the trick to solve it is quite simple: find {\it any} function $h$ that satisfies the boundary conditions (but it does not have to satisfy the PDE), and then write $f = u+ h$. It is easy to check that the function $u$ must now satisfy homogeneous  boundary conditions. This changes the PDE (by adding a term that makes it non-homogenous), and sometimes it also changes the initial conditions, but the key is that the boundary conditions are now the right ones for separation of variables. 
+\\
+\\
+{\bf Example 1:} Solve the diffusion equation (\ref{eq:diffeq}) on the interval $(0,L)$ with boundary conditions $f(0) = 0$ and $f(L) = 1$, and initial conditions $f(x,0) = H(x-L/2)$ (the Heaviside function). 
+\\
+\\
+{\color{red} {\bf Solution: 
+
+\begin{proof}
+    Begin by writing $u(x,t) = f(x,t) - x/L$:
+    \begin{gather*}
+        \begin{cases}
+            u_t = \kappa u_{xx}\\
+            u(0,t)  = 0,\quad  u(L,t) = 0 \\
+            u(x,0) = H(x-L/2) - x/L
+        \end{cases}
+        \label{lect3:ex1}
+        \tag{\bf EX 1}
+    \end{gather*}
+
+    \begin{gather*}
+        u(x,t) = A(x)B(t) \implies B_t = -\lambda\kappa B, \quad A_{xx} = -\lambda A
+    \end{gather*}
+    Following a similar method as \eqref{eq:diffeq}:
+    \begin{gather*}
+        B(t) = b_n e^{-\lambda\kappa t}, \quad A(x) = a_{n0} \cos \left(\sqrt{\lambda}x \right) + a_{n1} \sin \left(\sqrt{\lambda} x\right) \\
+        \left(\mathbf{BC} \right) \implies a_{n0} = 0, \quad \lambda = \frac{n^2 \pi^2}{L^2}
+    \end{gather*}
+    If $\lambda = 0$, $u(x,t) = c_0$ is also a solution. (Check this, I believe with these BC $c_0$ must be 0)
+    \begin{gather*}
+        \therefore \quad u(x,t) = c_0 + \sum_{n=1}^\infty c_n \sin\left( \frac{n\pi x}{L} \right) e^{-t / \tau_n}, \quad \tau_n \equiv \frac{1}{\lambda\kappa}
+    \end{gather*}
+    Applying projection:
+    \begin{gather*}
+        u(x,0) = H(x-L/2) - x/L \equiv u_0(x) \\
+        \implies c_m = \frac{2}{L} \int_0^L (u_0(x) - c_0) \sin\left(\frac{m \pi x}{L} \right) dx
+    \end{gather*}
+\end{proof}
+
+} }
+\\
+

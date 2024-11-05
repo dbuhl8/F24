@@ -1,0 +1,94 @@
+ \subsection{The wave equation in a finite interval}
+
+ Let's consider the wave equation 
+\begin{equation}
+    \frac{\partial^2 f}{\partial t^2} = c^2 \frac{\partial^2 f}{\partial x^2}
+    \label{eq:waveeq}
+\end{equation}
+on the interval $(0,L)$, with homogeneous Dirichlet conditions. At time $t= 0$, $f(x,0) = f_0(x)$, where $f_0(x)$ satisfies the boundary conditions as well, and $\partial f/\partial t(x,0) = 0$. 
+
+\begin{itemize}
+\item Show, using separation of variables, that the general solution of the equation can be written in the form
+\begin{equation}
+f(x,t) =  \sum_{n=1}^\infty \left[ a_n \cos(\omega_n t) + b_n \sin(\omega_n t)\right] \sin \left( \frac{n\pi x}{L} \right) 
+\end{equation} 
+where you need to determine what $\omega_n$ is. 
+\item Use the orthogonality properties of the sin functions to apply the initial conditions and find the coefficients $a_n$ and $b_n$. 
+\end{itemize} 
+Note: the orthogonality condition for sines is : 
+\begin{eqnarray}
+    \int_0^L \sin \left( \frac{n\pi x}{L} \right)  \sin \left( \frac{m\pi x}{L} \right) dx  && = 0 \mbox{ if  } m \neq n   \nonumber \\
+    && = \frac{L}{2} \mbox{ if  } m = n 
+    \label{eq:sinortho}
+\end{eqnarray}
+\\
+\\
+{\color{red} {\bf Solution:
+
+\begin{proof}
+    \begin{gather*}
+        f(x,t) = \tau(t)\chi(x)\\
+        \frac{\tau ''}{c^2\tau} = \frac{\chi ''}{\chi} = -\lambda \\
+        \chi(x) = A\cos(\sqrt{\lambda}x) + B\sin(\sqrt{\lambda}x), \quad \tau(t) = C\cos(c\sqrt{\lambda}t) + D\sin(c\sqrt{\lambda}t)\\
+        (\mathbf{BC}) \implies \chi(x) = B\sin(\sqrt{\lambda}x), \quad (\mathbf{IC}) \implies \tau(t) = C\cos(c\sqrt{\lambda}t)\\
+        f(x,t) = \sum_{n=1}^{\infty} a_n\cos(c\sqrt{\lambda}t)\sin(\sqrt{\lambda}x) \implies \sqrt{\lambda} = \frac{n\pi}{L} \implies \omega_n = \frac{cn\pi}{L}\\
+        a_n = \frac{2}{L}\int_0^L f_0(x)\sin\left(\frac{n\pi x}{L}\right)dx
+    \end{gather*}
+\end{proof}
+
+}}
+\\
+\\
+Note how: 
+\begin{itemize}
+    \item The function $f(x,t)$ is again decomposed into a sum of Fourier 'modes' that each has its own spatial dependence and this time its own {\it oscillation} frequency $\omega_n$. 
+    \item Higher-order modes (higher $n$)  capture finer spatial scales, and these oscillate faster. 
+    \item Both these behaviors are fundamental behaviors of the wave equation.
+    \item Note how here $\omega_n = n \omega_0$ where $\omega_0$ is the fundamental oscillation frequency. The fact that the frequencies are integer multiples of one another is the reason music exists!
+\end{itemize}
+
+\subsection{Laplace's equation in a finite domain}
+
+Consider Laplace's equation
+\begin{equation}
+    \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} = 0 
+    \label{eq:Laplaceeq}
+\end{equation}
+on a rectangular plate with $x \in (0,L)$ and $y \in (0,H)$, with homogeneous Dirichlet conditions on the three sides $y = 0$, $y= H$, and $x = 0$ and boundary conditions $f(L,y) = f_0(y)$ on the fourth side ($x= L$). 
+\begin{itemize}
+\item Show, using separation of variables, that the general solution of the equation can be written in the form
+\begin{equation}
+f(x,t) =  \sum_{n=1}^\infty \left[ a_n \cosh \left(\frac{x}{d_n}  \right)  + b_n \sinh \left(\frac{x}{d_n}  \right)\right] \sin \left(\frac{y}{d_n}  \right) 
+\end{equation} 
+where you need to determine what $d_n$ is.
+\item Explain why the Fourier Series is in the $y$ rather than the $x$ variable.
+\item Apply the boundary condition at $x = 0$ and $x = L$ to find $a_n$ and $b_n$ 
+\end{itemize}
+\\
+\\
+{\color{red} {\bf Solution: 
+
+\begin{proof}
+
+    \begin{gather*}
+        f(x,y) = \chi(x)\psi(y), \quad \eqref{eq:Laplaceeq} \implies \frac{\psi ''}{\psi} = - \frac{\chi ''}{\chi} = -\lambda \\
+        (\mathbf{BC}) \implies \psi(y) = A\sin(\sqrt{\lambda}y), \quad \sqrt{\lambda} = \frac{n\pi}{H}\\
+        (\mathbf{BC}) \implies \chi(x) = B\sinh(\sqrt{\lambda}x)\\
+        f(x,y) = \sum_{n=1}^{\infty} b_n \sinh\left(\frac{n\pi x}{H}\right)\sin\left(\frac{n\pi y}{H}\right), \quad b_n = \frac{2}{H\sinh\left(\frac{n\pi L}{H}\right)} \int_0^H f_0(y)\sin\left(\frac{n\pi y}{H}\right) dy
+    \end{gather*}
+    In this problem, the Fourier series is in $y$ rather than $x$ due to the boundary conditions of the problem. Laplace's equation requires separation of variables solutions where the eigenvalue in opposite directions is of different signs. Thus we have an oscillatory function in one direction and an exponential in the other. Since the boundary conditions show that the function must be oscillatory in $y$, we use a Fourier decomposition to model the function in y, while using exponential functions to model the function in $x$. 
+
+\end{proof}
+}}
+\\
+\\
+Note: 
+\begin{itemize}
+\item We see that even though the boundary conditions were not {\it completely} homogeneous, separation of variables works here too. This is because we could pick the variable with homogeneous boundary conditions as the one for the  Fourier expansion. 
+\item Plotting the solution shows that it seems to be the smoothest possible one that fits the boundary conditions. This is a generic property of Laplace's equation. 
+\item The maximum of the function $f$ is achieved on the boundary of the domain. This is in fact a general property of solutions of Laplace's equation in bounded domains called the {\it Weak Maximum Principle}. The {\it Strong Maximum Principle} further states that if $f$ achieves a maximum within the domain, then the only way this can happen is for $f$ to be constant.
+\end{itemize}
+
+Finally, and perhaps most importantly, we note that in all of these three examples, the solution was expanded as a Fourier series in the $x$ (or $y$) variable, which had homogeneous boundary conditions. This is not surprising, because the Fourier 'modes' are in each case the eigenfunctions of the operator ${\cal L}_x = \partial^2 / \partial x^2$. Which modes are needed (sines or cosines, or combinations thereof), and their basic wavenumber, depends only on that operator and on the boundary conditions applied -- they are independent of the initial or boundary conditions applied to the other variable. 
+
+In addition note how in each of these examples we relied heavily on the orthogonality of the modes to apply either initial conditions or boundary conditions. This property is therefore another key to the success of the method of separation of variables. 

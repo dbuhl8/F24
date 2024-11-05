@@ -1,0 +1,402 @@
+
+\chapter{Partial Differential Equations}
+
+We now begin one of the three main sections of this course, on partial differential equations (PDEs). The first part of this chapter will mostly review what you will have learned in an undergraduate PDE class, after which we will move on to more advanced concepts.
+
+\section{Definitions}
+
+In what follows, we will work with differential operators (say, ${\cal D}$) on the space of functions. An {\it ordinary} differential equation (ODE) is of the form ${\cal D}f= 0$, where $f$ is a function of a {\it single} variable, and ${\cal D}$ therefore only involves regular derivatives with respect to that variable. A {\it partial} differential equation (PDE) is also of the form ${\cal D}f= 0$, but this time $f$ is a function of {\it multiple} variables, and ${\cal D}$ therefore involves partial derivatives with respect to these variables. 
+\\
+\\
+{\bf Linear operators:} An operator is said to be linear (in which case it is often named ${\cal L}$) if, for any two functions $f$ and $g$ and scalar $a$, we have
+\begin{eqnarray}
+    {\cal L}(f+g) = {\cal L}f + {\cal L}g \\
+   \mbox{ and  } {\cal L}(af) = a {\cal L}f
+\end{eqnarray} 
+The second condition ensures that the operator ${\cal L}$ is also homogeneous (see below). 
+\\
+\\
+% ********** Example of linear operators: **********
+\noindent {\bf Example of linear operators:} 
+\begin{itemize}
+\item For ODEs: the integral $\int (f+g)(x)dx = \int f(x)dx + \int g(x)dx$ 
+and $\int af(x)dx = a \int f(x)dx$ 
+\item For PDEs: the laplacian $\Delta (f+g)(\mathbf{x}) = \Delta f(\mathbf{x}) + \Delta g(\mathbf{x})$ 
+and $\Delta (af)(\mathbf{x}) = a \Delta f(\mathbf{x})$
+\end{itemize}
+We see that ${\cal L}f$ is always a linear combination of $f$ and its derivatives (regular or partial). 
+\\
+\\
+\noindent {\bf Homogeneneous vs. non-homogeneous linear equations:}
+Linear ODEs or PDEs of the form ${\cal L}f = 0$, where ${\cal L}$ is a linear operator, are automatically homogeneous. We see that they are trivially satisfied by the null function $f \equiv 0$. 
+Linear ODEs and PDEs of the form
+${\cal L}f = F$ where $F$ is some explicit function of {\it only} the independent variables are not homogeneous. Notably, $f = 0$ is not a solution of these equations.  
+\\
+\\
+% ********** Examples of homogeneous and non-homogeneous linear equations: **********
+{\bf Examples of homogeneous and non-homogeneous linear equations:} 
+
+\begin{itemize}
+\item homogeneous: \color{red}$\dfrac{\partial^{2}f}{\partial x^{2}} + \dfrac{\partial^2 f}{\partial y^{2}} = 0 \quad $ (Laplace's eqn.)
+\color{black}
+\item nonhomogeneous: \color{red}$\dfrac{\partial^{2}f}{\partial x^{2}} + \dfrac{\partial^2 f}{\partial y^{2}} = F(x,y) \quad $ (Poisson's eqn.)
+\end{itemize}
+\\
+\\
+{\bf Nonlinear operators}: A nonlinear operator is simply not linear. Most ODEs and PDEs in the 'real' world involve nonlinear operators. However, analytical solutions of nonlinear ODEs and PDEs are rare, so this lecture will mostly focus on linear PDEs. If you are dealing with a nonlinear PDE, you will likely have to solve it numerically (if you need exact solutions) or approximately (using, e.g. local linearization or tools from asymptotic analysis, see Chapter 3).
+\\
+\\
+% ********** Examples of famous nonlinear PDEs: **********
+{\bf Examples of famous nonlinear PDEs:}
+\begin{itemize}
+\item \color{red} Navier-Stokes: 
+$\dfrac{\partial \mathbf{u}}{\partial t} + \mathbf{u} \cdot \nabla \mathbf{u} 
+= - \nabla p + \nu \Delta \mathbf{u}$
+\color{black}
+\item \color{red} Burgers' equation: 
+$\dfrac{\partial u}{\partial t} + u \dfrac{\partial u}{\partial x} = \nu \dfrac{\partial^{2}u}{\partial x^{2}}$
+\end{itemize}
+\\
+\\
+{\bf Initial / boundary conditions}: In addition to the differential equation itself, a real-world application will usually also involve initial conditions or boundary conditions that must be applied to find the solution of the problem. 
+\begin{itemize}
+    \item {\it Initial} conditions usually refer to conditions applied at some given point in time everywhere in space. \item {\it Boundary} conditions usually refer to conditions applied on the spatial domain boundaries at all times. 
+\end{itemize}
+
+Just like we did for the ODE or PDE itself, we will distinguish between linear and nonlinear boundary conditions. 
+\\
+\\
+{\bf Homogeneous boundary conditions:} Homogeneous linear boundary conditions  are boundary conditions that are trivially satisfied by the null function. They can be expressed as a linear combination of the function and its derivative(s)  being zero on the boundary. 
+\\
+\\
+% ********** Examples: **********
+{\bf Examples:}
+\begin{itemize}
+    \item Homogeneous Dirichlet conditions: 
+    \color{red} $f(\mathbf{x}) = 0, 
+    \forall \mathbf{x} \in \partial \Omega$ 
+    \color{black}
+    \item Homogeneous von Neumann conditions:
+    \color{red}
+    $\mathbf{\hat{n}} (\mathbf{x}) \cdot \nabla f (\mathbf{x})= 0, 
+    \forall \mathbf{x} \in \partial \Omega, \quad$ 
+    $\mathbf{\hat{n}}$ normal to $\partial \Omega$
+    \color{black}
+    \item Homogeneous Robin conditions: 
+    \color{red}
+    $\alpha f + \beta \mathbf{\hat{n}} \cdot \nabla f = 0, 
+    \forall \mathbf{x} \in \partial \Omega, \quad$ 
+    $\mathbf{\hat{n}}$ normal to $\partial \Omega$
+\end{itemize}
+\\
+\\
+{\bf Dimension of a PDE}: Confusingly, we also use the terminology 'dimension' (see previous lecture) to denote the number of independent variables of a PDE. The meaning of 'dimension' should hopefully be clear from the context in which it is used. 
+\\
+\\
+% ********** Examples: **********
+{\bf Examples:}
+\begin{itemize}
+    \item Example of a 2D PDE: 
+    \color{red}
+    $u_{t} = u_{xx}$, with $u(x,t) \quad$ 
+    (1D heat equation) 
+    \color{black}
+    \item Example of a  3D PDE: 
+    \color{red}
+    $u_{tt}(\mathbf{x},t) = c^{2} \Delta u(\mathbf{x},t)$, where $\mathbf{x} = (x,y) \quad$ 
+    (2D wave equation)
+    \color{black}
+    \item The Boltzmann equation: 
+    \color{red}
+    $\dfrac{\partial f}{\partial t} 
+    + \dfrac{\mathbf{p}}{m} \cdot \nabla f 
+    + \mathbf{F} \cdot \dfrac{\partial f}{\partial \mathbf{p}} 
+    = \left( \dfrac{\partial f}{\partial t} \right)_{\text{coll}}, $ \\
+    where $f(\mathbf{x},\mathbf{p},t)$ 
+    with position $\mathbf{x}=(x,y,z)$, momentum $\mathbf{p}=(p_{x}, p_{y}, p_{z})$, 
+    and time $t. \quad$ (7 dims) 
+    \color{black}
+\end{itemize}
+\\
+\\
+{\bf Order of an ODE or PDE}: The order of a linear differential equation is equal to the highest order derivative appearing in the operator ${\cal L}$. \\
+\\
+% ********** Examples: **********
+{\bf Examples:}
+\begin{itemize}
+    \item 
+    \color{red}
+    heat equation: $u_{t}(\mathbf{x},t) = \Delta u(\mathbf{x},t) \quad$ 
+    (2\textsuperscript{nd} order)
+    \color{black}
+    \item 
+    \color{red}
+    wave equation: $u_{tt}(\mathbf{x},t) = \Delta u(\mathbf{x},t) \quad$ 
+    (2\textsuperscript{nd} order)
+    \color{black}
+    \item
+    \color{red}
+    $\dfrac{\partial f}{\partial t} = c \dfrac{\partial^{4} f}{\partial t^{4}} \quad$ 
+    (4\textsuperscript{th} order)
+    \color{black}
+\end{itemize}
+
+With all these definitions now established, we dive in this Chapter into an important class of PDEs, namely second order, 2D, linear PDEs, which have been studied extensively as they very commonly arise in physics and  engineering. We will not touch first order PDEs, which you should have seen in an undergraduate-level PDE course. We will cover 3D and 4D linear PDEs later in this course.
+
+\section{Second order 2D linear PDEs (the basics)}
+
+\subsection{Classification of PDEs}
+
+A second order, 2D linear PDE in two variables $(x,y)$ can be written, in all generality, as 
+\begin{eqnarray}
+    a(x,y) \frac{\partial^2 f}{\partial x^2} + 2b(x,y) \frac{\partial^2 f}{\partial x \partial y} + c(x,y) \frac{\partial^2 f}{\partial y^2} \nonumber \\ + d(x,y) \frac{\partial f}{\partial x} + e(x,y) \frac{\partial f}{\partial y}  + g(x,y) f + h(x,y) = 0
+    \label{eq:generalform}
+\end{eqnarray}
+If the PDE is homogeneous, we further have $h(x,y) \equiv 0$.  
+The first line of this equation, which contains the highest-order derivatives, is called the {\it principal part}. 
+
+Using the theory of canonical forms, it is possible to show that second order 2D linear PDEs can be classified into 3 canonical types: parabolic equations, hyperbolic equations and elliptic equations, each of which has distinct properties. Furthermore, that classification only depends on the PDE's principal part. More specifically, compute the local discriminant of the PDE as 
+\begin{equation}
+    \Delta(x,y) = b^2(x,y) - a(x,y) c(x,y)
+\end{equation}
+\begin{itemize}
+\item If $\Delta(x,y) < 0$ at $(x,y)$ the PDE is locally elliptic
+\item If $\Delta(x,y) > 0$ at $(x,y)$ the PDE is locally hyperbolic
+\item If $\Delta(x,y) = 0$ at $(x,y)$ the PDE is locally parabolic
+\end{itemize}
+Note how some equations can have a hyperbolic nature in one part of a domain, and an elliptic nature in the other. But parabolic equations are usually parabolic everywhere.
+\\
+\\
+\noindent {\bf Example:} Consider the standard PDES with constant coefficients: 
+\begin{itemize}
+    \item the  diffusion equation 
+\begin{equation}
+    \frac{\partial f}{\partial t} = D \frac{\partial ^2 f}{\partial x^2},
+\end{equation}
+\item the wave equation
+\begin{equation}
+    \frac{\partial^2 f}{\partial t^2} = c^2 \frac{\partial ^2 f}{\partial x^2},
+\end{equation}
+\item Laplace's equation
+\begin{equation}
+    \frac{\partial^2 f}{\partial x^2} + \frac{\partial ^2 f}{\partial y^2} = 0 
+\end{equation}
+\end{itemize}
+What are their types?
+\\
+\\
+% ********** Solution: **********
+{\color{red} {\bf Solution:}\\
+The diffusion equation:\\
+\begin{equation*}
+    \frac{\partial f}{\partial t} = D \frac{\partial ^2 f}{\partial x^2} \Rightarrow D \frac{\partial ^2 f}{\partial x^2} - \frac{\partial f}{\partial t} = 0
+\end{equation*}
+This gives $a=D$, $b=0$, and $c=0$. Therefore,
+\begin{equation*}
+    \Delta = b^2 - ac = 0 - D(0) = 0
+\end{equation*}
+This result shows that the diffusion equation is parabolic.\\
+
+\noindent{The wave equation:}\\
+\begin{equation*}
+    \frac{\partial^2 f}{\partial t^2} = c^2 \frac{\partial ^2 f}{\partial x^2} \Rightarrow c^2 \frac{\partial ^2 f}{\partial x^2} - \frac{\partial^2 f}{\partial t^2} = 0
+\end{equation*}
+This gives $a=c^2$, $b=0$, and $c=-1$. Therefore,
+\begin{equation*}
+    \Delta = b^2 - ac = 0 - (c^2)(-1) = c^2 > 0
+\end{equation*}
+This result shows that the wave equation is hyperbolic.\\
+
+\noindent{Laplace's equation:}\\
+\begin{equation*}
+    \frac{\partial^2 f}{\partial x^2} + \frac{\partial ^2 f}{\partial y^2} = 0 
+\end{equation*}
+This gives $a=1$, $b=0$, and $c=1$. Therefore,
+\begin{equation*}
+    \Delta = b^2 - ac = 0 - (1)(1) = -1 < 0
+\end{equation*}
+This result shows that the wave equation is elliptic.\\
+}
+\\
+\\
+In fact, the theory of canonical forms states that it is always possible to find a change of variables that transforms a linear second order 2D PDE into one whose {\it principal part} has the same form as the diffusion equation (if it is parabolic), the wave equation (if it is hyperbolic) or Laplace's equation (if it is elliptic). That is why studying these three equations is so fundamental to the theory of second order 2D linear PDEs. 
+\\
+\\
+In this what follows, we now focus on homogeneous linear PDEs in a domain that is bounded in at least one of the spatial variables (i.e. at least one of the spatial variables lives on a finite interval). The boundary conditions on that interval are assumed to be homogeneous. A powerful technique for solving (some) equations of this type is called the {\it method of separation of variables}. We first discuss the method in general, and then solve a few simple PDEs to see how it works in practice.
+
+\subsection{Method of separation of variables (general idea)}
+
+The method of separation of variables is only appropriate for  certain types of 'separable' linear PDEs with appropriately 'separable' boundary conditions. 
+In order to be separable, a 2D homogeneous PDE (i.e. a PDE in 2 independent variables, let's call them $x$ and $y$) must be such that it is possible to rewrite it as 
+\begin{equation}
+    {\cal L}_x f = {\cal L}_y f,
+    \label{eq:separablecondition}
+\end{equation}
+where ${\cal L}_x$ is a linear operator that only includes partial derivatives in the $x$ variable, and ${\cal L}_y$ only includes partial derivatives in the $y$ variable. 
+\\
+\\
+% ********** Examples of separable and non-separable linear second order 2D PDEs: **********
+{\bf Examples of separable and non-separable linear second order 2D PDEs:}
+\begin{itemize}
+{\color{red} \item  {\bf Seperable:}
+    \begin{itemize}
+    \item Laplace's Equation: $ \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0 $
+    \item Poisson's Equation: $ \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = f(x, y) $
+    \item Diffusion Equation: $\frac{\partial u}{\partial t} = \alpha \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} \right) $
+    \end{itemize}
+\item {\bf Non-Seperable:}   
+    \begin{itemize}
+    \item Advection-Diffision Equation: $ \frac{\partial u}{\partial t} + v_x \frac{\partial u}{\partial x} + v_y \frac{\partial u}{\partial y} = D \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} \right) $ 
+
+    \end{itemize}
+}
+\end{itemize}
+More generally, if $b(x,y) = h(x,y) = 0$ in (\ref{eq:generalform}), and all of the other 'coefficients' $a(x,y)$, ... $g(x,y)$ of the PDE are constant, then it is homogeneous and separable. 
+\\
+\\
+If the boundary conditions are homogeneous as assumed, in order to be separable as well the domain boundaries must simply be composed of lines or curves where a given independent variable is held constant.
+\\
+\\
+% ********** Examples of separable and non-separable linear second order 2D PDEs: **********
+{\bf Examples of separable and non-separable homogeneous boundary conditions:}
+\begin{itemize}
+\item  
+\item 
+\item
+\end{itemize}
+We therefore note that not all linear homogeneous PDEs are separable, and even if the PDE itself is, not all homogeneous boundary conditions are separable either (this depends on the domain shape with respect to the coordinate system selected). 
+\\
+\\
+{\bf If the problem is separable}, then we can often solve it by leveraging the homogeneity and linearity of both equation and boundary conditions.
+Indeed, if (\ref{eq:separablecondition}) is satisfied, then there are (probably) separable solutions to the problem of the form $f(x,y) = A(x) B(y)$, satisfying
+\begin{equation}
+B(y) {\cal L}_x A = A(x){\cal L}_y B
+\end{equation}
+Dividing by $AB$, we obtain \begin{equation}
+\frac{ {\cal L}_x A}{A(x)} = \frac{{\cal L}_y B}{B(y)}
+\end{equation}
+Written in this way, we now see that the left-hand side only depends on $x$, while the right-hand side only depends on $y$, and that can only be possible if both are exactly constant: 
+\begin{equation}
+\frac{ {\cal L}_x A}{A(x)} = \lambda = \frac{{\cal L}_y B}{B(y)}
+\end{equation} 
+For this to be a solution, we then need at the same time
+\begin{equation}
+{\cal L}_x A = \lambda A \mbox{ and  }{\cal L}_y B = \lambda B. 
+\end{equation}
+In other words, $A$ must be an eigenfunction of ${\cal L}_x$, and $B$ must be an eigenfunction of ${\cal L}_y$, and they must share the eigenvalue $\lambda$ in order for $f = AB$ to be a solution of the PDE. That eigenvalue usually depends on the boundary conditions applied, and 
+often, many such triplets ($A$,$B$,$\lambda$) actually exist, so the true solution of the PDE would involve a linear combination of these individual separable solutions, and further work is needed to ensure that all the boundary and/or initial conditions are satisfied. Whether such a solution to the full problem always exist or not depends on the nature of the PDE, and is the focus of Sturm-Liouville theory (see later in the course). 
+
+In the next section, we look at a few examples of how to apply this method in practice. 
+
+\subsection{The diffusion equation in a finite interval}
+
+Let's consider the diffusion equation 
+\begin{equation}
+    \frac{\partial f}{\partial t} = D \frac{\partial^2 f}{\partial x^2}
+    \label{eq:diffeq}
+\end{equation}
+on the interval $(0,L)$, with homogeneous von Neumann conditions. At time $t= 0$, $f(x,0) = f_0(x)$, where $f_0(x)$ satisfies the boundary conditions as well. 
+\begin{itemize}
+\item Show, using separation of variables, that the general solution of the equation can be written in the form
+\begin{equation}
+f(x,t) = c_0 + \sum_{n=1}^\infty c_n \cos\left( \frac{n\pi x}{L} \right) e^{-t / \tau_n}
+\end{equation} 
+where you need to determine what $\tau_n$ is. 
+\item Use the orthogonality properties of the cosine functions to apply the initial conditions and find the coefficients $c_n$. 
+\item What is the limit of $f(x,t)$ as $t \rightarrow \infty$? What is the mathematical meaning of this value? What is the physical meaning of this value?
+\end{itemize}
+Note: the orthogonality condition for cosines is : 
+\begin{eqnarray}
+    \int_0^L \cos \left( \frac{n\pi x}{L} \right)  \cos \left( \frac{m\pi x}{L} \right) dx && = 0 \mbox{ if  } m \neq n   \nonumber \\
+   && = \frac{L}{2} \mbox{ if  } m = n > 0, \nonumber \\ && =  L \mbox{ if  } m = n = 0
+\label{eq:cosineortho}
+\end{eqnarray}\\
+\\
+% ********** Solution: **********
+{\color{red} {\bf Solution:}
+
+\\
+\begin{equation}
+    frac{\partial f}{\partial t} = D \frac{\partial^2 f}{\partial x^2} 
+\end{equation} 
+\begin{equation}
+    \begin{cases}
+        \frac{\partial{f}}{\partial{x}} = 0 \text{  at  }x=0,L \\
+        f (x,0) =  f_0(x)\\
+    \end{cases}
+\end{equation}
+\\
+
+Assume $f(x,t)=A(x)B(t)$. Then, 
+\begin{equation}
+    \frac{\partial f}{\partial t}=A\frac{dB}{dt} \textrm{\;\;\;and\;\;\;} \frac{D\partial^2f}{\partial x^2}=B\frac{d^2A}{dx^2}
+\end{equation}
+\begin{equation}
+    \Rightarrow \frac{1}{B}\frac{dB}{dt}=\frac{D}{A}\frac{d^2A}{dx^2} = \lambda
+\end{equation}
+\begin{equation}
+    \Rightarrow \begin{cases}
+        \frac{d^2 A}{dx^2}=\frac{\lambda}{D} A \\
+        \frac{dB}{dt}=\lambda B  
+    \end{cases}
+\end{equation}
+
+Consider the sign of $\lambda$. Note that this is a diffusion problem, so we expect that the solution will trend towards some steady-state and won't grow exponentially with respect to time. So, given $\frac{dB}{dt}=\lambda B$ with solution $B(t)=be^{\lambda t}$, we expect $\lambda \leq 0$. \\ \\
+
+
+        \begin{gather*}
+        \begin{cases}
+        \lambda = 0 \implies \frac{d^2A}{dx^2}, \frac{dA}{dx} = 0 : x = 0,L \\
+        \lambda > 0 \implies A(x) = \begin{cases} sin(\sqrt{\frac{\lambda}{D}x}) \\  cos(\sqrt{\frac{\lambda}{D}x}) \\ \end{cases} \\
+        \end{cases}
+        \end{gather*}
+        
+        We are able to eliminate $A(x) = sin(\sqrt{\frac{\lambda}{D}x})$ due to it's incompatibility with the B.C.'s. Hence, we take $A_n(x) = cos(\frac{n\pi x}{L})$. We can take the derivative and solve at the boundary L.
+
+        \begin{gather*}
+        \frac{dA}{dx} = \sqrt{\frac{\lambda}{D}}sin(\sqrt{\frac{\lambda}{D}x}) \\
+        \frac{dA}{dx}|_{x=L} = \sqrt{\frac{\lambda}{D}}L = n\pi = \imples \lambda _n = \frac{n^2\pi^2D}{L^2}\\
+        \end{gather*}
+
+        We can now plug our $\lambda_n$ into our equation for $\frac{dB_n}{dt}$.
+
+        \begin{gather*}
+            \frac{dB_n}{dt} = - \frac{n^2\pi^2D}{L^2}B_n \\ 
+            \implies B_n(t) = b_ne^{\frac{t}{\zeta_n}}, \zeta_n = \frac{L^2}{n^2\pi^2D} 
+        \end{gather*}
+
+        Now we can fill in our decomposition $f(x,y) = A(x)B(t)$ leveraging the fact that the B.C.'s are always zero.
+
+        \begin{gather*}
+            f(x,t) = a_0  + \sum_{n=1}^{\infty}a_ncos(\frac{n\pi x}{L})e^{\frac{-t}{\zeta}} = {(*)} \\
+        \end{gather*}
+
+        And projecting
+
+        \begin{gather*}
+            \int_{0}^{L}(*)cos(\frac{m\pi x}{L})dx \\
+            \begin{cases}
+                m \neq 0: 0 + \frac{L}{2}a_m = \int_{0}^{L}f_0(x)cos(\frac{m\pi x}{L})dx \\
+                m = 0: L*a_0 = \int_{0}^{L}f_0(x)cos(\frac{m\pi x}{L})dx \implies a_0 = \frac{1}{L}\int_{0}^{L}f_0(x)cos(\frac{m\pi x}{L})dx \\ 
+            \end{cases}
+        \end{gather*}
+
+
+}
+\\
+\\
+Note how: 
+\begin{itemize}
+    \item The function $f(x,t)$ is decomposed into a sum of Fourier 'modes' that each has its own spatial dependence (the eigenmode $A_n(x)$) and its own decay timescale $\tau_n$. 
+    \item Higher-order modes (higher $n$)  capture finer spatial scales, and these decay faster. After a large amount of time, only the largest system scales remain.  
+    \item Both these behaviors are fundamental behaviors of the diffusion equation.
+    \item Adding all of the individual separable solutions together was only possible because the boundary conditions are homogeneous!
+\end{itemize}
+
+\subsection{Take-home messages for lecture 2}
+
+Here are a few things to remember:
+\begin{itemize}
+    \item Be familiar with the definitions (linear; homogeneous; dimensions; order; types of boundary conditions; the three canonical 2nd order 2D PDEs)
+    \item The method of separation of variables is powerful, but requires that (1) the PDE and boundary conditions be linear, (2) the PDE and boundary conditions be separable, (3) that the boundary conditions be homogeneous for at least one of the variables. 
+\end{itemize}

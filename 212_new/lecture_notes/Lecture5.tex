@@ -1,0 +1,309 @@
+In the last 2 lectures, we covered simple 'canonical' second order 2D PDEs (diffusion, wave, Poisson equations). In all of these cases, the coefficients of the principal part were constant, which resulted in eigenmodes of the spatial problem that are simple Fourier  (sine, cosine) functions. In general, however, the coefficients are not always constant and these second-order 2D linear PDEs have the more universal form (\ref{eq:generalform}). Let's now study how to deal with these problems.
+
+\section{Second-order 2D linear PDEs (non-constant coefficients)}
+
+There are many common situations in which the coefficients of the principal part of the PDE can depend on the independent variables:
+\begin{itemize}
+    \item For the standard diffusion and wave equations in Cartesian coordinates, this happens when the wave speed and the diffusion coefficient vary with $x,t$.
+    \item The diffusion, wave and Laplace equations also acquire non-constant coefficients when moving to different coordinate systems that are more appropriate for the geometry of the problem. 
+\end{itemize}
+
+\subsection{The standard equations in other coordinate systems}
+
+In order to have a chance at using separation of variables to solve a problem, the domain boundaries should be aligned with the coordinate system. This means that to solve a PDE in a disk, it is better to use polar coordinates; to solve it in a cylinder or a sphere, it is better to use cylindrical or spherical coordinate systems; other coordinate systems also exist and/or can be constructed to deal with more complicated shapes. 
+
+To find the correct expression for the wave, diffusion and Laplace's equation (or any other PDE) in other coordinate systems, it is very important to always keep in mind the {\it principle of coordinate independence}. That is, while {\it you} may prefer to use a particular coordinate system to model a certain physical phenomenon, that phenomenon exists and is the same regardless of the coordinate system it is expressed in. For this reason, it is always better to write PDEs first using differential operators that are universal, and then express them in the coordinate system of your choice once you have selected it. 
+
+These universal differential operators are $\nabla$, $\nabla \cdot$ and $\nabla \times$ at first order, and the combination of $\nabla \cdot$ and $\nabla$ applied to a scalar is the so-called Laplacian operator
+\begin{equation}
+    \nabla^2 f = \nabla \cdot (\nabla f) 
+\end{equation}
+
+Using these operators, 
+\begin{itemize}
+    \item The universal expression for the diffusion equation (with constant diffusion coefficient) is:
+    \begin{equation}
+        \frac{\partial f}{\partial t} = D \nabla^2 f
+    \end{equation}
+    \item The universal expression for the wave equation (with constant wave speed $c$ is:
+    \begin{equation}
+        \frac{\partial^2 f}{\partial t^2} = c^2 \nabla^2 f
+    \end{equation}
+    \item The universal expression for Laplace's equation is:
+    \begin{equation}
+        \nabla^2 f = 0
+    \end{equation}
+\end{itemize}
+To express these equations in a given coordinate system, see, e.g. the NRL plasma formulary (for cylindrical adn spherical coordinates) and Batchelor's book (for general coordinates), to find the expression of the Laplacian operator in that coordinate system.
+\\
+\\
+{\bf Example 1:} Laplace's equation in polar coordinates is: 
+\\
+\\
+{\color{red} {\bf Solution:
+\begin{gather*}\nabla^2 f = 0 \to r^2\frac{\partial^2 f}{\partial r^2} + r\frac{\partial
+f}{\partial r} + \frac{\partial^2 f}{\partial \theta^2} = 0\end{gather*}
+} }
+\\
+\\
+{\bf Example 2:} The spherically-symmetric wave equation is :} 
+\\
+\\
+{\color{red} {\bf Solution:
+\begin{gather*}
+    \pp{f}{t} = 0
+\end{gather*}
+} }
+\\
+\\
+We see in these examples that even the 'standard' PDEs now have coefficients that depend on space.
+
+\subsection{Separation of variables}
+
+The general form of the homogeneous diffusion, wave and Laplace equations in other coordinate systems is still
+\begin{equation}
+   {\cal L}_t f = {\cal L}_x f  
+\end{equation}
+where ${\cal L}_x$ is a second-order linear differential operator that only involves a spatial coordinate $x$, ${\cal L}_t$ is a first or second-order differential operator that only involves $t$, and  
+where $t \rightarrow y$ for the Poisson equation. The main difference with the previous sections is that these operators now have coefficients that depend on the independent variables. Many PDEs arising from physical systems can be written in such a form, so what follows does have a lot of applications. 
+
+As we saw in Lecture 2, this equation has separable solutions of the form $f(x,t) = A(x) B(t)$ provided we can find temporal and spatial eigenmodes of the problem such that 
+\begin{equation}
+    {\cal L}_x A = \lambda A, \mbox{ and }{\cal L}_t B = \lambda B. 
+\end{equation}
+
+Everything therefore hangs in the existence of eigensolutions to the spatial part of the problem, that satisfy the boundary conditions. This existence, and the properties of the eigensolutions, are explicitly given by Sturm-Liouville theory.
+
+Let us first explicitly write, in all generality,
+\begin{equation}
+    {\cal L}_x A = a(x) \frac{d^2 A}{d x^2} + b(x) \frac{d A}{dx} + c(x) A. 
+\end{equation}
+Note that there is no term without $A$, because we had assumed the problem is homogeneous. Also note that since $A$ is only a function of $x$, we can now use regular derivatives. 
+
+Let's multiply this equation by the function $r(x) = p(x)/a(x)$, where 
+\begin{equation}
+    p(x) = \exp\left( \int \frac{b(x)}{a(x)} dx \right).
+\end{equation}
+Note that for $p(x)$ to exist, $b(x)/a(x)$ must be integrable, so there are limitations to this method if that is not the case.
+If this is reminiscent of the integrating factor method for 1st order ODEs, that is not a coincidence! We get
+\begin{equation}
+    r(x) {\cal L}_x A = p(x) \frac{d^2 A}{d x^2} + \frac{p(x)}{a(x)} b(x) \frac{d A}{d x} + r(x) c(x) A 
+\end{equation}
+Noting that 
+\begin{equation}
+    p'(x) = \frac{b(x)}{a(x)} p(x)
+\end{equation}
+we see that \begin{equation}
+    r(x) {\cal L}_x A = p(x) \frac{d^2 A}{d x^2} + p'(x) \frac{d A}{d x} + r(x) c(x) A = \frac{d}{dx} \left[ p(x) \frac{dA}{dx}\right] + r(x) c(x) A  
+\end{equation}
+
+The eigenvalue problem for $A$ then becomes
+\begin{equation}
+     \frac{d}{dx} \left[ p(x) \frac{dA}{dx}\right] + q(x) A  = \lambda r(x)  A  
+     \label{eq:SLform}
+\end{equation}
+where $q(x) = r(x) c(x)$. As we shall see now, this is called a Sturm-Liouville eigenvalue problem, and so we have just shown that separable linear second-order 2D homogeneous PDEs  {\it almost} always reduce to a Sturm Liouville problem (the only exception being when $p(x)$ does not exist because $b(x)/a(x)$ is not integrable in the domain considered). 
+\\
+\\
+{\bf Examples:}
+\begin{itemize}
+    \item Consider Laplace's equation in spherical coordinates. After assuming that the solutions are proportional to $\sin(\phi)$, separate the remaining variables. Show that the  eigenvalue equations in $r$ and $\theta$ are both in the form (\ref{eq:SLform}).
+      \\
+    \\
+    {\color{red} \bf Solution:
+    \begin{gather*}
+        \frac{1}{r^2}\pp{}{r}\left(r^2\pp{f}{r}\right) +
+        \frac{1}{r^2\sin(\theta)}\pp{}{\theta}\left(\sin{\theta}\pp{f}{\theta}\right)
+        + \frac{1}{r^2\sin^2(\theta)}\ppt{f}{\phi} = 0
+        \label{eq:laplace_spherical} \tag{L Sph.}\\
+        f = A(r)B(\theta)\sin(\phi)\\
+        \eqref{eq:laplace_spherical} \to
+        \frac{B(\theta)\sin(\phi)}{r^2}\pp{}{r}\left(r^2\pp{A(r)}{r}\right) +
+        \frac{A(r)\sin(\phi)}{r^2\sin(\theta)}\pp{}{\theta}\left(\sin(\theta)\pp{B(\theta)}{\theta}\right)
+        - \frac{A(r)B(\theta)\sin(\phi)}{r^2\sin^2(\theta)}\\
+        \frac{1}{A(r)}\pp{}{r}\left(r^2\pp{A(r)}{r}\right) = -
+        \frac{1}{B(\theta)\sin(\theta)}\pp{}{\theta}\left(\sin(\theta)\pp{B(\theta)}{\theta}\right)
+        + \frac{1}{\sin^2(\theta)} = -\lambda
+    \end{gather*}
+
+    }
+    \\
+    \\
+    \item Consider the Bessel equation:
+\begin{equation}
+x^2 \frac{d^2 u}{dx^2}  + x \frac{d u}{dx}   + (x^2 - \nu^2) u  = 0 
+\end{equation}
+where $\nu$ is a constant. Put it in the form (\ref{eq:SLform}).
+ \\
+    \\
+    {\color{red} \bf Solution:
+    \begin{gather*}
+        \pp{}{x}\left(x\pp{u}{x}\right) + xu = \frac{\nu^2}{x}u, \quad p(x) = x,
+        \quad q(x) = x, \quad r(x) = \frac{\nu^2}{x}
+    \end{gather*}
+    }
+    \\
+    \\
+\end{itemize}
+
+We now begin our exploration of Sturm-Liouville theory by formally defining what a Sturm-Liouville problem is.
+
+\subsection{Sturm-Liouville problems} 
+
+The eigenvalue problem 
+\begin{equation}
+     {\cal L}(u) = \frac{d}{dx} \left[ p(x) \frac{du}{dx}\right] + q(x) u  = - \lambda w(x)  u   
+\end{equation}
+on the interval $(x_a,x_b)$, with homogeneous boundary conditions
+\begin{eqnarray}
+\alpha_a u(x_a) + \beta_a u'(x_a) = 0 \\
+\alpha_b u(x_b) + \beta_b u'(x_b) = 0
+\end{eqnarray}
+is called a Sturm-Liouville problem provided 
+\begin{itemize}
+    \item $p(x)$, $p'(x)$, $q(x)$ and $w(x)$ are defined and continuous in $(x_a,x_b)$
+    \item $p(x)>0$ and $w(x)>0$ in $(x_a,x_b)$
+    \item $|\alpha_a| + |\beta_a| > 0$,$|\alpha_b| + |\beta_b| > 0$  
+\end{itemize}
+
+If $p(x)$ or $w(x)$ vanish at one of the boundaries, or if the domain is unbounded, the problem is called a {\it singular} Sturm-Liouville problem. Otherwise the problem is called {\it regular}. Also note that it is also possible to consider periodic boundary conditions, such that 
+\begin{equation}
+    u(x_a) = u(x_b) \mbox{  
+ and }  u'(x_a) = u'(x_b)
+\end{equation}
+Problems with periodic boundary conditions have very similar properties to regular Sturm-Liouville problems (as long as $p(x) > 0$, $w(x) > 0 $ on $[a,b]$).
+
+The function $w(x)$ is often called {\it the weight function} of the problem, and we will see shortly why. Note also that we have redefined the sign of $\lambda$ from the previous section, to be consistent with the standard definitions used in Sturm-Liouville theory. 
+\\
+\\
+{\bf Example 1:} Consider the equation and boundary conditions:
+\begin{eqnarray}
+\frac{d^2 u}{dx^2} + \lambda u  = 0 \\
+u(0) = 0, u(1) = 0
+\end{eqnarray}
+Identify if it is a Sturm-Liouville problem, and if yes, what type it is.  
+\\
+\\
+{\color{red} {\bf Solution:
+
+\begin{gather*}
+    \frac{d}{dx}\left(\frac{du}{dx}\right) + 0 = -\lambda u\\
+    p(x) = 1,\quad  q(x) = 0, \quad r(x) = 1
+\end{gather*}
+We have that this is a regular Sturm Liouville problem. 
+} 
+}
+\\
+\\
+{\bf Example 2:} Consider the Bessel equation and boundary conditions:
+\begin{eqnarray}
+x^2 \frac{d^2 u}{dx^2}  + x \frac{d u}{dx}   + (x^2 - \nu^2) u  = 0 \\
+|u(0)| < +\infty, u(R) = 0
+\end{eqnarray}
+In the previous lecture we already put this equation in the relevant form.  
+Identify if it is a Sturm-Liouville problem, and if yes, what type it is.  
+\\
+\\
+{\color{red} {\bf Solution:
+
+} 
+}
+\\
+\\
+As we shall now demonstrate, Sturm-Liouville problems are equivalent to the 'real symmetric matrices' of linear algebra,  and therefore have similar properties when it comes to their eigenvalues and eigenfunctions. 
+
+\subsection{Propertie of Sturm-Liouville problems} 
+
+{\bf (1) Symmetry of the operator.} \\
+It is easy to show that the operator ${\cal L}$ is symmetric, where symmetry is defined here as the property that 
+\begin{equation}
+    \int_{x_a}^{x_b} \left[ u {\cal L}(v) - v {\cal L}(u) \right] dx  = 0 
+\end{equation}
+for any two functions $u$ and $v$ satisfying the boundary conditions. 
+\\
+\\
+{\color{red} {\bf Proof:}}
+\\
+\\
+{\bf (2) Orthogonality of the eigenfunctions.} \\
+The eigenfunctions of a Sturm-Liouville problem are orthogonal with respect to the inner product 
+\begin{equation}
+    \langle u,v \rangle = \int_{x_a}^{x_b} u(x) v(x) w(x) dx 
+\end{equation}
+\\
+\\
+{\color{red} {\bf Proof:}}
+\\
+\\
+  {\bf (3) The eigenvalues of Sturm-Liouville problems are real} 
+  \\
+\\
+{\color{red} {\bf Proof:}}
+\\
+\\
+The following proofs being somewhat more involved, we will skip them. However, note that while all of the properties so far applied to any Sturm-Liouville problem, the next ones only work for regular Sturm-Liouville problems. 
+\\
+\\
+{\bf (4) The eigenvalues of regular Sturm-Liouville problems are simple.}\\
+In practice, this means that if two functions have the same eigenvalue, then these two functions are linearly dependent. 
+\\
+\\
+{\bf (5) The set of all eigenvalues of a regular Sturm-Liouville problem form an unbounded, strictly monotone sequence.}\\
+In other words, the set of all eigenvalues can be ordered as 
+\begin{equation}
+    \lambda_0 < \lambda_1 < \lambda_2 < ...
+\end{equation}
+with $\lim_{n \rightarrow \infty} \lambda_n = + \infty$. The quantity $\lambda_0$ is called the {\it principal eigenvalue}. 
+\\
+\\
+{\bf (6) The $n$-th eigenfunction of a regular Sturm-Liouville problem (i.e. the eigenfunction corresponding to $\lambda_n$ has exactly $n$ zeros in $(x_a,x_b)$}
+\\
+\\
+{\bf (7) The set of eigenfunctions of a regular Sturm-Liouville problem forms a complete basis for all functions on $[x_a,x_b]$.} Furthermore, it is possible to construct this basis so that
+\begin{itemize}
+    \item All of the eigenfunctions are real
+    \item The basis is orthogonal (i.e. the eigenfunctions are all mutually orthogonal to each other)
+\end{itemize}
+
+This final property is obviously the most interesting one in the context of solving linear  PDEs, because it allows us to generalize the concept of Fourier Series to other families of function. In particular, we now know that if the eigenfunctions of ${\cal L}$ are denoted as the family $\{v_n(x)\}$, then {\it any} function $u(x)$ defined on the interval $[x_a,x_b]$ can be written as 
+\begin{equation}
+    u(x) = \sum_{n=0}^{n=\infty} c_n v_n(x) 
+\end{equation}
+where, by orthogonality, the coefficients $c_n$ are given by 
+\begin{equation}
+    c_n = \frac{ \langle u,v_n \rangle }{\langle v_n, v_n \rangle}= \frac{ \int_{x_a}^{x_b} u(x)v_n(x) w(x) dx  }{\int_{x_a}^{x_b} v^2_n(x) w(x) dx  } 
+\end{equation}
+
+\subsection{Famous Examples of Sturm-Liouville problems}
+
+{\bf Example 1: The Fourier functions.} \\  Consider the problem 
+\begin{eqnarray}
+\frac{d^2 u}{dx^2}=  -\lambda u   \nonumber \\
+u(0) = u(L) = 0 
+\end{eqnarray}
+Show that it is a regular SL problem, and check that it satisfies all of the properties outlined in the previous section. 
+\\
+\\
+{{\color{red} {\bf Solution:}}
+}
+\\
+\\
+{\bf Example 2: The Bessel Functions}\\
+Consider the problem
+\begin{eqnarray}
+    x^2 \frac{d^2 u}{dx^2} + x \frac{du}{dx} + (x^2 - \nu^2) u = 0 \nonumber \\ 
+    |u(0)| < + \infty, u(R) = 0
+\end{eqnarray}
+for a given real value of $\nu$. 
+Check that
+it satisfies the first three properties outlined in the previous section. What is the relevant orthogonality condition? Which of the other properties does it satisfy? Which does it not satisfy? (You will have to consult the {\it Handbook of Mathematical Functions} for the answer to some of these questions). 
+\\
+\\
+{{\color{red} {\bf Solution:}}
+}
+\\
+\\
+Note that completeness of a basis is difficult to show in general in the (infinite) space of functions. As it turns out, it can be shown that this set of Bessel functions is a complete basis for all functions on the interval $[0,R]$. 
+
+We therefore see that even though the second example is a singular Sturm-Liouville problem, it still satisfies many of the same properties as those of a regular Sturm-Liouville problem (and in particular, the completeness of the basis). The reason behind this is that the singularity of this equation is not a 'bad' singularity.  In technical terms the point $x=0$ has a {\it regular singularity} (we will see more about those later), which are not as bad as real singularities. A physical reason one could invoke to understand why this problem effectively behaves as a regular problem is that it was {\it derived} from a regular problem simply through a change of variables. Therefore, 
+we know that this singular is just a coordinate singularity and there is nothing physically singular about the problem. 

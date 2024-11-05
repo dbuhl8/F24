@@ -1,0 +1,516 @@
+\chapter{Ideas of dimensional analysis}
+
+{\color{red} Please make sure to add all changes in red}
+\\
+\\
+In this set of lectures we will explore a few key analytical tools of applied mathematics. We will review general ideas for the solution of linear PDEs in Chapter 2, dive in Chapter 3 into asymptotic methods for the solution of ODEs (many of which extend fairly easily to PDEs as well), and finally introduce the concept of variational calculus as a method for optimizing functionals in Chapter 4. 
+
+Before we begin, however, we will spend this first lecture learning what is arguably {\it the} biggest 'bang-for-the-buck' tool of applied mathematics, namely dimensional analysis, which will allow you to obtain insightful and interesting results using just back-of-the-envelope calculations. 
+
+\section{The notion of dimensions and units}
+
+First of all, let's remember that we are {\it applied} mathematicians, and that every equation that we will likely have to solve arises from an application in real life. This means that the quantities modelled (parameters, variables, functions) are usually  dimensional and  only make sense when expressed in some system of units. 
+
+A {\it dimension} refers to the type of the variable: mass, length, time, temperature, etc., or combinations of these dimensions (e.g. velocity has the dimensions of length/time). In these lectures, we will use the notation $[q]$ to denote 'the dimension of $q$'. For instance, if the variable $x$ is a length and $v$ is a velocity, we would write \begin{equation} 
+[x]= \mbox{ length,} \quad [v] = \frac{\rm length}{\rm time}
+\end{equation}
+There are a few fundamental dimensions: mass, length, time, temperature, electric charge. Most other quantities have dimensions that can be written in terms of these fundamental ones. See the NRL Plasma Formulary for detail. 
+ 
+The {\it unit} refers to the metric by which this dimension is measured, e.g.:
+\begin{itemize}
+    \item centimeters, meters,  kilometers, etc. for length
+    \item seconds, minutes, hours,  years, etc. for time 
+    \item grams, kilograms, etc. for mass
+    \item degrees (usually Kelvin) for temperature
+    \item Coulomb, or Statcoulomb for charge
+\end{itemize}
+Note that the international community generally uses one of two standard systems of units: the SI  ('Syst\`eme International' units, meters-kilograms-seconds) or cgs (centimeters-grams-seconds) systems. The NRL Plasma Formulary provides a table to convert quantities between different unit systems. 
+
+But as we shall discuss in this lecture, it may sometimes be much better to use other systems of units that are more appropriate to the problem we want to solve\footnote{There is an important exception: scientists should always refrain from using inches, feet, ounces, and other relics from the imperial unit system, otherwise bad things happen --- Google "Mars Climate Orbiter" for example.}. 
+
+The presence of dimensions and units in real-life problems has a few trivial but nonetheless useful / important consequences. For instance, the left-hand side and right-hand side of any equation describing that problem {\it must} have the same units -- otherwise we are comparing apples to oranges. This is a simple way of checking whether your equations are correct or not. It can also be used to {\it find} the dimensions of certain parameters in an equation, and use that information to model them if needed.  
+\\
+\\
+\noindent {\bf Example 1:} Why is it $E = mc^2$ and not $E = mc^3$ or $E = m^2c^2$?
+\\
+\\
+{\color{red} {\bf Solution:}
+% Insert explanation
+Energy has units of $\frac{\text{mass} \cdot \text{length}^2}{\text{time}^2}$. By analyzing the dimensions of the right-hand side of the equation, we get that m has dimensions of mass and c, the speed of light, has dimensions of $\frac{\text{length}}{\text{time}}$. This gives matching dimensions for both sides of the equation. However, $E = mc^3$ and $E = m^2c^2$ give incorrect right-hand side dimensions of $\frac{\text{mass} \cdot \text{length}^3}{\text{time}^3}$ and $\frac{\text{mass}^2 \cdot \text{length}^2}{\text{time}^2}$ respectively.
+}
+\\
+\\
+{\bf Example 2:} 
+In the diffusion equation $\partial f/\partial t = D \partial^2 f / \partial x^2$, what is the dimension of $D$? In many applications, $D$ is often modeled as a characteristic velocity times a characteristic length scale. For example, in a turbulent flow, $D$ is modeled as the typical length scale of a turbulent eddy, times the velocity of that eddy. In random walk processes, $D$ is modeled as the  typical travel velocity times the characteristic length scale traveled before changing direction. Why does that make sense (at least, dimensionally)? \\
+\\
+{\color{red} {\bf Solution:}
+% Insert explanation
+\begin{align*}
+    \frac{[\partial f]}{[\partial t]} &\implies \frac{[f]}{\text{time}}\\
+    [D] \frac{[\partial ^2 f]}{[\partial x^2]} &\implies [D] \frac{[f]}{\text{length}^2}\\
+    \frac{[f]}{\text{time}} = [D] \frac{[f]}{\text{length}^2} &\implies [D] = \frac{\text{length}^2}{\text{time}}
+\end{align*}
+
+\noindent $D$ will have dimensions of $\frac{\text{length}^2}{\text{time}}$. In both turbulent flows and random walk processes, $D$ is modeled as a velocity times a length. Dimensionally, this makes sense because the product of velocity, which has dimensions of $\frac{\text{length}}{\text{time}}$, and length give the proper dimensions of $D$.
+}
+
+\section{Introduction to dimensional analysis}
+
+The idea behind dimensional analysis is the following. For a simple problem that only has a few input parameters (each of which has their own dimensions), it is usually possible to deduce what the characteristic length scale(s) or time scale(s) or velocity scale(s) of the problem ought to be, simply by finding the combination of parameters that has the correct dimension. 
+Using that information, we can often learn something interesting and useful about the solution.
+\\
+\\
+{\bf Example 1:} Consider an object of mass $m$, oscillating sideways on a spring with tension coefficient $k$. The time evolution of its displacement from rest $x$ is described by the harmonic oscillator equation:  
+\begin{equation}
+m\frac{d^2 x}{dt^2} = - k x 
+\end{equation}
+\begin{itemize}
+    \item What is the dimension of $k$?
+    \item Using dimensional analysis with the parameters provided, show that there is a single emergent characteristic timescale describing the problem.
+    \item Solve the problem exactly, assuming that the mass starts with zero velocity at a position $x_0$ away from rest. Does this characteristic time scale indeed appear in the solution?
+\end{itemize}
+\\
+{\color{red} {\bf Solution:}
+If we take $x$ to have dimension $l$ and then plug the units into the equation we have:
+\begin{align*}
+    m \frac{l}{t^2} = k l &\implies [k] = \frac{m}{t^2}
+\end{align*}
+In order to get a timescale out of this, we will need to divide out the $m$ from the dimension of $k$ and  then square root in order to remove the exponent on time. This produces the characteristic timescale:
+\begin{align*}
+\tau = 
+\sqrt{\frac{m}{k}}
+\end{align*}
+which has dimension:
+\begin{align*}
+   [\tau] = \sqrt{\frac{m}{k}} &= \sqrt{m/(\frac{m}{t^2})}\\
+&= \sqrt{t^2}\\
+&= t
+\end{align*}
+We have the second order differential equation:
+\begin{align*}
+    &m \frac{d^2 x}{dt^2} + kx = 0\\
+    &x(0) = x_0\\
+    &x'(0) = 0\\
+\end{align*}
+This produces the characteristic polynomial:
+\begin{align*}
+    mr^2 + k = 0
+\end{align*}
+which has the roots:
+\begin{align*}
+    \frac{\pm \sqrt{-4mk}}{2m} &= \pm i\frac{\sqrt{mk}}{m}\\
+    &= \pm i \sqrt{\frac{k}{m}}\\
+    &= \pm i \frac{1}{\tau}
+\end{align*}
+giving the general solution:
+\begin{align*}
+&x(t) = c_1 \cos(\frac{t}{\tau}) + c_2 \sin(\frac{t}{\tau})\\
+&x'(t) = -\frac{c_1}{\tau} \sin(\frac{t}{\tau}) +  \frac{c_2}{\tau}\cos(\frac{t}{\tau})
+\end{align*}
+Applying our velocity BC gives:
+\begin{align*}
+    x'(0) = 0 = c_2 &\implies x(t) = c_1 \cos(\frac{t}{\tau})
+\end{align*}
+And our IC gives:
+\begin{align*}
+    x(0) = x_0 = c_1
+\end{align*}
+Giving the particular solution:
+\begin{align*}
+    x(t) = x_0 \cos(\frac{t}{\tau})
+\end{align*}
+We see the characteristic timescale $\tau$ in the particular solution.
+}
+\\
+\\
+{\bf Example 2:}
+Let's now add some damping, so the equation reads
+\begin{equation}
+    m\frac{d^2 x}{dt^2} = - k x - \lambda \frac{dx}{dt}
+    \label{eq:damp_osc}
+\end{equation}
+\begin{itemize}
+    \item Show that there are  two distinct characteristic timescales in the problem. 
+    \item What is their physical meaning?
+    \end{itemize}
+\\
+\\
+{\color{red} {\bf Solution:}
+Let us non-dimensionalize equation 1.3.
+\begin{align*}
+  m\frac{d^2x}{dt^2} + \lambda\frac{dx}{dt} + kx = 0
+\end{align*}
+Let $\hat{x} = \frac{x}{x_s}$ and $\hat{t} = \frac{t}{t_s}$ and plug in for $x$ and $t$.
+\begin{align*}
+  \frac{mx_s}{t_s^2}\frac{d^2\hat{x}}{d\hat{t}^2} + \frac{\lambda x_s}{t_s}\frac{d\hat{x}}{d\hat{t}} + k\hat{x}x_s &= 0 \\
+  \frac{d^2\hat{x}}{d\hat{t}^2} + \frac{\lambda t_s}{m}\frac{d\hat{x}}{d\hat{t}} + \frac{kt_s^2}{m}\hat{x} &= 0
+\end{align*}
+By setting the leading coefficients in front of $\hat{x}$ and $\frac{d\hat{x}}{d\hat{t}}$ equal to 1 we can find the two characteristic time scales for the mass spring damped oscillator:
+\begin{align*}
+  \frac{\lambda t_s}{m} &= 1 \Longrightarrow 
+  t_s = \tau_1 = \frac{m}{\lambda} \\
+  \frac{k t_s^2}{m} &= 1 \Longrightarrow
+  t_s = \tau_2 = \sqrt{\frac{m}{k}}
+\end{align*}
+
+The characteristic time scales $\tau_1$ and $\tau_2$ are the response time of the mass returning to equilibrium. If we set the two characteristic time scales equal to one another:
+$$\tau_1 = \tau_2 = \frac{m}{\lambda} = \sqrt{\frac{m}{k}}$$
+
+This is exactly the condition such that the eigenvalues of the matrix $$A = \bigg[\begin{matrix}
+    0 & 1 \\
+    \frac{-k}{m} & \frac{\lambda}{m}
+\end{matrix}\bigg]$$ are always negative as we can see in the discriminant of the characteristic polynomial. Let $\lambda$, the dampening parameter be redefined to be $\beta$ and the eigenvalues of the Matrix $A$ be $\lambda$.
+
+$$\lambda = -\frac{2\beta}{m} \pm \frac{1}{2} \sqrt{\frac{\beta^2}{m^2} - 4 \frac{k}{m}}$$
+
+As we can see, the eigenvalues of the system, and therefore the stability of the mass returning to equilibrium are entirely dependent on the characteristic time scales. In fact, we can rewrite the eigenvalues in terms of $\tau_1$ and $\tau_2$:
+
+$$\lambda = -\frac{2}{\tau_1} \pm \frac{1}{2\tau_1} - \frac{1}{\tau_2}$$
+}
+\\
+\\
+    {\bf Example 3:}
+The advection-diffusion equation for temperature is given by  
+\begin{equation} 
+\frac{\partial T}{\partial t} + v \frac{\partial T}{\partial x} = D \frac{\partial^2 T}{\partial x^2}
+\label{eq:adv_diff}
+\end{equation}
+where $v$ is a constant advection velocity, and $D$ is a constant diffusion coefficient. We consider this equation on the interval $[0,L]$ where $L$ is a length, such that $T(0) = T_0$ and $T(L) = 2T_0$. 
+\begin{itemize}
+    \item Show using dimensional analysis that there is a second characteristic length scale of this problem in addition to $L$.
+    \item Solve for the steady-state solution of this problem. Does this new characteristic length scale appear in the solution?
+\end{itemize}
+\\
+\\
+{\color{red} {\bf Solution:}
+% The steady-state equation when $\frac{\partial T}{\partial t} = 0$ is \begin{equation}
+%     D\frac{\partial^2 T}{\partial x^2} - v\frac{\partial T}{\partial x} = 0\\
+%     \label{eq:adv_diff_steady_state}
+% \end{equation}
+
+% Let $\hat{T} = \frac{T}{T_s}$ and $\hat{x} = \frac{x}{x_s}$ such that \begin{align*}
+%     T = \hat{T}T_s \\
+%     X = \hat{x}x_s
+% \end{align*}
+
+% plugging into equation \ref{eq:adv_diff_steady_state}
+
+% \begin{align*}
+%     \frac{DT_s}{x_s^2}\frac{\partial^2 \hat{T}}{\partial \hat{x}^2} - \frac{vT_s}{x_s}\frac{\partial \hat{T}}{\partial \hat{x}} &= 0 \\
+%     \frac{\partial^2 \hat{T}}{\partial \hat{x}} - \frac{vx_s}{D}\frac{\partial \hat{T}}{\partial \hat{x}} &= 0 \\
+% \end{align*}
+
+% The characteristic length scale $x_s = L_c$ $$L_c = \frac{D}{v}$$ and the non-dimentionalized equation for the steady state advection-diffusion equation becomes:
+
+% \begin{equation*}
+%     \frac{\partial^2 T}{\partial x^2} - \frac{\partial T}{\partial x} = 0\\
+% \end{equation*}
+
+%Clearly the characteristic length scale does not appear in the solution, because it is absent from the ODE. 
+
+\noindent There are two parameters in the equation: $v$ and $D$ which have dimension:
+\begin{align*}
+    &[v] = \frac{l}{t}\\
+    &[D] = \frac{l^2}{t}\\
+\end{align*}
+We are trying to isolate an $l$ with a combination of $v$ and $D$. If you think about it, it becomes clear this can be generated from:
+\begin{align*}
+    [\frac{D}{v}] = \frac{l^2}{t}\frac{t}{l} = l
+\end{align*}
+Giving us:
+\begin{align*}
+    L_c = \frac{D}{v}
+\end{align*}
+We now solve the steady state equation:
+\begin{align*}
+    v \frac{d T}{d x} = D \frac{d^2 T}{d x^2} &\implies \frac{dT}{dx} = \frac{D}{v} \frac{d^2 T}{dx^2}\\
+    &\implies L_c \frac{d^2 T}{dx^2} - \frac{dT}{dx} = 0
+\end{align*}
+This has corresponding characteristic polynomial:
+\begin{align*}
+    L_cr^2 - r = 0
+\end{align*}
+Which gives the roots:
+\begin{align*}
+r_{1,2}=\frac{1 \pm \sqrt{1}}{2L_c} = 0, \frac{1}{2 L_c}
+\end{align*}
+Producing the general solution:
+\begin{align*}
+    T = c_1 + c_2e^{\frac{1}{2 L_c} t}
+\end{align*}
+Showing that this characteristic length scale appears in the steady state solution.
+
+}
+
+\section{Non-dimensional equations}
+
+Having discovered that a given problem has 'natural' length, time, or velocity scales, that are given by the input parameters, the next natural step is to use these characteristic scales as our new metric (our new system of units). By casting each variable (dependent and independent) in the new unit system, we can create a non-dimensional problem (i.e. a problem which has no dimensions). 
+\\
+\\
+{\bf Example 1:} Let's go back to the harmonic oscillator example of the previous section.  
+\begin{itemize}
+    \item Create new dimensionless variables $\hat x = x/x_0$, and $\hat t = t / \tau$ where $\tau$ is the characteristic timescale of the harmonic oscillator that was derived in the previous section. Express the governing equation and initial conditions in this new set of variables, and show that there are no longer any parameters left -- this is a 'universal' problem. 
+    \item What is the 'universal' solution $\hat x(\hat t)?$ for these initial conditions? Show that it recovers the solution found earlier upon changing back to dimensional variables.
+\end{itemize}
+\\
+{\color{red} {\bf Solution:}
+We first get our original variables in terms of these new dimensionless variables:
+\begin{align*}
+    &\hat{x} = x/x_0 \implies x = \hat{x}x_0\\
+    &\hat{t} = t/\tau  \implies t = \hat{t} \tau
+\end{align*}
+We now plug these into our original equation:
+\begin{align*}
+    m \frac{d^2 x}{dt^2} + kx = 0 & \implies m \frac{d^2 (\hat{x}x_0)}{d(\hat{t}\tau)^2} + k(\hat{x}{x_0}) = 0\\
+    &\implies \frac{mx_0}{\tau^2} \frac{d^2 \hat{x}}{d \hat{t}^2} + k\hat{x}x_0 = 0\\
+    &\implies \frac{m}{(m/k)} \frac{d^2 \hat{x}}{d \hat{t}^2} + k\hat{x} = 0\\
+    &\implies k \frac{d^2 \hat{x}}{d \hat{t}^2} + k\hat{x} = 0\\
+    &\implies  \frac{d^2 \hat{x}}{d \hat{t}^2} + \hat{x} = 0
+\end{align*}
+and we get our ``universal problem".
+This is a second order ODE and it is easier to solve than the standard oscillator equation since its characteristic polynomial is:
+\begin{align*}
+    r^2 + 1 = 0
+\end{align*}
+which clearly has roots $\pm 1$. This gives the general solution:
+\begin{align*}
+    &\hat{x}(\hat{t}) = c_1\cos(\hat{t}) + c_2 \sin(\hat{t})\\
+    &\hat{x}'(\hat{t}) = -c_1\sin(\hat{t}) + c_2 \cos(\hat{t})
+\end{align*}
+Using our velocity condition gives:
+\begin{align*}
+    \hat{x}'(0) = (0)/x_0 = 0 = c_2 & \implies \hat{x}(\hat{t}) = c_1\cos(\hat{t})
+\end{align*}
+And our IC gives:
+\begin{align*}
+    \hat{x}(0) = x_0/x_0 = c_1
+\end{align*}
+Giving the particular solution:
+\begin{align*}
+    \hat{x}(\hat{t}) = \cos(\hat{t})
+\end{align*}
+Now lets change back to dimensional variables:
+\begin{align*}
+    \hat{x}(\hat{t}) = \cos(\hat{t}) &\implies \frac{x}{x_0} = \cos(\frac{t}{\tau})\\
+    &\implies x(t) = x_0\cos(\frac{t}{\tau})
+\end{align*}
+Which recovers our dimensional solution.
+}
+\\
+\\
+\noindent {\bf Example 2:} Let's now add some damping again (see equation \ref{eq:damp_osc})
+\begin{itemize}
+    \item Pick a system of units for $x$ and $t$. What is the resulting dimensionless equation? 
+    \item Show that this time there is 1 nondimensional parameter that appears. What is its physical interpretation?
+    \item What happens mathematically when this parameter is very small or very big? What  does it correspond to physically?
+\end{itemize}
+\\
+\\
+\\
+\\
+{\color{red} {\bf Solution}:
+Starting from the equation (1.6):
+\begin{equation}
+    m \frac{d^2 x}{dt^2} + \lambda \frac{dx}{dt} + k x = 0 \label{eq:damp_osc}
+\end{equation}
+
+Choose characteristic units:
+\[
+    T = \sqrt{\frac{m}{k}}, \quad \tilde{t} = \frac{t}{T}, \quad \tilde{x} = \frac{x}{X}
+\]
+Derivatives transform as:
+\[
+    \frac{dx}{dt} = \frac{X}{T} \frac{d\tilde{x}}{d\tilde{t}}, \quad \frac{d^2 x}{dt^2} = \frac{X}{T^2} \frac{d^2\tilde{x}}{d\tilde{t}^2}
+\]
+Substitute into equation \eqref{eq:damp_osc}:
+\[
+    m \left( \frac{X}{T^2} \frac{d^2\tilde{x}}{d\tilde{t}^2} \right) + \lambda \left( \frac{X}{T} \frac{d\tilde{x}}{d\tilde{t}} \right) + kX \tilde{x} = 0
+\]
+Simplify using $T = \sqrt{\frac{m}{k}}$:
+\[
+    \frac{d^2\tilde{x}}{d\tilde{t}^2} + \beta \frac{d\tilde{x}}{d\tilde{t}} + \tilde{x} = 0
+\]
+where
+\[
+    \beta = \frac{\lambda}{\sqrt{k m}}
+\]
+
+The single nondimensional parameter $\beta$ represents the relative damping of the system. It indicates how significant the damping $\lambda$ is compared to the system's inertia and stiffness.
+
+- \textbf{Small $\beta$ ($\beta \ll 1$):} Damping is negligible.
+  - \textit{Mathematically:} The equation approximates to simple harmonic motion.
+  - \textit{Physically:} The system is underdamped and oscillates freely.
+
+- \textbf{Large $\beta$ ($\beta \gg 1$):} Damping dominates.
+  - \textit{Mathematically:} The system's response slows down exponentially without oscillations.
+  - \textit{Physically:} The system is overdamped, returning to equilibrium slowly.
+}
+\\
+\\
+\noindent {\bf Example 3:} Consider the advection-diffusion equation (\ref{eq:adv_diff}) on the interval $[0,L]$. 
+\begin{itemize}
+    \item Show that there are two characteristic timescales associated with the input parameters.
+    \item Non-dimensionalize the problem using $L$ as a unit length, and the timescale associated with $v$ as the unit time. 
+    \item How many non-dimensional parameters appear in the problem? What is the physical interpretation of the parameter(s)?
+    \item What happens mathematically when the parameter(s) is/are very small or very big? What  does it correspond to physically?
+\end{itemize}
+\\
+\\
+{\color{red} {\bf Solution:}
+% Insert explanation
+%Alex
+We consider the input parameters $v \text{ and } D$, where $[v] = \frac{L}{T}$ and $[D] = \frac{L^2}{T}$. From here we can derive the characteristic timescales:
+\begin{align*}
+    v &= \frac{L}{T_1} \implies T_1 = \frac{L}{v}\\
+    D &= \frac{L^2}{T_2} \implies T_2 = \frac{L^2}{D}
+\end{align*}
+Now considering timescale $T_1$ associated with $v$, we nondimensionalize the problem such that: 
+\begin{align*}
+    \hat{x} &= \frac{x}{L} \implies x = \hat{x}L\\
+    \hat{t} &= \frac{tv}{L} \implies t = \frac{\hat{t}L}{v}
+\end{align*}
+Now through substitution we obtain: 
+\begin{align*}
+    \frac{\partial T}{\partial(\frac{\hat{t}L}{v})} + v\frac{\partial T}{\partial (\hat{x}L)} &= D\frac{\partial^2T}{\partial(\hat{x}L)^2}\\
+    \frac{v}{L}\frac{\partial T}{\partial \hat{t}} + \frac{v}{L}\frac{\partial T}{\partial \hat{x}} &= \frac{D}{L^2}\frac{\partial ^2 T}{\partial\hat{x}}^2\\
+    \frac{\partial T}{\partial \hat{t}} + \frac{\partial T}{\partial \hat{x}} = \frac{D}{Lv}\frac{\partial^2 T}{\partial \hat{x}^2}
+\end{align*}
+Thus we've obtained one dimensionless parameter denoting the rate of diffusion. When the parameter is large, we see that heat diffuses faster, whereas when the parameter is small, heat diffuses slower. 
+}
+
+\section{The Buckingham $\pi$ theorem} 
+  
+As we have seen through examples, by non-dimensionalizing the problem, we can systematically reduce the number of parameters in the equations and/or boundary conditions. This is a very general result, which has been formalized in the {\it Buckingham $\pi$} theorem. 
+
+Loosely speaking, the theorem states that the number of {\it independent}  dimensionless parameters of a problem is equal to the number of independent (relevant) dimensional parameters, minus the number of fundamental dimensions in the problem.   
+\\
+\\
+{\bf Example 1:}
+In the harmonic oscillator problem, we have 3 relevant independent parameters: $x_0$, $m$, and $k$. There are 3 fundamental dimensions involved: mass (from $m$), length (from $x_0$) and time (from $k$). Therefore, the system can be non-dimensionalized so that there are $3-3 = 0$ remaining dimensionless parameters. 
+\\
+\\
+{\bf Example 2:} Consider now the damped harmonic oscillator and its initial conditions. 
+\begin{itemize}
+    \item Count the number of independent parameters, and fundamental dimensions of the problem. 
+    \item What is the minimum number of dimensionless parameters needed to represent it?
+    \item Compare this with your findings of the previous section.
+\end{itemize}
+\\
+\\
+{\color{red} {\bf Solution:}
+% Insert explanation
+Considering the damped harmonic oscillator, there are 4 independent parameters (m,t_0,k, $\lambda$) and 3  fundamental dimensions (mass,time,length). Thus, there will be at least $4-3=1$ dimensionless parameters.
+}
+\\
+\\
+{\bf Example 3:} Consider the advection-diffusion equation. 
+\begin{itemize}
+ \item Count the number of independent parameters, and fundamental dimensions of the problem. 
+    \item What is the minimum number of dimensionless parameters needed to represent it?
+    \item Compare this with your findings of the previous section.
+\end{itemize}
+\\
+\\
+{\color{red} {\bf Solution:}
+% Insert explanation
+%Alex 
+We consider the advection-diffusion equation: 
+\begin{align*}
+    \frac{\partial T}{\partial t} + v \frac{\partial T}{\partial x} &= D \frac{\partial ^2 T}{\partial x ^2}    \\
+\end{align*}
+on the domain $[0, L]$ with $T(0) = T_0$
+We have independent parameters with dimensions: 
+\begin{itemize}
+    \item v with dimensions $\frac{L}{t}$\\
+    \item D with dimensions $\frac{L^2}{t}$\\
+    \item $T_0$ with dimension $T$\\
+    \item L with dimension $L$
+\end{itemize}
+where $L$ denotes length, $t$ denotes time and $T$ denotes temperature. We have 4 independent parameters, and 3 fundamental dimensions, thus by the Buckingham $\pi$ theorem we have $4 - 3 = 1$ independent dimensionless parameters. This follows the results from section 1.3 example 3, where we found one dimensionless parameter denoting the rate of diffusion. 
+}
+
+\\
+\\
+The Buckingham $\pi$ theorem is very important, because it shows that non-dimensionalization can always be used to reduce the number of input parameters of the problem -- which is very convenient if you want to avoid wasting time exploring a parameter space that is bigger than necessary. It also shows that two problems that are apparently very different, but have the {\it same} dimensionless form, will behave in exactly the same way. We can therefore build 'universal' non-dimensional solutions that depend only on the non-dimensional parameters, and then recover the desired dimensional solutions (if needed) for a wide range of dimensional input parameters. 
+\\
+\\
+{\bf Example:} In fluid mechanics, it can be shown that the incompressible (non-rotating, unstratified, non-magnetic) flow past an object satisfies a universal equation that depends only on 1 dimensionless parameter: the Reynolds number, ${\rm Re} = UL/\nu$ where $U$ is the characteristic velocity of the incoming flow, $L$ a characteristic size of the object, and $\nu$ the viscosity of the fluid. Therefore, in order to test the aerodynamic properties of an airplane or a race car in air at velocity $U$, we simply have to create a small-scale model of that airplane or car of size $L/a$ (where $a >1$), and put it in a wind-tunnel with a wind of velocity $aU$. This works, because their Reynolds numbers are the same.   
+
+\section{What is large, and what is small?}
+
+Non-dimensionalizing a problem is also very useful, because it helps us have a formal way of defining concepts such as 'large' and 'small' quantities. 
+
+Indeed, a quantity is only 'large' or 'small' relative to the system of units used: 1g, is also 0.001kg (small compared to a kg), but is also 1000$\mu$g (large compared to a $\mu$g) -- so is 1g large, or is it small? That depends on your system of units!  
+
+This then leads to the much more philosophical question of what is the {\it correct} system of units to use for a given problem. As the example above shows, using real physical units (like cgs or SI) can confuse the matter, because a quantity can be large {\it or} small depending on the choice made. 
+
+However, we learned in the previous sections that there are intrinsic length, time, mass, velocity, etc. scales that can be created from the system parameters, and these are often a much more meaningful choice for the system of units. In these new units, we can then determine more objectively whether a quantity is large or small.
+\\
+\\
+{\bf Example 1:} In the example of the damped harmonic oscillator, how would you quantify if the effect of damping is large or small? 
+\\
+\\
+{\color{red} {\bf Solution:}
+% Insert explanation
+%Alex
+To quantify whether the effect of damping is large or small, we first nondimensionalize the equation using 
+\begin{align*}
+    \hat{x}&= \frac{x}{x_0} \implies x = x_0 \hat{x}\\
+    \frac{t}{T_c}&= \frac{t}{\sqrt{\frac{m}{k}}} \implies t = \hat{t}m^{1/2}k^{-1/2}
+\end{align*}
+Substituting these into the equation, we obtain: 
+\begin{align*}
+    m\frac{\partial^2(x_0x)}{\partial(\hat{t}m^{1/2}k^{-1/2})^2} &= -k(x_0x)- \lambda \frac{\partial(x_0x)}{\partial(\hat{t}m^{1/2}k^{-1/2})}\\
+    \frac{mx_0k}{m}\frac{\partial^2\hat{x}}{\partial \hat{t}^2} &= -k x_0\hat{x} - x_0\frac{\lambda k^{1/2}}{m^{1/2}}\frac{\partial \hat{x}}{\partial \hat{t}}\\
+    \frac{\partial^\hat{x}}{\partial\hat{t}^2} = -x - \frac{\lambda}{\sqrt{mk}}\frac{\partial \hat{x}}{\partial \hat{t}}
+\end{align*}
+We consider the damping coefficient: 
+\begin{align*}
+    \varphi &= \frac{\lambda}{\sqrt{mk}}
+\end{align*}
+
+Now we consider three cases: 
+\begin{itemize}
+    \item $\varphi = 1$, the system returns to equilibrium quickly 
+    \item $\varphi > 1$, the system returns to equilibrium slowly without any oscillations
+    \item $\varphi < 1$, the system oscillates and degrades over time
+\end{itemize}}
+{\bf Example 2:} In the example of the time-dependent advection-diffusion equation, how would you quantify if the effect of diffusion is large or small? 
+\\
+\\
+{\color{red} {\bf Solution}:
+
+To quantify if the effect of diffusion is large or small in the time-dependent advection-diffusion equation, we compare the characteristic timescales of advection and diffusion:
+
+\begin{itemize}
+    \item \textbf{Advection timescale:} $T_{\text{adv}} = \dfrac{L}{v}$
+    \item \textbf{Diffusion timescale:} $T_{\text{diff}} = \dfrac{L^2}{D}$
+\end{itemize}
+
+We define the dimensionless \textbf{Péclet number} (Pe) as the ratio of these timescales:
+
+\[
+\text{Pe} = \frac{T_{\text{diff}}}{T_{\text{adv}}} = \frac{L v}{D}
+\]
+
+This parameter quantifies the relative importance of diffusion and advection:
+
+\begin{itemize}
+    \item If $\text{Pe} \gg 1$, advection dominates ($D$ is small), so diffusion effects are negligible.
+    \item If $\text{Pe} \ll 1$, diffusion dominates ($D$ is large), so diffusion effects are significant.
+\end{itemize}
+
+Therefore, by evaluating the Péclet number, we can determine whether the effect of diffusion is large or small in the system.
+
+}
+
+\section{Take-home messages}
+
+Here are a few things to remember from this lecture:
+\begin{itemize}
+    \item Dimensional analysis can help you discover important characteristic scales of a problem.
+    \item These scales can be used to form a new system of units for your equations and boundary/initial conditions.
+    \item Non-dimensionalizing equations and boundary/initial conditions using these scales reduces the dimensionality of parameter space (Buckingham $\pi$ theorem).
+    \item It also helps you find out objectively if a quantity is large or small compared with these intrinsic problem scales. This will be particularly useful when we start doing some asymptotic analysis, which is the study of equations that have very large or very small parameters.
+\end{itemize}
+

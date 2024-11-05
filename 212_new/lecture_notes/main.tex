@@ -1,0 +1,39 @@
+\documentclass[oneside]{book}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amsthm} % proof environment
+\usepackage{amssymb} % math utils
+\usepackage{amsfonts} % math utils
+\usepackage[a4paper,margin=1in,heightrounded]{geometry}
+% Dante Buhl: I changed the formatting of the document by adjusting the margins and adding the geometry, amsthm, amssymb, amsfonts packages. I also removed the two sided document properties by adding the "[oneside]" modifier to the document class. If you would like to change this back simply remove the [oneside] text.
+
+
+\title{AM212 Lectures}
+\author{Pascale Garaud and the 212 class}
+\date{Fall 2024}
+
+\begin{document}
+
+\newcommand{\grad}{\nabla}
+\renewcommand{\div}{\nabla\cdot}
+\newcommand{\curl}{\nabla\times}
+\newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ppt}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+
+
+\maketitle
+
+ 
+
+%\include{Lecture1}
+%\include{Lecture2_part1}
+%\include{Lecture2_part2}
+%\include{Lecture3_part1}
+%\include{Lecture3_part2}
+%\include{Lecture4}
+\include{Lecture5}
+
+
+
+\end{document}
