@@ -1,17 +1,5 @@
 \providecommand{\noopsort}[1]{}\providecommand{\singleletter}[1]{#1}%
-\begin{thebibliography}{4}
+\begin{thebibliography}{0}
 \providecommand{\natexlab}[1]{#1}
-
-\bibitem[{{Chini} et~al.(2022){Chini}, {Michel}, {Julien}, {Rocha}, \& {Caulfield}}]{Chinial2022}
-{Chini}, Gregory~P., {Michel}, Guillaume, {Julien}, Keith, {Rocha}, Cesar~B., \& {Caulfield}, Colm-cille~P. 2022, Journal of Fluid Mechanics, 933, A22
-
-\bibitem[{{Garaud} et~al.(2024){Garaud}, P., Kaasturi, \& {Caulfield}}]{Garaudal2024}
-{Garaud}, Pascale, P., {Chini}~Gregory, Kaasturi, {Shah}, \& {Caulfield}, Colm-cille~P. 2024, JFM Rapids
-
-\bibitem[{Julien \& Knobloch(2007)}]{JulienKnobloch2007}
-Julien, Keith, \& Knobloch, Edgar 2007, Journal of Mathematical Physics, 48, 6, 065405
-
-\bibitem[{{Sprague} et~al.(2006){Sprague}, {Julien}, {Knobloch}, \& {Werne}}]{SpragueJulienKnoblochWerne2006}
-{Sprague}, Michael, {Julien}, Keith, {Knobloch}, Edgar, \& {Werne}, Joseph 2006, Journal of Fluid Mechanics, 551, 141–174
 
 \end{thebibliography}

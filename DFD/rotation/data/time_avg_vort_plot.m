@@ -5,17 +5,17 @@ format shortE
 nd = 766^2;
 
 % this reads all data tim from multiple timestamps into 1 array (it ignores the lineskips in the .dat file)
-vort = readmatrix("new_Om2B100.dat");
+vort = readmatrix("Om2B30.dat");
 invRo = 2;
 
 s1 = size(vort);
 sd = s1(1)/nd
 
 % in order to plot this by individual timestep, you have to restrict the plot by column 3 which is the timestep. 
-num_timesteps =  2*766^2;
+num_timesteps = 766^2;
 
 time_col = 3;
-[row,col] = find(vort(:,time_col) == vort(s1(1)-num_timesteps,time_col));
+[row,col] = find(vort(:,time_col) == vort(s1(1),time_col));
 s2 = size(vort(row,time_col));
 
 np = 64;
@@ -38,14 +38,13 @@ for i = 1:s1(1)
     % the plotting with imagesc is weird (x-y are switched)
     colors(y,x) = colors(y,x) + 1;
 end
+colors = colors/sd;
 
 plot(vort(:,xcol_num)+invRo,vort(:,ycol_num), 'o')
 xlim([min1, max1]+2);
 
 figure
 
-%xlabel("vorticity")
-%ylabel("Thermal Dissipation")
 imagesc(log(colors))
 xtickformat('%.5f');
 ytickformat('%.5f');
@@ -56,6 +55,8 @@ xticklabels(round(linspace(min1,max1,num_ticks+1)+invRo,2));
 yticklabels(round(flip(linspace(min2,max2,num_ticks+1)),2));
 colormap sky
 colorbar
+xlabel("$\overline{\omega_z} + 2\Omega$", 'Interpreter','latex','Fontsize',22)
+ylabel("$\overline{|\nabla T|^2}$", 'Interpreter','latex', 'Rotation', 0, 'FontSize',22)
 
 figure
 
@@ -99,7 +100,7 @@ figure
 nd = 766^2;
 
 % this reads all data tim from multiple timestamps into 1 array (it ignores the lineskips in the .dat file)
-vort = readmatrix("new_Om2B30.dat");
+vort = readmatrix("Om3B30.dat");
 invRo = 2;
 
 s1 = size(vort);
@@ -108,7 +109,7 @@ sd = s1(1)/nd
 % in order to plot this by individual timestep, you have to restrict the plot by column 3 which is the timestep. 
 
 time_col = 3;
-[row,col] = find(vort(:,time_col) == vort(s1(1)-num_timesteps,time_col));
+[row,col] = find(vort(:,time_col) == vort(s1(1),time_col));
 s2 = size(vort(row,time_col));
 
 np = 64;
@@ -131,6 +132,7 @@ for i = 1:s1(1)
     % the plotting with imagesc is weird (x-y are switched)
     colors(y,x) = colors(y,x) + 1;
 end
+colors = colors/sd;
 
 plot(vort(:,xcol_num)+invRo,vort(:,ycol_num), 'o')
 xlim([min1, max1]+2);

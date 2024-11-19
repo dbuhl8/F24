@@ -168,8 +168,9 @@
     %B1 is -5:5
     \centering
 
-    This slide might be replaced with a movie (images went below before, maybe
-    both)
+    Typical non-rotating flows, properties of stratified turbulence
+
+
     \bmp{.235}
         \centering
         $1/Fr = 1$
@@ -212,383 +213,89 @@
     \[\overrightarrow{\rm Stratification}\]
 \end{frame}
 
+\begin{frame}
+    Increasing rotation, typical rotating flows
+\end{frame}
+
+% Energy Spectrum
+\begin{frame}{Inverse Energy Cascade}
+
+    \bmp{.33}
+        \centering
+        $Ro^{-1} = 1$
+        \includegraphics[width=\textwidth]{images/Om1Spec.pdf}
+    \emp
+    \bmp{.33}
+        \centering
+        $Ro^{-1} = 2$
+        \includegraphics[width=\textwidth]{images/Om2Spec.pdf}
+    \emp
+    \bmp{.33}
+        \centering
+        $Ro^{-1} = 5$
+        \includegraphics[width=\textwidth]{images/Om5Spec.pdf}
+    \emp
+
+\end{frame}
 %RMS Data
 \begin{frame}{R.M.S. Data}
     \bmp{.49}
         \centering
         %u_h 
-        \includegraphics[width=.985\textwidth]{images/Om0.5Spec.pdf}
+        \includegraphics[width=1\textwidth]{images/urms_plot.pdf}
     \emp
     \bmp{.49}
         % w
         \centering
-        \includegraphics[width=\textwidth]{images/Om1Spec.pdf}
+        \includegraphics[width=1\textwidth]{images/wrms_plot.pdf}
     \emp
     
     \bmp{.49}
         % eta
         \centering
-        \includegraphics[width=\textwidth]{images/Om4Spec.pdf}
+        \includegraphics[width=1\textwidth]{images/mixing_plot.pdf}
     \emp
     \bmp{.49}
         % buoyancy flux
         \centering
-        \includegraphics[width=1\textwidth]{images/Om5Spec.pdf}
-    \emp
-
-\end{frame}
-
-% Energy Spectrum
-\begin{frame}{Inverse Energy Cascade}
-    \bmp{.33}
-        \centering
-        $Ro^{-1} = 0.5$
-        %\includegraphics[width=.985\textwidth]{files/Om0.5Spec.pdf}
-    \emp
-    \bmp{.33}
-        \centering
-        $Ro^{-1} = 1$
-        %\includegraphics[width=\textwidth]{files/Om1Spec.pdf}
-    \emp
-    \bmp{.33}
-        \centering
-        $Ro^{-1} = 2$
-        %\includegraphics[width=1\textwidth]{files/Om2Spec.pdf}
-    \emp
-    
-    \bmp{.33}
-        \centering
-        $Ro^{-1} = 4$
-        %\includegraphics[width=\textwidth]{files/Om4Spec.pdf}
-    \emp
-    \bmp{.33}
-        \centering
-        $Ro^{-1} = 5$
-        %\includegraphics[width=1\textwidth]{files/Om5Spec.pdf}
-    \emp
-    \bmp{.33}
-        \centering
-        $Ro^{-1} = 10$
-        %\includegraphics[width=\textwidth]{files/Om10Spec.pdf}
+        \includegraphics[width=1\textwidth]{images/bflux_plot.pdf}
     \emp
 
 \end{frame}
 
 
-
-
-% how does this affect mixing and turbulence
-%\begin{frame}{Weighted $w_{rms}$ scaling}
-    %\centering 
-    %\bmp{.29}
-        %{\small
-        %{\color{blue}
-        %\[
-            %w_{turb} =
-            %\sqrt{\frac{\left<w^2\omega_z^2\right>}{\left<\omega_z^2\right>}}
-        %\]
-        %}{\color{red}
-        %\[
-            %w_{lam} =
-            %\sqrt{\frac{\left<w^2\omega_z^{-2}\right>}{\left<\omega_z^{-2}\right>}}
-        %\]
-        %}}
-    %\emp
-    %\bmp{.7}
-        %\centering
-        %\includegraphics[width =\textwidth]{files/wrms_plot_nonrotating.pdf}
-        %\includegraphics[width =\textwidth]{files/wrms_key_slides.pdf}
-    %\emp
-    % Notes: This scaling doesn't match the previous findings perfectly. As was
-    % noted in pervious papers, we expected the turbulent w_rms to scale by
-    % Froude to the 1/2, and the laminar w_rms to scale with Froude. As seen
-    % here however, the predicted scaling do not seem to appear here. More
-    % importantly, the turbulent and laminar w_rms both seem to follow the same
-    % scaling, that is they do not diverge from each other as seen in previous
-    % results. 
-    % Note: W_turb arises from the multiscale analysis and when non-diffusive should scale with
-    % froude to the half (source: Brethower et al (2007), Billant and Chomex (2001))
-    % W_lam is recovered with the single scale analysis and when non-diffusive should scale with
-    % froude (source: Chini et al. (2022), Riley and Lindbord (2012))
-    % Explain the weighed wrms definitions.
-%\end{frame}
-
-
-\begin{frame}{Mixing Efficiency, $\eta$}
-    \centering
-
-    \bmp{.3}
-        \begin{gather*}
-            \eta = \frac{\chi}{\chi + \epsilon}\\
-            \chi = \frac{\left<|\grad T|^2\right>}{Fr^2Pe}\\
-            \epsilon = \frac{\left<|\grad \uvec|^2\right>}{Re}
-        \end{gather*}
-    \emp
-    \bmp{.7}
-        %\includegraphics[width = \textwidth]{files/mixing_plot_nonrotating.pdf}
-    \emp
-    % Notes: Here is the plot of the mixing efficiency as a function of the B
-    % value (froude **-.5). We can see that this suggests that the effective
-    % froude number might be different from that of simulations with the
-    % sinusoidal shear forcing. It seems that the plateau of the mixing
-    % efficiecy starts at lower B values in previous simualtions than in the
-    % results shown here. 
-\end{frame}
-
-\begin{comment}
-\begin{frame}{Discussion}
-
-    \begin{itemize}
-        \item What might be ideal parameters to directly compare new simulations
-        to previous?
-        \item Are the weighted $w_{rms}$ definitions still valid in a
-        multi-directionally forced flow? 
-        % sin shear flows seemed successful with weighted w values. In a flow
-        % forced in x and y, is the vertical vorticity still a valid model (will
-        % it pick up intermediate eddy scales?)
-        % Is there a differnt multiscale analysis that we can expect with such a
-        % forcing?
-    \end{itemize}
-
-\end{frame}
-\end{comment}
-
-\begin{comment}
-\begin{frame}{Mixing and Vertical Vorticity }
-
-    \bmp{0.49}
-        \centering
-        %\includegraphics[width=1\textwidth]{files/vortz_pB400_vr.png}
-    \emp
-    \bmp{0.49}
-        \centering
-        %\includegraphics[width=1\textwidth]{files/chi_pB400_vr.png}
-    \emp
-    
-\end{frame}
 
 \begin{frame}{Mixing and Vertical Vorticity}
     \centering
-    \bmp{0.49}
-        \centering
-        %\includegraphics[width=1\textwidth]{files/vortz_B180_vr2.png}
-    \emp
-    \bmp{0.49}
-        \centering
-        %\includegraphics[width=1\textwidth]{files/chi_B180_vr2.png}
-    \emp
-\end{frame}
-\end{comment}
-
-\begin{frame}{Mixing and Vertical Vorticity }
-
-    \bmp{.3}
-        {\footnotesize\citep{Garaudal2024}}
-
-        \vspace{100pt}
-
-        {\footnotesize Stochastic DNS}
-    \emp
-    \bmp{0.35}
-        \centering
-        $\omega_z$
-        %\includegraphics[width=.9\textwidth]{files/vortz_pB400_vr.png}
-        
-        %\includegraphics[width=.9\textwidth]{files/vortz_B180_vr2.png}
-    \emp
-    \bmp{0.35}
-        \centering
-        $|\grad T|^2/Pe$
-        %\includegraphics[width=.9\textwidth]{files/chi_pB400_vr.png}
-        
-        %\includegraphics[width=.9\textwidth]{files/chi_B180_vr2.png}
-    \emp
-    
-\end{frame}
-
-\section{Rotation}
-
-%set up
-\begin{frame}{Rotating DNS}
-
-We studied the effect of rotation by running two series of DNS, each set with a fixed Froude number and varying Rossby number. 
-    
-\end{frame}
-
-%Numerical Restrictions
-\begin{frame}{Numerical Constraints}
-    \begin{itemize}
-        \item The Courant condition limits the timestep of our DNS ($\dt \le \dx/|U|_{\rm max}$)
-        \item Rapidly rotating DNS require smaller timesteps due to the amplitude of the horizontal velocity. 
-    \end{itemize}
-\end{frame}
- 
-
-
-\begin{frame}{Columnar Structures}
-    \centering
-    \bmp{.235}
-        \centering
-        $1/Ro = 0.5$
-        \vspace{2pt}
-        
-        %\includegraphics[width=\textwidth]{files/XYOm0.5ux.png}
-        %\includegraphics[width=\textwidth]{files/XZOm0.5ux.png}
-    \emp
-    \hspace{1pt}
-    \bmp{.235}
-        \centering
-        $1/Ro = 1$
-        \vspace{2pt}
- 
-        %\includegraphics[width=\textwidth]{files/XYOm1ux.png}
-        %\includegraphics[width=\textwidth]{files/XZOm1ux.png}
-    \emp
-    \hspace{1pt}
-    \bmp{.235}
-        \centering
-        $1/Ro = 2$
-        \vspace{2pt}
-        
-        %\includegraphics[width=\textwidth]{files/XYOm2ux.png}
-        %\includegraphics[width=\textwidth]{files/XZOm2ux.png}
-    \emp
-    \hspace{1pt}
-    \bmp{.235}
-        \centering
-         $1/Ro = 4$
-        \vspace{2pt}
-
-        %\includegraphics[width=\textwidth]{files/XYOm4ux.png}
-        %\includegraphics[width=\textwidth]{files/XZOm4ux.png}
-    \emp
-    \[\overrightarrow{\rm Rotation}\]
-\end{frame}
-
-\begin{frame}{Mixing in the Flow}
     \bmp{0.07}
         $\omega_z$
-        
+
         \vspace{75pt}
-        
-        $\frac{|\grad T|^2}{Pe}$
+
+        $\frac{|\nabla T|^2}{Pe}$
     \emp
-    \bmp{.31}
-        %omega_z
+    \bmp{0.31}
         \centering
-        $1/Ro = 0.5$
-        %\includegraphics[width=.95\textwidth]{files/vortz_Om0.5_vr2.png}
-        %\includegraphics[width=.95\textwidth]{files/chi_Om0.5_vr2.png}
+        $1/Ro = 1$
+        \includegraphics[width=.95\textwidth]{images/vortz_Om0.5_vr2.png}
+        \includegraphics[width=.95\textwidth]{images/chi_Om0.5_vr2.png}
     \emp
-     \bmp{.31}
-        %omega_z
+    \bmp{0.31}
         \centering
         $1/Ro = 2$
-        %\includegraphics[width=.95\textwidth]{files/vortz_Om2_vr2.png}
-        %\includegraphics[width=.95\textwidth]{files/chi_Om2_vr2.png}
+        \includegraphics[width=.95\textwidth]{images/vortz_Om2_vr2.png}
+        \includegraphics[width=.95\textwidth]{images/chi_Om2_vr2.png}
     \emp
-    \bmp{.31}
-        %omega_z
+    \bmp{0.31}
         \centering
         $1/Ro = 10$
-        %\includegraphics[width=.95\textwidth]{files/vortz_Om10_vr2.png}
-        %\includegraphics[width=.95\textwidth]{files/chi_Om10_vr2.png}
+        \includegraphics[width=.95\textwidth]{images/vortz_Om10_vr2.png}
+        \includegraphics[width=.95\textwidth]{images/chi_Om10_vr2.png}
     \emp
+
+
 \end{frame}
 
-\begin{frame}{Quantities affected by Rotation}
-    \bmp{.49}
-        % u_h
-        \centering
-        %\includegraphics[width=.83\textwidth]{files/urms_plot.pdf}
-    
-         % mixing efficiency
-        %\includegraphics[width=.8\textwidth]{files/mixing_plot.pdf}
-    \emp
-    \hspace{2pt} 
-    \bmp{.49}
-         % temp flux efficieny
-        \centering
-        %\includegraphics[width=.8\textwidth]{files/bflux_plot.pdf}
-
-        % wrms plot
-    \emp
-        %\includegraphics[width=.8\textwidth]{files/wrms_plot.pdf}
-\end{frame}
-
-
-
-\begin{frame}{Rotation in the Multiscale Theory}
-    We now include the Coriolis term in the multiscale theory by \citet{Chinial2022} in order to study the effects of rotation on stratified turbulence.
-\end{frame}
-
-\begin{frame}{Weakly rotating regime: $Ro \ge 1$}
-
-    \begin{itemize}
-        \item Mean flow is weakly influenced by rotation.
-        \item Fluctuations are not rotationally influenced.
-    \end{itemize}
-    {\scriptsize
-    \begin{gather*}
-    \ppts{\bar{\uvec}_h} + \bar{\uvec}_h\cdot \grads\bar{\uvec}_h
-    + \frac{1}{\alpha}\overline{\uvec_h'\cdot\gradf\uvec_h'}
-    + \frac{\bar{w}}{\alpha}\ppzeta{\bar{\uvec}_h} 
-    + \overline{\frac{w'}{\alpha}\ppzeta{\uvec_h'}} + \frac{1}{Ro}\ez \times \bar{\uvec}\\
-    = -\grads\bar{p} + \bar{\F}_h + \frac{1}{Re_b}\ppzetas{\bar{\uvec}_h} \tag{mean}\\
-    \frac{1}{\alpha}\pptf{\uvec_h'} 
-    + \frac{1}{\alpha}\bar{\uvec_h}\cdot\gradf\uvec_h'
-    + \frac{w'}{\alpha}\ppzeta{\bar{\uvec}_h} + \frac{1}{Ro}\ez \times \uvec'\\
-    = -\frac{1}{\alpha}\gradf p' + \frac{1}{Re_b}\left( \gradf^2\uvec_h' + \ppzetas{\uvec_h'}\right) \tag{fluctuations}
-    \end{gather*}
-    }
-    No change in the scalings obtained by \citet{Chinial2022}.
-\end{frame}
-
-\begin{frame}{Intermediate regime: $\alpha \ll Ro \ll 1$}
-
-    \begin{itemize}
-        \item Mean flow is strongly influenced by rotation.
-        \item Fluctuations are not influenced by rotation directly. 
-    \end{itemize}
-    {\footnotesize
-    \begin{gather*}
-        \frac{1}{Ro}\ez \times \bar{\uvec}_h = -\grad_s \bar{p}, \quad \ppzeta{\bar{p}} = 0 \tag{mean}
-    \end{gather*} 
-    \begin{equation*}
-        \begin{split}
-        &\frac{1}{\alpha}\pptf{\uvec_h'} 
-        + \frac{1}{\alpha}\bar{\uvec}_h\cdot\gradf\uvec_h'
-        + \frac{w'}{\alpha}\ppzeta{\bar{\uvec}_h} + \frac{1}{Ro}\ez \times \uvec'_h\\ 
-        &= -\frac{1}{\alpha}\gradf p' + \frac{1}{Re_b}\left( \gradf^2\uvec_h' + \ppzetas{\uvec_h'}\right) 
-        \end{split}
-        \tag{fluctuations}
-    \end{equation*}
-    }
-    
-    \begin{itemize}
-    
-    \item Hydrostatic equilibrium in the fluctuation equations implies $\alpha = Fr$. 
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Strongly rotating: $Ro \ll \alpha$}
-
-    \begin{itemize}
-        \item Both mean flow and fluctuations are strongly rotationally influenced.
-    \end{itemize}
-
-    \begin{align*}
-        \frac{1}{Ro}\ez \times \bar{\uvec}_h &= -\grad_s \bar{p}, \quad \ppzeta{\bar{p}} = 0 \tag{mean}\\
-        \frac{\alpha}{Ro}\ez \times \uvec'_h &= -\grad_f p', \quad \ppzeta{p'} = 0 \tag{fluctuations}
-    \end{align*} 
-
-    What is $\alpha$?
-\end{frame}
-
-\begin{frame}{Missing Vertical Length Scale}
-    The appearance of strong columnar vortices in the flow suggests that another vertical length scale is needed in order to create a multiscale theory of rotating stratified turbulence \citep[cf.][]{SpragueJulienKnoblochWerne2006, JulienKnobloch2007}.
-    
-\end{frame}
 
 \begin{frame}{Conclusion}
 
@@ -600,14 +307,6 @@ We studied the effect of rotation by running two series of DNS, each set with a 
         \item Very rapid rotation inhibits vertical mixing completely.
     \end{itemize}
 
-\end{frame}
-
-\begin{frame}{Future Work}
-    \begin{itemize}
-        \item Additional DNS to extend investigated parameter space ($Fr, Ro, Re, \ldots$).
-        \item Comprehensive comparison of Steady vs. Stochastic forcing is necessary.
-        \item Develop a multiscale theory of rotating stratified turbulence accounting for multiple vertical length scales.
-    \end{itemize}
 \end{frame}
 
 {\scriptsize
