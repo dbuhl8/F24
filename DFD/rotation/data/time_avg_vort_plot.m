@@ -2,44 +2,44 @@ close all; clear; clc;
 
 format shortE
 
-np = 766^2;
+nd = 766^2;
 
 % this reads all data tim from multiple timestamps into 1 array (it ignores the lineskips in the .dat file)
 vort = readmatrix("new_Om2B100.dat");
 invRo = 2;
 
 s1 = size(vort);
+sd = s1(1)/nd
 
 % in order to plot this by individual timestep, you have to restrict the plot by column 3 which is the timestep. 
-time_col = 3
-last_timestep = vort(s1(1),time_col);
+num_timesteps =  2*766^2;
 
-[row, col] = find(vort(:,time_col) == last_timestep);
-
+time_col = 3;
+[row,col] = find(vort(:,time_col) == vort(s1(1)-num_timesteps,time_col));
 s2 = size(vort(row,time_col));
 
 np = 64;
 colors = zeros(np);
 
-xcol_num = 7
-ycol_num = 8
+xcol_num = 7;
+ycol_num = 8;
 
-min1 = min(vort(row,xcol_num));
-max1 = max(vort(row,xcol_num));
-min2 = min(vort(row,ycol_num));
-max2 = max(vort(row,ycol_num));
+min1 = min(vort(:,xcol_num));
+max1 = max(vort(:,xcol_num));
+min2 = min(vort(:,ycol_num));
+max2 = max(vort(:,ycol_num));
 
 d1 = (max1 - min1)/(np-1);
 d2 = (max2 - min2)/(np-1);
 
-for i = 1:s2(1)
-    x = floor((vort(row(i),xcol_num)-min1)/d1)+1;
-    y = np-floor((vort(row(i),ycol_num)-min2)/d2);
+for i = 1:s1(1)
+    x = floor((vort(i,xcol_num)-min1)/d1)+1;
+    y = np-floor((vort(i,ycol_num)-min2)/d2);
     % the plotting with imagesc is weird (x-y are switched)
     colors(y,x) = colors(y,x) + 1;
 end
 
-plot(vort(row,xcol_num)+invRo,vort(row,ycol_num), 'o')
+plot(vort(:,xcol_num)+invRo,vort(:,ycol_num), 'o')
 xlim([min1, max1]+2);
 
 figure
@@ -96,41 +96,43 @@ title("uz_rms")
 
 figure 
 
-vort = readmatrix("new_Om1B100.dat");
-invRo = 1;
+nd = 766^2;
+
+% this reads all data tim from multiple timestamps into 1 array (it ignores the lineskips in the .dat file)
+vort = readmatrix("new_Om2B30.dat");
+invRo = 2;
 
 s1 = size(vort);
+sd = s1(1)/nd
 
 % in order to plot this by individual timestep, you have to restrict the plot by column 3 which is the timestep. 
-time_col = 3
-last_timestep = vort(s1(1),time_col);
 
-[row, col] = find(vort(:,time_col) == last_timestep);
-
+time_col = 3;
+[row,col] = find(vort(:,time_col) == vort(s1(1)-num_timesteps,time_col));
 s2 = size(vort(row,time_col));
 
 np = 64;
 colors = zeros(np);
 
-xcol_num = 7
-ycol_num = 8
+xcol_num = 7;
+ycol_num = 8;
 
-min1 = min(vort(row,xcol_num));
-max1 = max(vort(row,xcol_num));
-min2 = min(vort(row,ycol_num));
-max2 = max(vort(row,ycol_num));
+min1 = min(vort(:,xcol_num));
+max1 = max(vort(:,xcol_num));
+min2 = min(vort(:,ycol_num));
+max2 = max(vort(:,ycol_num));
 
 d1 = (max1 - min1)/(np-1);
 d2 = (max2 - min2)/(np-1);
 
-for i = 1:s2(1)
-    x = floor((vort(row(i),xcol_num)-min1)/d1)+1;
-    y = np-floor((vort(row(i),ycol_num)-min2)/d2);
+for i = 1:s1(1)
+    x = floor((vort(i,xcol_num)-min1)/d1)+1;
+    y = np-floor((vort(i,ycol_num)-min2)/d2);
     % the plotting with imagesc is weird (x-y are switched)
     colors(y,x) = colors(y,x) + 1;
 end
 
-plot(vort(row,xcol_num)+invRo,vort(row,ycol_num), 'o')
+plot(vort(:,xcol_num)+invRo,vort(:,ycol_num), 'o')
 xlim([min1, max1]+2);
 
 figure
@@ -147,6 +149,11 @@ xticklabels(round(linspace(min1,max1,num_ticks+1)+invRo,2));
 yticklabels(round(flip(linspace(min2,max2,num_ticks+1)),2));
 colormap sky
 colorbar
+
+figure
+
+x1 = 1:766;
+y1 = 1:766;
 
 z1 = reshape(vort(row,7),[766, 766]);
 z2 = reshape(vort(row,11),[766, 766]);
