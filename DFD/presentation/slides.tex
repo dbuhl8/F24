@@ -95,8 +95,36 @@
 
 \frame{\titlepage}
 
-\section{Introduction}
 
+\begin{frame}{Motivation}
+
+Must be Geophysically Motivated:
+
+ideas:
+\begin{itemize}
+
+\item Strat Turb is inpportant for mixing in GAFD
+
+\item Dynamics of strat. turb. are inflenced by both Strat. and Rot. in GA
+flows.
+
+\item In the absense of Rotation, Strat. Turb. is dominated by srtongly
+anisotropic pancake structures with an aspect ratio controlled by the
+stratification. (show picture of pancake structure).
+
+\item By contrast, Rotation barotropic structues wihch are invariant along the
+axis of rotation. (show pictures of cylinders)
+
+
+% This is the main question which we will attempt to answer. Maybe put it on its
+% own slide.
+\item Using DNS, we will study the competing effects of rotation and
+stratification on vertical mixing in the flow. 
+
+\end{itemize}
+
+
+\end{frame}
 
 \begin{frame}{Schematic}
     \includegraphics[width = \textwidth]{images/schematic.pdf}
@@ -121,13 +149,13 @@
         \frac{T}{Fr^2}\ez + \F + \frac{1}{Re}\Grad^2\uvec \tag{mom.}\label{eq:momentum}\\
         \ppt{T} + \bs{u} \cdot \Grad T + w &= \frac{1}{Pe}\Grad^2T \tag{temp.} \label{eq:temp} \\
         \Div \bs{u} &= 0 \tag{cont.}\label{eq:cont}
-    \end{align}}
+    \end{align}
     
-    %\begin{align*}
-        %Re = \frac{UL}{\nu}, \quad Pe = \frac{UL}{\kappa}, \quad Fr =
-        %\frac{U}{NL}, \quad Ro = \frac{U}{2\Omega L}
-    %\end{align*}
-    %}
+    \begin{align*}
+        Re = \frac{UL}{\nu}, \quad Pe = \frac{UL}{\kappa}, \quad Fr =
+        \frac{U}{NL}, \quad Ro = \frac{U}{2\Omega L}
+    \end{align*}
+    }
     %\begin{itemize}
         %\item $U$ is the characteristic velocity
         %\item $L$ is the large eddy horizontal length scale
@@ -153,14 +181,15 @@
     The forcing is applied in spectral space and satisfies $\bs{k} \cdot \hat{\bs{F}} = 0$:
     \begin{gather*}
         \hat{F}_x = \frac{k_y}{|\bs{k}_h|}G(\bs{k}_h,t), \quad \hat{F}_y = \frac{-k_x}{|\bs{k}_h|}G(\bs{k}_h,t)\\
-        G(\bs{k}_h,t) \in \C
     \end{gather*}
-    where $G(\bs{k}_h,t)$ is a Gaussian process of amplitude 1 and correlation timescale 1. 
+    where $G(\bs{k}_h,t)$ is a Gaussian process of amplitude 1 and correlation
+    timescale 1, where $|\bs{k}_h| \le \sqrt{2}$. 
+
 
 \end{frame}
 
 % what are the flow structures that we obtain?
-\begin{frame}{From Stratified Turbulence to rotationally domainated flow}
+\begin{frame}{Non-rotating Stratified Turbulence}
     % Ux rms figure
     % plot info: B100 is -3.5:3.5
     % B300 is -5:5
@@ -170,6 +199,8 @@
 
     Typical non-rotating flows, properties of stratified turbulence
 
+    main idea: show that this forcing produces flows which exhibit stratified
+    turbulence. 
 
     \bmp{.235}
         \centering
@@ -213,13 +244,79 @@
     \[\overrightarrow{\rm Stratification}\]
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Rotating Stratified Turbulence}
     Increasing rotation, typical rotating flows
+    \bmp{.235}
+        \centering
+        $1/Ro = 1$
+        \vspace{2pt}
+        \includegraphics[width=\textwidth]{images/}
+        \includegraphics[width=\textwidth]{images/XZB1ux.png}
+    \emp
+    \hspace{1pt}
+    \bmp{.235}
+        \centering
+        $1/Ro = 3.16$
+        \vspace{2pt}
+        
+        %\includegraphics[width=\textwidth]{files/XYB10ux.png}
+        %\includegraphics[width=\textwidth]{files/XZB10ux.png}
+        %\includegraphics[width = \textwidth]{files/B10Spec.pdf}
+    \emp
+    \hspace{1pt}
+    \bmp{.235}
+        \centering
+        $1/Fr = 10$
+        \vspace{2pt}
+        
+        %\includegraphics[width=\textwidth]{files/XYB100ux.png}
+        %\includegraphics[width=\textwidth]{files/XZB100ux.png}
+        %\includegraphics[width = \textwidth]{files/B100Spec.pdf}
+    \emp
+    \hspace{1pt}
+    \bmp{.235}
+        \centering
+        $1/Fr = 17.36$
+        \vspace{2pt}
+        
+        %\includegraphics[width=.99\textwidth]{files/XYB300ux.png}
+        %\includegraphics[width=.99\textwidth]{files/XZB300ux.png}
+        %\includegraphics[width = \textwidth]{files/B300Spec.pdf}
+    \emp
 \end{frame}
+
+\begin{frame}{Vertically-invariant Structures in the flow}
+    \centering
+    \bmp{0.07}
+        $\omega_z$
+    \emp
+    \bmp{0.31}
+        \centering
+        $1/Ro = 1$
+        \includegraphics[width=.95\textwidth]{images/vortz_Om0.5_vr2.png}
+    \emp
+    \bmp{0.31}
+        \centering
+        $1/Ro = 2$
+        \includegraphics[width=.95\textwidth]{images/vortz_Om2_vr2.png}
+    \emp
+    \bmp{0.31}
+        \centering
+        $1/Ro = 10$
+        \includegraphics[width=.95\textwidth]{images/vortz_Om10_vr2.png}
+    \emp
+\end{frame}
+
 
 % Energy Spectrum
 \begin{frame}{Inverse Energy Cascade}
 
+    %%\bmp{.33}
+        %\centering
+        %$Ro^{-1} = 1$
+        %\includegraphics[width=\textwidth]{images/Om1Spec.pdf}
+    %\emp
+%
     \bmp{.33}
         \centering
         $Ro^{-1} = 1$
@@ -247,22 +344,51 @@
     \bmp{.49}
         % w
         \centering
-        \includegraphics[width=1\textwidth]{images/wrms_plot.pdf}
+        \includegraphics[width=.96\textwidth]{images/wrms_plot.pdf}
     \emp
     
-    \bmp{.49}
-        % eta
-        \centering
-        \includegraphics[width=1\textwidth]{images/mixing_plot.pdf}
+\end{frame}
+
+\begin{frame}{Vertically-Averaged Flow}
+    \centering
+    \bmp{.2}
+        {\footnotesize $Ro^{-1} = 1$}
     \emp
-    \bmp{.49}
-        % buoyancy flux
+    \bmp{.37}
         \centering
-        \includegraphics[width=1\textwidth]{images/bflux_plot.pdf}
+        \includegraphics[width=1\textwidth]{images/Om1B30_vortz_bar.pdf}
+    \emp
+    \bmp{.37}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Om1B30_uzrms_bar.pdf}
+    \emp
+
+    \bmp{.2}
+        {\footnotesize $Ro^{-1} = 3$}
+    \emp
+    \bmp{.37}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Om3B30_vortz_bar.pdf}
+    \emp
+    \bmp{.37}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Om3B30_uzrms_bar.pdf}
     \emp
 
 \end{frame}
 
+\begin{frame}{Temperature Transport and Mixing in the Flow}
+    \bmp{.49}
+        % eta
+        \centering
+        \includegraphics[width=1\textwidth]{images/bflux_plot.pdf}
+    \emp
+    \bmp{.49}
+        % buoyancy flux
+        \centering
+        \includegraphics[width=.94\textwidth]{images/mixing_plot.pdf}
+    \emp
+\end{frame}
 
 
 \begin{frame}{Mixing and Vertical Vorticity}
@@ -293,6 +419,12 @@
         \includegraphics[width=.95\textwidth]{images/chi_Om10_vr2.png}
     \emp
 
+\end{frame}
+
+\begin{frame}{Correspondance between Planetary Vorticity and Mixing}
+
+    \includegraphics[width=\textwidth]{images/}
+    \includegraphics[width=\textwidth]{images/}
 
 \end{frame}
 
@@ -300,11 +432,14 @@
 \begin{frame}{Conclusion}
 
     \begin{itemize}
-        \item Stochastic forcing produces flow with notably different properties compared to steady forcing.
-        \item Method of isolating mean and fluctuation dynamics must be modified.
-        \item Rapid rotation influences the mean flow before it influences the fluctuations. Vertical mixing is only affected when $Ro \to Fr$
-        \item In rapidly rotating flows, mixing is contained in regions of anti-cyclones.
-        \item Very rapid rotation inhibits vertical mixing completely.
+    \item For $Ro > 1$, no significant change from the non-rotating case
+    \item For $1 > Ro > Fr$, horizontal flow becomes increasingly
+    two-dimensional, and vertical mixing is localized in regions of low total
+    vorticity. 
+    \item In particular, for low $Ro$ the cyclones are especially stable due to
+    a high total planetary vorticity. Mixing is localized outside of these
+    vortices. 
+    \item $\eta$ is approximately constant for $Ro > Fr$. 
     \end{itemize}
 
 \end{frame}

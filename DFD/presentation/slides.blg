@@ -1,10 +1,10 @@
-This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2024/Arch Linux)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: slides.aux
 The style file: apj.bst
 I found no \citation commands---while reading file slides.aux
 Database file #1: BuhlThesis.bib
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated wiz_functions (elt_size=8) to 6000 items from 3000.
 You've used 0 entries,
             3049 wiz_defined-function locations,
             779 strings with 5806 characters,
