@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex slides"] 1732139597.90014 "slides.aux" "slides.bbl" "slides" 1732149532.61431 0
+["bibtex slides"] 0 "slides.aux" "slides.bbl" "slides" 1732171175.98852 -1
   "./BuhlThesis.bib" 1731982949.2328 196361 5137558c197832fab80e43904ecbb8a7 ""
   "./apj.bst" 1731982951.26279 30309 6d222945a72ea9fbf641c5d19b6d2275 ""
-  "slides.aux" 1732149532.50965 2689 6ba49673290c0a256fe8839eba714ef8 "pdflatex"
+  "slides.aux" 1732171175.8861 2818 26fe4c1c2faf332206a20d56e69c8a7b "pdflatex"
   (generated)
   "slides.bbl"
   "slides.blg"
   (rewritten before read)
-["pdflatex"] 1732149531.7965 "slides.tex" "slides.pdf" "slides" 1732149532.61442 2
+["pdflatex"] 1732171175.17619 "slides.tex" "slides.pdf" "slides" 1732171175.98868 2
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1727349926 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1727349926 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1727349926 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -252,22 +252,24 @@
   "images/Om3B30_vortz_bar.pdf" 1732138670.74348 188913 d676f600daf6e04b09dc205d4a8bacf3 ""
   "images/Om5Spec.pdf" 1732078826.37171 282865 6247c6aef73465a55347f35e21ff7abd ""
   "images/XZB1ux.png" 0 -1 0 ""
+  "images/XZOm2ux.png" 1732170314.21961 62484 6de8ad4a6c5bab195deca7d0b740f6ee ""
   "images/bflux_plot.pdf" 1732080646.63338 8546 12b36c7bd8f0143c90e2974f49d61ca5 ""
   "images/chi_Om0.5_vr2.png" 1732078826.37171 358683 42fc78874b93bd12038dd55b85f69e39 ""
   "images/chi_Om10_vr2.png" 1732078826.37171 287552 68367367bb61679ef6999afcf63d6ef6 ""
   "images/chi_Om2_vr2.png" 1732078826.37171 464185 9fd9e7635c198b28dfcc87d3f7ec2460 ""
   "images/mixing_plot.pdf" 1732081005.66333 9790 5c4ea7a8bfb05bb59b8fea68c008c400 ""
   "images/schematic.pdf" 1731984409.1165 70757 d1b33560f2e5983b36e5e48329cdbee3 ""
+  "images/uB100XZSlice.png" 1732169803.01942 65433 1e880a5b7395ebfbe69255186f1cb76a ""
   "images/urms_plot.pdf" 1732081085.96605 11817 f601e75bc25626fffb2b936272aa22a2 ""
   "images/vortz_Om0.5_vr2.png" 1732078826.37504 703893 2a9da1cc7c41cda65820dd86a96179c5 ""
   "images/vortz_Om10_vr2.png" 1732078826.37504 438627 fb16138d367ebb6bcc873f0f4fea7c44 ""
   "images/vortz_Om2_vr2.png" 1732078826.37837 627788 f5ac185ebff5399289602d1c58c1d366 ""
   "images/wrms_plot.pdf" 1732081127.45576 9360 d2792721fc21325917375eb60ab1892d ""
-  "slides.aux" 1732149532.50965 2689 6ba49673290c0a256fe8839eba714ef8 "pdflatex"
+  "slides.aux" 1732171175.8861 2818 26fe4c1c2faf332206a20d56e69c8a7b "pdflatex"
   "slides.bbl" 1732139597.92629 154 f0923c926cd78f030e0fd62a80f79bb8 "bibtex slides"
-  "slides.nav" 1732149532.50965 1574 f5abf7444d939a8c2cd188b6df8c9c87 "pdflatex"
-  "slides.out" 1732149532.13298 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "slides.tex" 1732149529.90966 13599 ef7846c5348ad0c9db427c4b20c56bfe ""
+  "slides.nav" 1732171175.8861 1667 223530e0d280496bcaab89de82b2e7ab "pdflatex"
+  "slides.out" 1732171175.4961 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "slides.tex" 1732171173.16946 14333 89c10c17da79a1b62e269423daef7142 ""
   (generated)
   "slides.aux"
   "slides.log"
