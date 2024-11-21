@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.12)  20 NOV 2024 22:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.12)  21 NOV 2024 03:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -534,7 +534,16 @@ Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks46
 \verbatim@line=\toks47
 \verbatim@in@stream=\read3
-) (/usr/share/texmf-dist/tex/latex/beamer/beamerthemeDresden.sty (/usr/share/texmf-dist/tex/latex/beamer/beamerouterthememiniframes.sty) (/usr/share/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty)) (/usr/share/texmf-dist/tex/latex/beamer/beamercolorthemedolphin.sty) (/usr/share/texmf-dist/tex/latex/beamer/beamerfontthemeserif.sty) (/usr/share/texmf-dist/tex/latex/psnfss/pifont.sty
+) (/usr/share/texmf-dist/tex/latex/beamer/beamerthemeDresden.sty (/usr/share/texmf-dist/tex/latex/beamer/beamerouterthememiniframes.sty) (/usr/share/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty)) (/usr/share/texmf-dist/tex/latex/beamer/beamercolorthemedolphin.sty) (/usr/share/texmf-dist/tex/latex/beamer/beamerfontthemeserif.sty) (./embed_video.tex (/usr/share/texmf-dist/tex/latex/media9/pdfbase.sty
+Package: pdfbase 2022/08/04 v0.55 driver independent access to low-level PDF features
+ (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count337
+\l__pdf_internal_box=\box76
+)
+\g_pbs_page_int=\count338
+\g_pbs_oc_int=\count339
+)) (/usr/share/texmf-dist/tex/latex/psnfss/pifont.sty
 Package: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR) 
 LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
  (/usr/share/texmf-dist/tex/latex/psnfss/upzd.fd
@@ -548,24 +557,24 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
  (/usr/share/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count337
-\c@Blindtext=\count338
-\c@blind@countparstart=\count339
-\blind@countxx=\count340
-\blindtext@numBlindtext=\count341
-\blind@countyy=\count342
-\c@blindlist=\count343
-\c@blindlistlevel=\count344
-\c@blindlist@level=\count345
-\blind@listitem=\count346
-\c@blind@listcount=\count347
-\c@blind@levelcount=\count348
-\blind@mathformula=\count349
-\blind@Mathformula=\count350
-\c@blind@randomcount=\count351
-\c@blind@randommax=\count352
-\c@blind@pangramcount=\count353
-\c@blind@pangrammax=\count354
+\c@blindtext=\count340
+\c@Blindtext=\count341
+\c@blind@countparstart=\count342
+\blind@countxx=\count343
+\blindtext@numBlindtext=\count344
+\blind@countyy=\count345
+\c@blindlist=\count346
+\c@blindlistlevel=\count347
+\c@blindlist@level=\count348
+\blind@listitem=\count349
+\c@blind@listcount=\count350
+\c@blind@levelcount=\count351
+\blind@mathformula=\count352
+\blind@Mathformula=\count353
+\c@blind@randomcount=\count354
+\c@blind@randommax=\count355
+\c@blind@pangramcount=\count356
+\c@blind@pangrammax=\count357
 ) (/usr/share/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
  (/usr/share/texmf-dist/tex/latex/caption/caption3.sty
@@ -582,8 +591,8 @@ Package caption Info: beamer document class detected.
  (/usr/share/texmf-dist/tex/latex/caption/caption-beamer.sto
 File: caption-beamer.sto 2022/01/06 v2.0c Adaption of the caption package to the beamer document classes (AR)
 ))
-\c@caption@flags=\count355
-\c@continuedfloat=\count356
+\c@caption@flags=\count358
+\c@continuedfloat=\count359
 Package caption Info: hyperref package is loaded.
 Package caption Info: Hyperref support is turned off
 (caption)             because hyperref has stopped early.
@@ -603,10 +612,10 @@ Package: soul-ori 2023-06-14 v3.1 letterspacing/underlining (mf)
 \SOUL@hyphkern=\dimen305
 \SOUL@dimen=\dimen306
 \SOUL@dimeni=\dimen307
-\SOUL@minus=\count357
-\SOUL@comma=\count358
-\SOUL@apo=\count359
-\SOUL@grave=\count360
+\SOUL@minus=\count360
+\SOUL@comma=\count361
+\SOUL@apo=\count362
+\SOUL@grave=\count363
 \SOUL@spaceskip=\skip65
 \SOUL@ttwidth=\dimen308
 \SOUL@uldp=\dimen309
@@ -618,38 +627,34 @@ Package: multimedia 2012/05/02 ver 0.02
  (/usr/share/texmf-dist/tex/generic/iftex/ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
 )
-\mm@movie=\count361
+\mm@movie=\count364
 ) (/usr/share/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip66
 \bibsep=\skip67
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count362
-) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count363
-\l__pdf_internal_box=\box76
+\c@NAT@ctr=\count365
 ) (./slides.aux)
 \openout1 = `slides.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -687,16 +692,16 @@ LaTeX Font Info:    ... okay on input line 28.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count364
+\scratchcounter=\count366
 \scratchdimen=\dimen311
 \scratchbox=\box77
-\nofMPsegments=\count365
-\nofMParguments=\count366
+\nofMPsegments=\count367
+\nofMParguments=\count368
 \everyMPshowfont=\toks54
-\MPscratchCnt=\count367
+\MPscratchCnt=\count369
 \MPscratchDim=\dimen312
-\MPnumerator=\count368
-\makeMPintoPDFobject=\count369
+\MPnumerator=\count370
+\makeMPintoPDFobject=\count371
 \everyMPtoPDFconversion=\toks55
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -704,7 +709,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 28.
+Package hyperref Info: Link coloring OFF on input line 30.
  (./slides.out) (./slides.out)
 \@outlinefile=\write5
 \openout5 = `slides.out'.
@@ -727,42 +732,48 @@ Package caption Info: End \AtBeginDocument code.
  (./slides.nav) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 113.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 117.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 113.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 117.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [2
+)
+<./images/ocean_thermocline_NOS_NOAA.jpg, id=50, 963.6pt x 377.41pt>
+File: ./images/ocean_thermocline_NOS_NOAA.jpg Graphic file (type jpg)
+<use ./images/ocean_thermocline_NOS_NOAA.jpg>
+Package pdftex.def Info: ./images/ocean_thermocline_NOS_NOAA.jpg  used on input line 117.
+(pdftex.def)             Requested size: 150.57372pt x 58.97015pt.
+ [2
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
+ <./images/ocean_thermocline_NOS_NOAA.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
 []\OT1/cmr/m/n/9 Nonrotating strat-i-fied tur-bu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
 \OT1/cmr/m/n/9 anisotropic pan-cake struc-tures
  []
 
-<images/uB100XZSlice.png, id=78, 575.90157pt x 140.77594pt>
+<images/uB100XZSlice.png, id=79, 575.90157pt x 140.77594pt>
 File: images/uB100XZSlice.png Graphic file (type png)
 <use images/uB100XZSlice.png>
-Package pdftex.def Info: images/uB100XZSlice.png  used on input line 157.
+Package pdftex.def Info: images/uB100XZSlice.png  used on input line 160.
 (pdftex.def)             Requested size: 129.98306pt x 31.77202pt.
-<images/XZOm2ux.png, id=79, 574.39594pt x 140.77594pt>
+<images/XZOm2ux.png, id=80, 574.39594pt x 140.77594pt>
 File: images/XZOm2ux.png Graphic file (type png)
 <use images/XZOm2ux.png>
-Package pdftex.def Info: images/XZOm2ux.png  used on input line 157.
+Package pdftex.def Info: images/XZOm2ux.png  used on input line 160.
 (pdftex.def)             Requested size: 129.98306pt x 31.85579pt.
 [3
 
  <./images/uB100XZSlice.png (PNG copy)> <./images/XZOm2ux.png>]
-<images/schematic.pdf, id=110, 390.45876pt x 195.73125pt>
+<images/schematic.pdf, id=111, 390.45876pt x 195.73125pt>
 File: images/schematic.pdf Graphic file (type pdf)
 <use images/schematic.pdf>
-Package pdftex.def Info: images/schematic.pdf  used on input line 170.
+Package pdftex.def Info: images/schematic.pdf  used on input line 173.
 (pdftex.def)             Requested size: 307.28987pt x 154.04657pt.
  [4
 
@@ -772,171 +783,182 @@ Package pdftex.def Info: images/schematic.pdf  used on input line 170.
 
 ] [7
 
-]
-
-./slides.tex:316: LaTeX Error: File `images/' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.316 \end{frame}
-                 
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `images/XZB1ux.png' not found on input line 316.
-
-
-./slides.tex:316: Package pdftex.def Error: File `images/XZB1ux.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.316 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 316--316
-  [] 
- []
-
-[8
+] [8
 
 ]
 <images/vortz_Om0.5_vr2.png, id=305, 721.19438pt x 694.84593pt>
 File: images/vortz_Om0.5_vr2.png Graphic file (type png)
 <use images/vortz_Om0.5_vr2.png>
-Package pdftex.def Info: images/vortz_Om0.5_vr2.png  used on input line 338.
+Package pdftex.def Info: images/vortz_Om0.5_vr2.png  used on input line 345.
 (pdftex.def)             Requested size: 90.49585pt x 87.1842pt.
 <images/vortz_Om2_vr2.png, id=306, 722.7pt x 688.82344pt>
 File: images/vortz_Om2_vr2.png Graphic file (type png)
 <use images/vortz_Om2_vr2.png>
-Package pdftex.def Info: images/vortz_Om2_vr2.png  used on input line 338.
+Package pdftex.def Info: images/vortz_Om2_vr2.png  used on input line 345.
 (pdftex.def)             Requested size: 90.49585pt x 86.24986pt.
 <images/vortz_Om10_vr2.png, id=307, 721.19438pt x 693.34032pt>
 File: images/vortz_Om10_vr2.png Graphic file (type png)
 <use images/vortz_Om10_vr2.png>
-Package pdftex.def Info: images/vortz_Om10_vr2.png  used on input line 338.
+Package pdftex.def Info: images/vortz_Om10_vr2.png  used on input line 345.
 (pdftex.def)             Requested size: 90.49585pt x 86.99529pt.
  [9
 
  <./images/vortz_Om0.5_vr2.png (PNG copy)> <./images/vortz_Om2_vr2.png (PNG copy)> <./images/vortz_Om10_vr2.png (PNG copy)>]
-<images/Om1Spec.pdf, id=335, 658.38966pt x 429.70535pt>
+<images/B30Spec.pdf, id=335, 590.90758pt x 414.81975pt>
+File: images/B30Spec.pdf Graphic file (type pdf)
+<use images/B30Spec.pdf>
+Package pdftex.def Info: images/B30Spec.pdf  used on input line 373.
+(pdftex.def)             Requested size: 128.63391pt x 90.29851pt.
+<images/Om1Spec.pdf, id=336, 645.79268pt x 416.43584pt>
 File: images/Om1Spec.pdf Graphic file (type pdf)
 <use images/Om1Spec.pdf>
-Package pdftex.def Info: images/Om1Spec.pdf  used on input line 366.
-(pdftex.def)             Requested size: 101.40622pt x 66.184pt.
-<images/Om2Spec.pdf, id=336, 660.04594pt x 432.19466pt>
+Package pdftex.def Info: images/Om1Spec.pdf  used on input line 373.
+(pdftex.def)             Requested size: 139.94261pt x 90.23727pt.
+<images/Om2Spec.pdf, id=337, 644.98969pt x 415.63278pt>
 File: images/Om2Spec.pdf Graphic file (type pdf)
 <use images/Om2Spec.pdf>
-Package pdftex.def Info: images/Om2Spec.pdf  used on input line 366.
-(pdftex.def)             Requested size: 101.40622pt x 66.39595pt.
-<images/Om5Spec.pdf, id=337, 660.04588pt x 426.40306pt>
+Package pdftex.def Info: images/Om2Spec.pdf  used on input line 373.
+(pdftex.def)             Requested size: 132.8744pt x 85.62384pt.
+<images/Om5Spec.pdf, id=338, 649.02472pt x 422.0869pt>
 File: images/Om5Spec.pdf Graphic file (type pdf)
 <use images/Om5Spec.pdf>
-Package pdftex.def Info: images/Om5Spec.pdf  used on input line 366.
-(pdftex.def)             Requested size: 101.40622pt x 65.50621pt.
+Package pdftex.def Info: images/Om5Spec.pdf  used on input line 373.
+(pdftex.def)             Requested size: 135.70212pt x 88.24799pt.
  [10
 
- <./images/Om1Spec.pdf, page is rotated 90 degrees> <./images/Om2Spec.pdf, page is rotated 90 degrees> <./images/Om5Spec.pdf, page is rotated 90 degrees>]
-<images/urms_plot.pdf, id=382, 616.74422pt x 455.18053pt>
+ <./images/B30Spec.pdf, page is rotated 90 degrees> <./images/Om1Spec.pdf, page is rotated 90 degrees> <./images/Om2Spec.pdf, page is rotated 90 degrees> <./images/Om5Spec.pdf, page is rotated 90 degrees>]
+<images/urms_plot.pdf, id=392, 616.74422pt x 455.18053pt>
 File: images/urms_plot.pdf Graphic file (type pdf)
 <use images/urms_plot.pdf>
-Package pdftex.def Info: images/urms_plot.pdf  used on input line 380.
+Package pdftex.def Info: images/urms_plot.pdf  used on input line 387.
 (pdftex.def)             Requested size: 150.57372pt x 111.12778pt.
-<images/wrms_plot.pdf, id=383, 588.48863pt x 464.86674pt>
+<images/wrms_plot.pdf, id=393, 588.48863pt x 464.86674pt>
 File: images/wrms_plot.pdf Graphic file (type pdf)
 <use images/wrms_plot.pdf>
-Package pdftex.def Info: images/wrms_plot.pdf  used on input line 380.
+Package pdftex.def Info: images/wrms_plot.pdf  used on input line 387.
 (pdftex.def)             Requested size: 144.55177pt x 114.18062pt.
  [11
 
  <./images/urms_plot.pdf, page is rotated 90 degrees> <./images/wrms_plot.pdf, page is rotated 90 degrees>]
-<images/Om1B30_vortz_bar.pdf, id=423, 347.09576pt x 299.0071pt>
+<images/Om1B30_vortz_bar.pdf, id=433, 338.09312pt x 259.29878pt>
 File: images/Om1B30_vortz_bar.pdf Graphic file (type pdf)
 <use images/Om1B30_vortz_bar.pdf>
-Package pdftex.def Info: images/Om1B30_vortz_bar.pdf  used on input line 408.
-(pdftex.def)             Requested size: 113.69574pt x 97.94264pt.
-<images/Om1B30_uzrms_bar.pdf, id=424, 353.14938pt x 292.95444pt>
-File: images/Om1B30_uzrms_bar.pdf Graphic file (type pdf)
-<use images/Om1B30_uzrms_bar.pdf>
-Package pdftex.def Info: images/Om1B30_uzrms_bar.pdf  used on input line 408.
-(pdftex.def)             Requested size: 113.69574pt x 94.31503pt.
-<images/Om3B30_vortz_bar.pdf, id=425, 345.90129pt x 289.46143pt>
+Package pdftex.def Info: images/Om1B30_vortz_bar.pdf  used on input line 429.
+(pdftex.def)             Requested size: 92.1879pt x 70.704pt.
+<images/Om3B30_vortz_bar.pdf, id=434, 340.19096pt x 254.0592pt>
 File: images/Om3B30_vortz_bar.pdf Graphic file (type pdf)
 <use images/Om3B30_vortz_bar.pdf>
-Package pdftex.def Info: images/Om3B30_vortz_bar.pdf  used on input line 408.
-(pdftex.def)             Requested size: 113.69574pt x 95.14272pt.
-<images/Om3B30_uzrms_bar.pdf, id=426, 345.99263pt x 294.1489pt>
+Package pdftex.def Info: images/Om3B30_vortz_bar.pdf  used on input line 429.
+(pdftex.def)             Requested size: 92.1879pt x 68.845pt.
+<images/Om10B30_vortz_bar.pdf, id=435, 337.03914pt x 255.12318pt>
+File: images/Om10B30_vortz_bar.pdf Graphic file (type pdf)
+<use images/Om10B30_vortz_bar.pdf>
+Package pdftex.def Info: images/Om10B30_vortz_bar.pdf  used on input line 429.
+(pdftex.def)             Requested size: 92.1879pt x 69.78342pt.
+<images/Om1B30_uzrms_bar.pdf, id=436, 341.22482pt x 250.9375pt>
+File: images/Om1B30_uzrms_bar.pdf Graphic file (type pdf)
+<use images/Om1B30_uzrms_bar.pdf>
+Package pdftex.def Info: images/Om1B30_uzrms_bar.pdf  used on input line 429.
+(pdftex.def)             Requested size: 92.1879pt x 67.79614pt.
+<images/Om3B30_uzrms_bar.pdf, id=437, 344.22499pt x 254.06923pt>
 File: images/Om3B30_uzrms_bar.pdf Graphic file (type pdf)
 <use images/Om3B30_uzrms_bar.pdf>
-Package pdftex.def Info: images/Om3B30_uzrms_bar.pdf  used on input line 408.
-(pdftex.def)             Requested size: 113.69574pt x 96.66098pt.
- [12
+Package pdftex.def Info: images/Om3B30_uzrms_bar.pdf  used on input line 429.
+(pdftex.def)             Requested size: 92.1879pt x 68.04135pt.
+<images/Om10B30_uzrms_bar.pdf, id=438, 343.18114pt x 251.98141pt>
+File: images/Om10B30_uzrms_bar.pdf Graphic file (type pdf)
+<use images/Om10B30_uzrms_bar.pdf>
+Package pdftex.def Info: images/Om10B30_uzrms_bar.pdf  used on input line 429.
+(pdftex.def)             Requested size: 92.1879pt x 67.68599pt.
 
- <./images/Om1B30_vortz_bar.pdf> <./images/Om1B30_uzrms_bar.pdf> <./images/Om3B30_vortz_bar.pdf> <./images/Om3B30_uzrms_bar.pdf>]
-<images/bflux_plot.pdf, id=553, 604.63887pt x 457.60959pt>
+./slides.tex:429: Extra }, or forgotten $.
+\insertframetitle ...tframetitlecontinuation \fi }
+                                                  
+l.429 \end{frame}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./slides.tex:429: Missing $ inserted.
+<inserted text> 
+                $
+l.429 \end{frame}
+                 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./slides.tex:429: Missing } inserted.
+<inserted text> 
+                }
+l.429 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[12
+
+ <./images/Om1B30_vortz_bar.pdf> <./images/Om3B30_vortz_bar.pdf> <./images/Om10B30_vortz_bar.pdf> <./images/Om1B30_uzrms_bar.pdf> <./images/Om3B30_uzrms_bar.pdf> <./images/Om10B30_uzrms_bar.pdf>]
+<images/bflux_plot.pdf, id=608, 604.63887pt x 457.60959pt>
 File: images/bflux_plot.pdf Graphic file (type pdf)
 <use images/bflux_plot.pdf>
-Package pdftex.def Info: images/bflux_plot.pdf  used on input line 421.
+Package pdftex.def Info: images/bflux_plot.pdf  used on input line 442.
 (pdftex.def)             Requested size: 150.57372pt x 113.95523pt.
-<images/mixing_plot.pdf, id=554, 577.98938pt x 457.59961pt>
+<images/mixing_plot.pdf, id=609, 577.98938pt x 457.59961pt>
 File: images/mixing_plot.pdf Graphic file (type pdf)
 <use images/mixing_plot.pdf>
-Package pdftex.def Info: images/mixing_plot.pdf  used on input line 421.
+Package pdftex.def Info: images/mixing_plot.pdf  used on input line 442.
 (pdftex.def)             Requested size: 141.53966pt x 112.05353pt.
  [13
 
  <./images/bflux_plot.pdf, page is rotated 90 degrees> <./images/mixing_plot.pdf, page is rotated 90 degrees>]
-Overfull \hbox (2.98906pt too wide) in paragraph at lines 452--452
+Overfull \hbox (2.98906pt too wide) in paragraph at lines 473--473
 []$[]$ 
  []
 
 File: images/vortz_Om0.5_vr2.png Graphic file (type png)
 <use images/vortz_Om0.5_vr2.png>
-Package pdftex.def Info: images/vortz_Om0.5_vr2.png  used on input line 452.
+Package pdftex.def Info: images/vortz_Om0.5_vr2.png  used on input line 473.
 (pdftex.def)             Requested size: 90.49585pt x 87.1842pt.
-<images/chi_Om0.5_vr2.png, id=594, 722.7pt x 693.34032pt>
+<images/chi_Om0.5_vr2.png, id=649, 722.7pt x 693.34032pt>
 File: images/chi_Om0.5_vr2.png Graphic file (type png)
 <use images/chi_Om0.5_vr2.png>
-Package pdftex.def Info: images/chi_Om0.5_vr2.png  used on input line 452.
+Package pdftex.def Info: images/chi_Om0.5_vr2.png  used on input line 473.
 (pdftex.def)             Requested size: 90.49585pt x 86.81543pt.
 File: images/vortz_Om2_vr2.png Graphic file (type png)
 <use images/vortz_Om2_vr2.png>
-Package pdftex.def Info: images/vortz_Om2_vr2.png  used on input line 452.
+Package pdftex.def Info: images/vortz_Om2_vr2.png  used on input line 473.
 (pdftex.def)             Requested size: 90.49585pt x 86.24986pt.
-<images/chi_Om2_vr2.png, id=595, 722.7pt x 691.83469pt>
+<images/chi_Om2_vr2.png, id=650, 722.7pt x 691.83469pt>
 File: images/chi_Om2_vr2.png Graphic file (type png)
 <use images/chi_Om2_vr2.png>
-Package pdftex.def Info: images/chi_Om2_vr2.png  used on input line 452.
+Package pdftex.def Info: images/chi_Om2_vr2.png  used on input line 473.
 (pdftex.def)             Requested size: 90.49585pt x 86.6269pt.
 File: images/vortz_Om10_vr2.png Graphic file (type png)
 <use images/vortz_Om10_vr2.png>
-Package pdftex.def Info: images/vortz_Om10_vr2.png  used on input line 452.
+Package pdftex.def Info: images/vortz_Om10_vr2.png  used on input line 473.
 (pdftex.def)             Requested size: 90.49585pt x 86.99529pt.
-<images/chi_Om10_vr2.png, id=596, 723.45282pt x 692.5875pt>
+<images/chi_Om10_vr2.png, id=651, 723.45282pt x 692.5875pt>
 File: images/chi_Om10_vr2.png Graphic file (type png)
 <use images/chi_Om10_vr2.png>
-Package pdftex.def Info: images/chi_Om10_vr2.png  used on input line 452.
+Package pdftex.def Info: images/chi_Om10_vr2.png  used on input line 473.
 (pdftex.def)             Requested size: 90.49585pt x 86.62605pt.
 [14
 
  <./images/chi_Om0.5_vr2.png (PNG copy)> <./images/chi_Om2_vr2.png (PNG copy)> <./images/chi_Om10_vr2.png (PNG copy)>]
 
-./slides.tex:459: LaTeX Error: File `images/' not found.
+./slides.tex:480: LaTeX Error: File `images/' not found.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.459 \end{frame}
+l.480 \end{frame}
                  
 I could not locate the file with any of these extensions:
 .pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -944,13 +966,13 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./slides.tex:459: LaTeX Error: File `images/' not found.
+./slides.tex:480: LaTeX Error: File `images/' not found.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.459 \end{frame}
+l.480 \end{frame}
                  
 I could not locate the file with any of these extensions:
 .pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -988,18 +1010,18 @@ Package rerunfilecheck Info: File `slides.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 24064 strings out of 476076
- 458908 string characters out of 5793774
+ 24214 strings out of 476076
+ 462258 string characters out of 5793774
  1942187 words of memory out of 5000000
- 45631 multiletter control sequences out of 15000+600000
- 573543 words of font info for 93 fonts, out of 8000000 for 9000
+ 45774 multiletter control sequences out of 15000+600000
+ 574622 words of font info for 97 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 101i,15n,107p,437b,585s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on slides.pdf (16 pages, 4229952 bytes).
+ 101i,15n,107p,437b,587s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on slides.pdf (16 pages, 4752747 bytes).
 PDF statistics:
- 752 PDF objects out of 1000 (max. 8388607)
- 602 compressed objects within 7 object streams
+ 820 PDF objects out of 1000 (max. 8388607)
+ 643 compressed objects within 7 object streams
  36 named destinations out of 1000 (max. 500000)
- 147 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 167 words of extra memory for PDF output out of 10000 (max. 10000000)
 

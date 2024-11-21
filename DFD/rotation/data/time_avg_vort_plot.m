@@ -56,7 +56,6 @@ yticks(linspace(0,64,num_ticks+1));
 xticklabels(round(linspace(min1,max1,num_ticks+1)+invRo,2));
 yticklabels(round(flip(linspace(min2,max2,num_ticks+1)),2));
 colormap sky
-colorbar
 xlabel("$\overline{\omega_z} + 2\Omega$", 'Interpreter','latex','Fontsize',22)
 ylabel("$\overline{|\nabla T|^2}$", 'Interpreter','latex', 'Rotation', 0, 'FontSize',22)
 
@@ -78,10 +77,10 @@ ylim([0,766])
 set(gca,'XTick',[],'YTick',[])
 view(0,90)
 shading interp
-colormap jet
+colormap(redwhiteblue(min(z1+invRo,[],'all'),max(z1+invRo,[],'all')))
 colorbar
-title("$|\omega_z|_z + 2\Omega$", 'Interpreter','latex','FontSize',22)
-clim([-35,35])
+title("$\widehat{\omega_z} + 2\Omega$", 'Interpreter','latex','FontSize',22)
+%clim([-35,35])
 saveas(gcf,'Om1B30_vortz_bar.pdf')
 
 figure('color','white')
@@ -107,8 +106,8 @@ view(0,90)
 shading interp
 colormap parula
 colorbar
-clim([0,3.5])
-title("$\left|B|\nabla T|^2/Re\right|_z$",'Interpreter','latex','FontSize',22)
+%clim([0,3.5])
+title("$\frac{\widehat{|\nabla T|^2}}{Fr^2Pe}$",'Interpreter','latex','FontSize',22)
 saveas(gcf,'Om1B30_tdisp_bar.pdf')
 
 figure('color','white')
@@ -121,8 +120,8 @@ view(0,90)
 shading interp
 colormap parula
 colorbar
-clim([0,1.2])
-title("$|u_z^2|_z$",'Interpreter','latex','FontSize',22)
+%clim([0,1.2])
+title("$\widehat{w^2}$",'Interpreter','latex','FontSize',22)
 saveas(gcf,'Om1B30_uzrms_bar.pdf')
 
 figure('color','white')
@@ -136,7 +135,7 @@ shading interp
 colormap parula
 colorbar
 %clim([0,1.2])
-title("$\left||\nabla \mathbf{u}|^2/Re\right|_z$",'Interpreter','latex','FontSize',22)
+title("$\frac{\widehat{|\nabla \mathbf{u}|^2}}{Re}$",'Interpreter','latex','FontSize',22)
 saveas(gcf,'Om1B30_mdisp_bar.pdf')
 
 figure('color','white') 
@@ -213,10 +212,11 @@ ylim([0,766])
 set(gca,'XTick',[],'YTick',[])
 view(0,90)
 shading interp
-colormap jet
+%colormap(redwhiteblue)
+colormap(redwhiteblue(min(z1+invRo,[],'all'),max(z1+invRo,[],'all')))
 colorbar
-clim([-35,35])
-title("$|\omega_z|_z + 2\Omega$",'Interpreter','latex','FontSize',22)
+%clim([-35,35])
+title("$\widehat{\omega_z} + 2\Omega$",'Interpreter','latex','FontSize',22)
 view(0,90)
 saveas(gcf,'Om3B30_vortz_bar.pdf')
 
@@ -245,7 +245,7 @@ shading interp
 colormap parula
 colorbar
 %clim([0,3.5])
-title("$\left|B|\nabla T|^2/Pe\right|_z$",'Interpreter','latex','FontSize',22)
+title("$\frac{\widehat{|\nabla T|^2}}{Fr^2Pe}$",'Interpreter','latex','FontSize',22)
 view(0,90)
 saveas(gcf,'Om3B30_tdisp_bar.pdf')
 
@@ -260,7 +260,7 @@ shading interp
 colormap parula
 colorbar
 %clim([0,1.2])
-title("$|u_z^2|_z$", 'Interpreter','latex','FontSize',22)
+title("$\widehat{w^2}$", 'Interpreter','latex','FontSize',22)
 saveas(gcf,'Om3B30_uzrms_bar.pdf')
 
 surf(x1, y1, z5)
@@ -272,7 +272,7 @@ shading interp
 colormap parula
 colorbar
 %clim([0,1.2])
-title("$\left||\nabla \mathbf{u}|^2/Re\right|_z$",'Interpreter','latex','FontSize',22)
+title("$\frac{\widehat{|\nabla \mathbf{u}|^2}}{Re}$",'Interpreter','latex','FontSize',22)
 saveas(gcf,'Om3B30_mdisp_bar.pdf')
 
 figure('color','white') 
@@ -349,10 +349,11 @@ ylim([0,766])
 set(gca,'XTick',[],'YTick',[])
 view(0,90)
 shading interp
-colormap jet
+%colormap(redwhiteblue)
+colormap(redwhiteblue(min(z1+invRo,[],'all'),max(z1+invRo,[],'all')))
 colorbar
-clim([-35,35])
-title("$|\omega_z|_z + 2\Omega$",'Interpreter','latex','FontSize',22)
+%clim([-35,35])
+title("$\widehat{\omega_z} + 2\Omega$",'Interpreter','latex','FontSize',22)
 view(0,90)
 saveas(gcf,'Om10B30_vortz_bar.pdf')
 
@@ -381,7 +382,7 @@ shading interp
 colormap parula
 colorbar
 %clim([0,3.5])
-title("$\left|B|\nabla T|^2/Pe\right|_z$",'Interpreter','latex','FontSize',22)
+title("$\frac{\widehat{|\nabla T|^2}}{Fr^2Pe}$",'Interpreter','latex','FontSize',22)
 view(0,90)
 saveas(gcf,'Om10B30_tdisp_bar.pdf')
 
@@ -396,7 +397,7 @@ shading interp
 colormap parula
 colorbar
 %clim([0,1.2])
-title("$|u_z^2|_z$", 'Interpreter','latex','FontSize',22)
+title("$\widehat{w^2}$", 'Interpreter','latex','FontSize',22)
 saveas(gcf,'Om10B30_uzrms_bar.pdf')
 
 surf(x1, y1, z5)
@@ -408,6 +409,6 @@ shading interp
 colormap parula
 colorbar
 %clim([0,1.2])
-title("$\left||\nabla \mathbf{u}|^2/Re\right|_z$",'Interpreter','latex','FontSize',22)
+title("$\frac{\widehat{|\nabla \mathbf{u}|^2}}{Re}$",'Interpreter','latex','FontSize',22)
 saveas(gcf,'Om10B30_mdisp_bar.pdf')
 

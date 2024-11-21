@@ -9,9 +9,11 @@
 %\usecolortheme{spruce}
 \usecolortheme{dolphin}
 \usefonttheme{serif}
+
+\input{embed_video.tex}
+
 \usepackage{amsmath}
-\usepackage{pifont}
-\usepackage{hyperref}
+\usepackage{pifont} \usepackage{hyperref}
 \usepackage{amsthm} %proof environment
 \usepackage{amssymb}
 \usepackage{amsfonts}
@@ -108,7 +110,9 @@ rotation influence dynamics.
 } %end small
 \end{itemize}
 
-inlude pictures of oceans, stellar interiors, and other things
+\bmp{.49}
+    \includegraphics[width=\textwidth]{ocean_thermocline_NOS_NOAA.jpg}
+\emp
 
 \end{frame}
 
@@ -125,7 +129,6 @@ inlude pictures of oceans, stellar interiors, and other things
     {\footnotesize
     Nonrotating stratified turbulence is characterized by strongly
     anisotropic pancake structures within the flow. 
-
     \begin{figure}
         \centering
         \includegraphics[width=.9\textwidth]{images/uB100XZSlice.png}
@@ -206,14 +209,14 @@ stratification on vertical mixing in the flow.
 
     We choose our forcing to be purely horizontal and divergence-free:
     \[
-        \bs{F} = F_x\ex + F_y\ey, \quad \grad \cdot \uvec = 0
+        \bs{F} = F_x\ex + F_y\ey, \quad \grad \cdot \bs{F} = 0
     \]
     The forcing is applied in spectral space and satisfies $\bs{k} \cdot \hat{\bs{F}} = 0$:
     \begin{gather*}
         \hat{F}_x = \frac{k_y}{|\bs{k}_h|}G(\bs{k}_h,t), \quad \hat{F}_y = \frac{-k_x}{|\bs{k}_h|}G(\bs{k}_h,t)\\
     \end{gather*}
     where $G(\bs{k}_h,t)$ is a Gaussian process of amplitude 1 and correlation
-    timescale 1, where $|\bs{k}_h| \le \sqrt{2}$. 
+    timescale 1, and $|\bs{k}_h| \le \sqrt{2}$. 
 
 
 \end{frame}
@@ -276,12 +279,16 @@ stratification on vertical mixing in the flow.
 
 \begin{frame}{Rotating Stratified Turbulence}
     Increasing rotation, typical rotating flows
+
+    %\embedvideo*{\includegraphics[width=\textwidth]{ocean_thermocline_NOS_NOAA.jpg}}{images/B100XYPlane.mp4}
+
+
     \bmp{.235}
         \centering
         $1/Ro = 1$
-        \vspace{2pt}
-        \includegraphics[width=\textwidth]{images/}
-        \includegraphics[width=\textwidth]{images/XZB1ux.png}
+        %\vspace{2pt}
+        %\includegraphics[width=\textwidth]{images/}
+        %\includegraphics[width=\textwidth]{images/XZB1ux.png}
     \emp
     \hspace{1pt}
     \bmp{.235}
@@ -341,26 +348,26 @@ stratification on vertical mixing in the flow.
 % Energy Spectrum
 \begin{frame}{Inverse Energy Cascade}
 
-    %%\bmp{.33}
-        %\centering
-        %$Ro^{-1} = 1$
-        %\includegraphics[width=\textwidth]{images/Om1Spec.pdf}
-    %\emp
-%
-    \bmp{.33}
+    \bmp{.46}
         \centering
-        $Ro^{-1} = 1$
-        \includegraphics[width=\textwidth]{images/Om1Spec.pdf}
+        {\small Nonrotating}
+        \includegraphics[width=.91\textwidth]{images/B30Spec.pdf}
     \emp
-    \bmp{.33}
+    \bmp{.46}
         \centering
-        $Ro^{-1} = 2$
-        \includegraphics[width=\textwidth]{images/Om2Spec.pdf}
+        {\small $Ro^{-1} = 1$}
+        \includegraphics[width=.99\textwidth]{images/Om1Spec.pdf}
     \emp
-    \bmp{.33}
+
+    \bmp{.46}
         \centering
-        $Ro^{-1} = 5$
-        \includegraphics[width=\textwidth]{images/Om5Spec.pdf}
+        {\small $Ro^{-1} = 2$}
+        \includegraphics[width=.94\textwidth]{images/Om2Spec.pdf}
+    \emp
+    \bmp{.46}
+        \centering
+        {\small $Ro^{-1} = 5$}
+        \includegraphics[width=.96\textwidth]{images/Om5Spec.pdf}
     \emp
 
 \end{frame}
@@ -379,30 +386,44 @@ stratification on vertical mixing in the flow.
     
 \end{frame}
 
-\begin{frame}{Vertically-Averaged Flow}
+\begin{frame}{Vertically-Averaged Flow: $\quad \widehat{(\cdot)} \equiv
+\frac{1}{L_z}\int(\cdot)dz}
     \centering
-    \bmp{.2}
-        {\footnotesize $Ro^{-1} = 1$}
-    \emp
-    \bmp{.37}
+    \bmp{.1}
         \centering
+        {\footnotesize $\widehat{\omega_z} + 2\Omega$}
+    \emp
+    \bmp{.3}
+        \centering
+        $1/Ro = 1$
         \includegraphics[width=1\textwidth]{images/Om1B30_vortz_bar.pdf}
     \emp
-    \bmp{.37}
+    \bmp{.3}
+        \centering
+        $1/Ro = 3$
+        \includegraphics[width=1\textwidth]{images/Om3B30_vortz_bar.pdf}
+    \emp
+    \bmp{.3}
+        \centering
+        $1/Ro = 10$
+        \includegraphics[width=1\textwidth]{images/Om10B30_vortz_bar.pdf}
+    \emp
+
+    \bmp{.1}
+        \centering
+        {\footnotesize $\widehat{w^2}$}
+    \emp
+    \bmp{.3}
         \centering
         \includegraphics[width=1\textwidth]{images/Om1B30_uzrms_bar.pdf}
     \emp
-
-    \bmp{.2}
-        {\footnotesize $Ro^{-1} = 3$}
-    \emp
-    \bmp{.37}
-        \centering
-        \includegraphics[width=1\textwidth]{images/Om3B30_vortz_bar.pdf}
-    \emp
-    \bmp{.37}
+    \bmp{.3}
         \centering
         \includegraphics[width=1\textwidth]{images/Om3B30_uzrms_bar.pdf}
+    \emp
+    \bmp{.3}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Om10B30_uzrms_bar.pdf}
     \emp
 
 \end{frame}
