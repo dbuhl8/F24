@@ -131,8 +131,7 @@ rotation influence dynamics.
     anisotropic pancake structures within the flow. 
     \begin{figure}
         \centering
-        \includegraphics[width=.9\textwidth]{images/uB100XZSlice.png}
-        \caption*{\scriptsize Vertical profile of horizontal velocity}
+        \includegraphics[width=.9\textwidth]{images/pancakes.pdf}
     \end{figure}
     } %end small
 \emp
@@ -144,8 +143,7 @@ rotation influence dynamics.
     
     \begin{figure}
         \centering
-        \includegraphics[width=.9\textwidth]{images/XZOm2ux.png}
-        \caption*{\scriptsize Vertical profile of horizontal velocity}
+        \includegraphics[width=.9\textwidth]{images/cylinders.pdf}
     \end{figure}
     } %end small
 \emp
@@ -232,19 +230,17 @@ stratification on vertical mixing in the flow.
     %B1 is -5:5
     \centering
 
-    Typical non-rotating flows, properties of stratified turbulence
-
-    main idea: show that this forcing produces flows which exhibit stratified
-    turbulence. 
+    Numerically integrating these equations in this domain produces anisotropic
+    flow structures. 
 
     \bmp{.235}
         \centering
         $1/Fr = 1$
         \vspace{2pt}
-        
-        %\includegraphics[width=\textwidth]{files/XYB1ux.png}
-        %\includegraphics[width=\textwidth]{files/XZB1ux.png}
-        %\includegraphics[width = \textwidth]{files/B1Spec.pdf}
+       
+        \includegraphics[width=\textwidth]{images/XYB1ux.png}
+        \includegraphics[width=\textwidth]{images/XZB1ux.png}
+        %\includegraphics[width = \textwidth]{images/B1Spec.pdf}
     \emp
     \hspace{1pt}
     \bmp{.235}
@@ -252,9 +248,9 @@ stratification on vertical mixing in the flow.
         $1/Fr = 3.16$
         \vspace{2pt}
         
-        %\includegraphics[width=\textwidth]{files/XYB10ux.png}
-        %\includegraphics[width=\textwidth]{files/XZB10ux.png}
-        %\includegraphics[width = \textwidth]{files/B10Spec.pdf}
+        \includegraphics[width=\textwidth]{images/XYB10ux.png}
+        \includegraphics[width=\textwidth]{images/XZB10ux.png}
+        %\includegraphics[width = \textwidth]{images/B10Spec.pdf}
     \emp
     \hspace{1pt}
     \bmp{.235}
@@ -262,9 +258,9 @@ stratification on vertical mixing in the flow.
         $1/Fr = 10$
         \vspace{2pt}
         
-        %\includegraphics[width=\textwidth]{files/XYB100ux.png}
-        %\includegraphics[width=\textwidth]{files/XZB100ux.png}
-        %\includegraphics[width = \textwidth]{files/B100Spec.pdf}
+        \includegraphics[width=\textwidth]{images/XYB100ux.png}
+        \includegraphics[width=\textwidth]{images/XZB100ux.png}
+        %\includegraphics[width = \textwidth]{images/B100Spec.pdf}
     \emp
     \hspace{1pt}
     \bmp{.235}
@@ -272,52 +268,55 @@ stratification on vertical mixing in the flow.
         $1/Fr = 17.36$
         \vspace{2pt}
         
-        %\includegraphics[width=.99\textwidth]{files/XYB300ux.png}
-        %\includegraphics[width=.99\textwidth]{files/XZB300ux.png}
-        %\includegraphics[width = \textwidth]{files/B300Spec.pdf}
+        \includegraphics[width=.99\textwidth]{images/XYB300ux.png}
+        \includegraphics[width=.99\textwidth]{images/XZB300ux.png}
+        %\includegraphics[width = \textwidth]{images/B300Spec.pdf}
     \emp
     \[\overrightarrow{\rm Stratification}\]
 \end{frame}
 
 \begin{frame}{Rotating Stratified Turbulence}
-    Increasing rotation, typical rotating flows
+    \centering
 
+    \bmp{.33}
+        \centering
+        $1/Ro = 0.5$
+        \vspace{2pt}
+        \embedvideo*{\includegraphics[width=.8\textwidth]{images/SC_Om0.5B30_XY.png}}{images/Om0.5B30_XY.mp4}
 
-
-    \bmp{.25}
+        %\includegraphics[width=\textwidth]{files/XYB100ux.png}
+        %\includegraphics[width=\textwidth]{files/XZB100ux.png}
+        %\includegraphics[width = \textwidth]{files/B100Spec.pdf}
+    \emp
+    \bmp{.33}
         \centering
         $1/Ro = 1$
+        \vspace{2pt}
+        \embedvideo*{\includegraphics[width=.8\textwidth]{images/SC_Om1B30_XY.png}}{images/Om1B30_XY.mp4}
         %\vspace{2pt}
         %\includegraphics[width=\textwidth]{images/}
         %\includegraphics[width=\textwidth]{images/XZB1ux.png}
     \emp
-    \bmp{.25}
+
+    \bmp{.33}
         \centering
         $1/Ro = 2$
         \vspace{2pt}
-        \embedvideo*{\includegraphics[width=\textwidth]{images/SC_Om2B30_XY.png}}{images/Om2B30_XY.mp4}
+        \embedvideo*{\includegraphics[width=.8\textwidth]{images/SC_Om2B30_XY.png}}{images/Om2B30_XY.mp4}
         %\includegraphics[width=\textwidth]{files/XYB10ux.png}
         %\includegraphics[width=\textwidth]{files/XZB10ux.png}
         %\includegraphics[width = \textwidth]{files/B10Spec.pdf}
     \emp
     \hspace{1pt}
-    \bmp{.235}
+    \bmp{.33}
         \centering
         $1/Ro = 5$
         \vspace{2pt}
-        
+        \embedvideo*{\includegraphics[width=.8\textwidth]{images/SC_Om5B30_XY.png}}{images/Om5B30_XY.mp4}
+
         %\includegraphics[width=\textwidth]{files/XYB100ux.png}
         %\includegraphics[width=\textwidth]{files/XZB100ux.png}
         %\includegraphics[width = \textwidth]{files/B100Spec.pdf}
-    \emp
-    \bmp{.25}
-        \centering
-        $1/Ro = 10$
-        \vspace{2pt}
-        
-        %\includegraphics[width=.99\textwidth]{files/XYB300ux.png}
-        %\includegraphics[width=.99\textwidth]{files/XZB300ux.png}
-        %\includegraphics[width = \textwidth]{files/B300Spec.pdf}
     \emp
 \end{frame}
 
@@ -484,8 +483,43 @@ stratification on vertical mixing in the flow.
 
 \begin{frame}{Correspondance between Planetary Vorticity and Mixing}
 
-    \includegraphics[width=\textwidth]{images/}
-    \includegraphics[width=\textwidth]{images/}
+    \centering
+    \bmp{.1}
+        \centering
+        {\footnotesize $\widehat{\omega_z} + Ro^{-1}$}
+    \emp
+    \bmp{.3}
+        \centering
+        $1/Ro = 1$
+        \includegraphics[width=1\textwidth]{images/Om1B30_vortz_bar.pdf}
+    \emp
+    \bmp{.3}
+        \centering
+        $1/Ro = 3$
+        \includegraphics[width=1\textwidth]{images/Om3B30_vortz_bar.pdf}
+    \emp
+    \bmp{.3}
+        \centering
+        $1/Ro = 10$
+        \includegraphics[width=1\textwidth]{images/Om10B30_vortz_bar.pdf}
+    \emp
+
+    \bmp{.1}
+        \centering
+        {\footnotesize $\frac{\widehat{|\grad T|^2}}{Fr^2Pe}$}
+    \emp
+    \bmp{.3}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Om1B30_uzrms_bar.pdf}
+    \emp
+    \bmp{.3}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Om3B30_uzrms_bar.pdf}
+    \emp
+    \bmp{.3}
+        \centering
+        \includegraphics[width=1\textwidth]{images/Om10B30_uzrms_bar.pdf}
+    \emp
 
 \end{frame}
 
