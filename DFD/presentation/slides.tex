@@ -1,6 +1,6 @@
-\documentclass{beamer}
+\documentclass[aspecttatio=169]{beamer}
 \title{The Effects of Rotation on Stratified Turbulence}
-%\author[Dante Buhl]{Dante Buhl {\scriptsize Advised by: Pascale Garaud, Hongyun Wang}}
+\author[Dante Buhl]{Dante Buhl \\{\scriptsize Advised by: Pascale Garaud}}
 \date{November 25, 2024}
 \institute{UCSC Applied Mathematics}
 \graphicspath{ {./images/} }
@@ -110,9 +110,9 @@ rotation influence dynamics.
 } %end small
 \end{itemize}
 
-\bmp{.49}
-    \includegraphics[width=\textwidth]{ocean_thermocline_NOS_NOAA.jpg}
-\emp
+%\bmp{.49}
+    %\includegraphics[width=\textwidth]{ocean_thermocline_NOS_NOAA.jpg}
+%\emp
 
 \end{frame}
 
@@ -139,7 +139,7 @@ rotation influence dynamics.
 \hspace{6pt}
 \bmp{.47}
     {\footnotesize
-    Rotation promotes barotropic structures which are invaraint along the axis
+    Rotation promotes barotropic structures which are invariant along the axis
     of rotation.
     
     \begin{figure}
@@ -160,6 +160,7 @@ stratification on vertical mixing in the flow.
 \end{frame}
 
 \begin{frame}{Schematic}
+    We condider a tripply periodic domain: 
     \includegraphics[width = \textwidth]{images/schematic.pdf}
 
     %\hl{add temp profile, gravity}
@@ -207,7 +208,8 @@ stratification on vertical mixing in the flow.
 
 \begin{frame}{Forcing Mechanism}
 
-    We choose our forcing to be purely horizontal and divergence-free:
+    We choose the forcing to be purely horizontal and divergence-free stochastic
+    process:
     \[
         \bs{F} = F_x\ex + F_y\ey, \quad \grad \cdot \bs{F} = 0
     \]
@@ -280,22 +282,20 @@ stratification on vertical mixing in the flow.
 \begin{frame}{Rotating Stratified Turbulence}
     Increasing rotation, typical rotating flows
 
-    %\embedvideo*{\includegraphics[width=\textwidth]{ocean_thermocline_NOS_NOAA.jpg}}{images/B100XYPlane.mp4}
 
 
-    \bmp{.235}
+    \bmp{.25}
         \centering
         $1/Ro = 1$
         %\vspace{2pt}
         %\includegraphics[width=\textwidth]{images/}
         %\includegraphics[width=\textwidth]{images/XZB1ux.png}
     \emp
-    \hspace{1pt}
-    \bmp{.235}
+    \bmp{.25}
         \centering
-        $1/Ro = 3.16$
+        $1/Ro = 2$
         \vspace{2pt}
-        
+        \embedvideo*{\includegraphics[width=\textwidth]{images/SC_Om2B30_XY.png}}{images/Om2B30_XY.mp4}
         %\includegraphics[width=\textwidth]{files/XYB10ux.png}
         %\includegraphics[width=\textwidth]{files/XZB10ux.png}
         %\includegraphics[width = \textwidth]{files/B10Spec.pdf}
@@ -303,17 +303,16 @@ stratification on vertical mixing in the flow.
     \hspace{1pt}
     \bmp{.235}
         \centering
-        $1/Fr = 10$
+        $1/Ro = 5$
         \vspace{2pt}
         
         %\includegraphics[width=\textwidth]{files/XYB100ux.png}
         %\includegraphics[width=\textwidth]{files/XZB100ux.png}
         %\includegraphics[width = \textwidth]{files/B100Spec.pdf}
     \emp
-    \hspace{1pt}
-    \bmp{.235}
+    \bmp{.25}
         \centering
-        $1/Fr = 17.36$
+        $1/Ro = 10$
         \vspace{2pt}
         
         %\includegraphics[width=.99\textwidth]{files/XYB300ux.png}
@@ -391,7 +390,7 @@ stratification on vertical mixing in the flow.
     \centering
     \bmp{.1}
         \centering
-        {\footnotesize $\widehat{\omega_z} + 2\Omega$}
+        {\footnotesize $\widehat{\omega_z} + Ro^{-1}$}
     \emp
     \bmp{.3}
         \centering
@@ -430,14 +429,25 @@ stratification on vertical mixing in the flow.
 
 \begin{frame}{Temperature Transport and Mixing in the Flow}
     \bmp{.49}
-        % eta
+        % buoyancy flux
         \centering
         \includegraphics[width=1\textwidth]{images/bflux_plot.pdf}
     \emp
     \bmp{.49}
-        % buoyancy flux
+        % eta
         \centering
         \includegraphics[width=.94\textwidth]{images/mixing_plot.pdf}
+    \emp
+
+    \vspace{10pt}
+
+    \bmp{.49}
+        \[\]
+    \emp
+    \bmp{.49}
+         \[\eta = \frac{\frac{|\grad T|^2}{Fr^2Pe}}{\frac{|\grad T|^2}{Fr^2Pe} +
+        \frac{|\grad \uvec|^2}{Re}}
+        \]
     \emp
 \end{frame}
 

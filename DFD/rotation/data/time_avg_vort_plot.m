@@ -152,7 +152,7 @@ sd = s1(1)/nd
 % in order to plot this by individual timestep, you have to restrict the plot by column 3 which is the timestep. 
 
 time_col = 3;
-[row,col] = find(vort(:,time_col) == vort(s1(1),time_col));
+[row,col] = find(vort(:,time_col) == vort(s1(1)-2*nd,time_col));
 s2 = size(vort(row,time_col));
 
 np = 64; colors = zeros(np);
@@ -262,6 +262,8 @@ colorbar
 %clim([0,1.2])
 title("$\widehat{w^2}$", 'Interpreter','latex','FontSize',22)
 saveas(gcf,'Om3B30_uzrms_bar.pdf')
+
+figure('color','white')
 
 surf(x1, y1, z5)
 xlim([0,766])
@@ -399,6 +401,8 @@ colorbar
 %clim([0,1.2])
 title("$\widehat{w^2}$", 'Interpreter','latex','FontSize',22)
 saveas(gcf,'Om10B30_uzrms_bar.pdf')
+
+figure('color','white')
 
 surf(x1, y1, z5)
 xlim([0,766])
