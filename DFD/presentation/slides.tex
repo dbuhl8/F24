@@ -187,6 +187,8 @@ stratification on vertical mixing in the flow.
         Re = \frac{UL}{\nu}, \quad Pe = \frac{UL}{\kappa}, \quad Fr =
         \frac{U}{NL}, \quad Ro = \frac{U}{2\Omega L}
     \end{align*}
+    In what follows, simulations will be conducted with $Re = 600$ and $Pe = 60$
+    ($Pr = 0.1$).
     }
     %\begin{itemize}
         %\item $U$ is the characteristic velocity
@@ -222,7 +224,7 @@ stratification on vertical mixing in the flow.
 \end{frame}
 
 % what are the flow structures that we obtain?
-\begin{frame}{Non-rotating Stratified Turbulence}
+\begin{frame}{Non-Rotating Stratified Turbulence}
     % Ux rms figure
     % plot info: B100 is -3.5:3.5
     % B300 is -5:5
@@ -230,59 +232,70 @@ stratification on vertical mixing in the flow.
     %B1 is -5:5
     \centering
 
-    Numerically integrating these equations in this domain produces anisotropic
-    flow structures. 
+    Decreasing the Froude number creates increasingly anisotropic structures in
+    $u$. 
+
+    \vspace{5pt}
 
     \bmp{.235}
         \centering
-        $1/Fr = 1$
-        \vspace{2pt}
        
         \includegraphics[width=\textwidth]{images/XYB1ux.png}
         \includegraphics[width=\textwidth]{images/XZB1ux.png}
+        \vspace{2pt}
+        $1/Fr = 1$
         %\includegraphics[width = \textwidth]{images/B1Spec.pdf}
     \emp
     \hspace{1pt}
     \bmp{.235}
         \centering
-        $1/Fr = 3.16$
-        \vspace{2pt}
         
         \includegraphics[width=\textwidth]{images/XYB10ux.png}
         \includegraphics[width=\textwidth]{images/XZB10ux.png}
+        \vspace{2pt}
+        $1/Fr = 3.16$
         %\includegraphics[width = \textwidth]{images/B10Spec.pdf}
     \emp
     \hspace{1pt}
     \bmp{.235}
         \centering
-        $1/Fr = 10$
-        \vspace{2pt}
         
         \includegraphics[width=\textwidth]{images/XYB100ux.png}
         \includegraphics[width=\textwidth]{images/XZB100ux.png}
-        %\includegraphics[width = \textwidth]{images/B100Spec.pdf}
+         \vspace{2pt}
+        $1/Fr = 10$
+       %\includegraphics[width = \textwidth]{images/B100Spec.pdf}
     \emp
     \hspace{1pt}
     \bmp{.235}
         \centering
-        $1/Fr = 17.36$
-        \vspace{2pt}
         
         \includegraphics[width=.99\textwidth]{images/XYB300ux.png}
         \includegraphics[width=.99\textwidth]{images/XZB300ux.png}
+        \vspace{2pt}
+        $1/Fr = 17.36$
+
         %\includegraphics[width = \textwidth]{images/B300Spec.pdf}
     \emp
+
     \[\overrightarrow{\rm Stratification}\]
 \end{frame}
 
-\begin{frame}{Rotating Stratified Turbulence}
+\begin{frame}{Rotating Stratified Turbulence at fixed $Fr = 0.18$}
     \centering
 
-    \bmp{.33}
+   \bmp{.33}
+        Evolution of $\omega_z$
+   \emp
+   \bmp{.33}
         \centering
         $1/Ro = 0.5$
         \vspace{2pt}
         \embedvideo*{\includegraphics[width=.8\textwidth]{images/SC_Om0.5B30_XY.png}}{images/Om0.5B30_XY.mp4}
+        \vspace{5pt}
+        $1/Ro = 2$
+        \vspace{2pt}
+        \embedvideo*{\includegraphics[width=.8\textwidth]{images/SC_Om2B30_XY.png}}{images/Om2B30_XY.mp4}
 
         %\includegraphics[width=\textwidth]{files/XYB100ux.png}
         %\includegraphics[width=\textwidth]{files/XZB100ux.png}
@@ -293,34 +306,16 @@ stratification on vertical mixing in the flow.
         $1/Ro = 1$
         \vspace{2pt}
         \embedvideo*{\includegraphics[width=.8\textwidth]{images/SC_Om1B30_XY.png}}{images/Om1B30_XY.mp4}
-        %\vspace{2pt}
-        %\includegraphics[width=\textwidth]{images/}
-        %\includegraphics[width=\textwidth]{images/XZB1ux.png}
-    \emp
-
-    \bmp{.33}
-        \centering
-        $1/Ro = 2$
-        \vspace{2pt}
-        \embedvideo*{\includegraphics[width=.8\textwidth]{images/SC_Om2B30_XY.png}}{images/Om2B30_XY.mp4}
-        %\includegraphics[width=\textwidth]{files/XYB10ux.png}
-        %\includegraphics[width=\textwidth]{files/XZB10ux.png}
-        %\includegraphics[width = \textwidth]{files/B10Spec.pdf}
-    \emp
-    \hspace{1pt}
-    \bmp{.33}
-        \centering
+        \vspace{5pt}
         $1/Ro = 5$
         \vspace{2pt}
         \embedvideo*{\includegraphics[width=.8\textwidth]{images/SC_Om5B30_XY.png}}{images/Om5B30_XY.mp4}
 
-        %\includegraphics[width=\textwidth]{files/XYB100ux.png}
-        %\includegraphics[width=\textwidth]{files/XZB100ux.png}
-        %\includegraphics[width = \textwidth]{files/B100Spec.pdf}
     \emp
+
 \end{frame}
 
-\begin{frame}{Vertically-invariant Structures in the flow}
+\begin{frame}{Vertically-Invariant Structures in the flow}
     \centering
     \bmp{0.07}
         $\omega_z$
@@ -435,51 +430,54 @@ stratification on vertical mixing in the flow.
     \bmp{.49}
         % eta
         \centering
-        \includegraphics[width=.94\textwidth]{images/mixing_plot.pdf}
+        \includegraphics[width=.91\textwidth]{images/mixing_plot.pdf}
     \emp
 
     \vspace{10pt}
 
     \bmp{.49}
-        \[\]
+        \[\left< \bs{F}\cdot \uvec\right> = -\frac{\left<wT\right>}{Fr^2} +
+        \frac{\left<|\grad \uvec|^2\right>}{Re}\]
+        \[ -\left<wT\right> = \frac{\left<|\grad T|^2\right>}{Pe}\]
     \emp
     \bmp{.49}
-         \[\eta = \frac{\frac{|\grad T|^2}{Fr^2Pe}}{\frac{|\grad T|^2}{Fr^2Pe} +
-        \frac{|\grad \uvec|^2}{Re}}
+         \[\eta = \frac{\frac{\left<|\grad
+         T|^2\right>}{Fr^2Pe}}{\frac{\left<|\grad T|^2\right>}{Fr^2Pe} +
+        \frac{\left<|\grad \uvec|^2\right>}{Re}}
         \]
     \emp
 \end{frame}
 
 
-\begin{frame}{Mixing and Vertical Vorticity}
-    \centering
-    \bmp{0.07}
-        $\omega_z$
+%\begin{frame}{Mixing and Vertical Vorticity}
+    %\centering
+    %\bmp{0.07}
+        %$\omega_z$
 
-        \vspace{75pt}
+        %\vspace{75pt}
 
-        $\frac{|\nabla T|^2}{Pe}$
-    \emp
-    \bmp{0.31}
-        \centering
-        $1/Ro = 1$
-        \includegraphics[width=.95\textwidth]{images/vortz_Om0.5_vr2.png}
-        \includegraphics[width=.95\textwidth]{images/chi_Om0.5_vr2.png}
-    \emp
-    \bmp{0.31}
-        \centering
-        $1/Ro = 2$
-        \includegraphics[width=.95\textwidth]{images/vortz_Om2_vr2.png}
-        \includegraphics[width=.95\textwidth]{images/chi_Om2_vr2.png}
-    \emp
-    \bmp{0.31}
-        \centering
-        $1/Ro = 10$
-        \includegraphics[width=.95\textwidth]{images/vortz_Om10_vr2.png}
-        \includegraphics[width=.95\textwidth]{images/chi_Om10_vr2.png}
-    \emp
+        %$\frac{|\nabla T|^2}{Pe}$
+    %\emp
+    %\bmp{0.31}
+        %\centering
+        %$1/Ro = 1$
+        %\includegraphics[width=.95\textwidth]{images/vortz_Om0.5_vr2.png}
+        %\includegraphics[width=.95\textwidth]{images/chi_Om0.5_vr2.png}
+    %\emp
+    %\bmp{0.31}
+        %\centering
+        %$1/Ro = 2$
+        %\includegraphics[width=.95\textwidth]{images/vortz_Om2_vr2.png}
+        %\includegraphics[width=.95\textwidth]{images/chi_Om2_vr2.png}
+    %\emp
+    %\bmp{0.31}
+        %\centering
+        %$1/Ro = 10$
+        %\includegraphics[width=.95\textwidth]{images/vortz_Om10_vr2.png}
+        %\includegraphics[width=.95\textwidth]{images/chi_Om10_vr2.png}
+    %\emp
 
-\end{frame}
+%\end{frame}
 
 \begin{frame}{Correspondance between Planetary Vorticity and Mixing}
 
@@ -524,7 +522,7 @@ stratification on vertical mixing in the flow.
 \end{frame}
 
 
-\begin{frame}{Conclusion}
+\begin{frame}{Summary}
 
     \begin{itemize}
     \item For $Ro > 1$, no significant change from the non-rotating case
@@ -539,8 +537,4 @@ stratification on vertical mixing in the flow.
 
 \end{frame}
 
-{\scriptsize
-\bibliographystyle{apj}
-\bibliography{BuhlThesis}
-}
 \end{document}

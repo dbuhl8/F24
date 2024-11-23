@@ -1,0 +1,6 @@
+In order to encode videos using ffmpeg you must have a sequence of PNG images such as the ones in the following subdirectories.
+
+An example usage of ffmpeg to achieve this is:
+$ ffmpeg -r 10 -i Om5B30_XY_movie%04d.png -start_number 81 -c:v libx264 -pix_fmt yuv420p Om5B30_XY.mp4
+
+This takes a sequence of png files with the prefix "Om5B30_XY_movie####.png" (-i is the input flag, and %04d signifies there will be four digits) starting with image numbered 81 (-start_number signifies which willbe the first frame). The resulting mp4 file will have a framerate of 10fps. The -c:v libx264, and -pix_fmt yuv420p are necessary, but I can't honestly tell you what they do besides one is a pixel format and the other is the video codec. 

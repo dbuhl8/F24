@@ -1,0 +1,290 @@
+\documentclass{article}
+
+\usepackage{graphicx} % Required for inserting images
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm} %proof environment
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{enumitem} %nice lists
+\usepackage{verbatim} %useful for something 
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{blindtext} % I have no idea what this is 
+\usepackage{caption}  % need this for unnumbered captions/figures
+\usepackage{natbib}
+\usepackage{tikz}
+\usepackage{soul} % need this for the hl command
+\usepackage{hyperref}
+
+\begin{document}
+
+\title{The Effects of Rotation on Stratified Turbulence}
+\author{Dante Buhl \\{\small Advised by: Pascale Garaud}}
+\date{November 25, 2024}
+
+
+\newcommand{\wrms}{w_{\text{rms}}}
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+\newcommand{\tb}[1]{\textbf{#1}}
+\newcommand{\bmp}[1]{\begin{minipage}{#1\textwidth}}
+\newcommand{\emp}{\end{minipage}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\K}{\bs{\mathrm{K}}}
+\newcommand{\m}{\bs{\mu}_*}
+\newcommand{\s}{\bs{\Sigma}_*}
+\newcommand{\dt}{\Delta t}
+\newcommand{\dx}{\Delta x}
+\newcommand{\tr}[1]{\text{Tr}(#1)}
+\newcommand{\Tr}[1]{\text{Tr}(#1)}
+\newcommand{\Div}{\nabla \cdot}
+\renewcommand{\div}{\nabla \cdot}
+\newcommand{\Curl}{\nabla \times}
+\newcommand{\Grad}{\nabla}
+\newcommand{\grad}{\nabla}
+\newcommand{\grads}{\nabla_s}
+\newcommand{\gradf}{\nabla_f}
+\newcommand{\xs}{\bs{x}_s}
+\newcommand{\xf}{\bs{x}_f}
+\newcommand{\ts}{t_s}
+\newcommand{\tf}{t_f}
+\newcommand{\pt}{\partial t}
+\newcommand{\pz}{\partial z}
+\newcommand{\uvec}{\bs{u}}
+\newcommand{\F}{\bs{F}}
+\newcommand{\T}{\tilde{T}}
+\newcommand{\ez}{\bs{e}_z}
+\newcommand{\ex}{\bs{e}_x}
+\newcommand{\ey}{\bs{e}_y}
+\newcommand{\eo}{\bs{e}_{\bs{\Omega}}}
+\newcommand{\ppt}[1]{\frac{\partial #1}{\partial t}}
+\newcommand{\ppts}[1]{\frac{\partial #1}{\partial t_s}}
+\newcommand{\pptf}[1]{\frac{\partial #1}{\partial t_f}}
+\newcommand{\ppz}[1]{\frac{\partial #1}{\partial z}}
+\newcommand{\ddz}[1]{\frac{d #1}{d z}}
+\newcommand{\ppzetas}[1]{\frac{\partial^2 #1}{\partial \zeta^2}}
+\newcommand{\ppzs}[1]{\frac{\partial #1}{\partial z_s}}
+\newcommand{\ppzf}[1]{\frac{\partial #1}{\partial z_f}}
+\newcommand{\ppx}[1]{\frac{\partial #1}{\partial x}}
+\newcommand{\ppy}[1]{\frac{\partial #1}{\partial y}}
+\newcommand{\ppzeta}[1]{\frac{\partial #1}{\partial \zeta}}
+
+
+\maketitle 
+
+\section{Intro Slide}
+
+\section{Motivation 1}
+\begin{itemize}
+    \item We are studying rotating stratified turbulence, as stratified
+    turbulence plays a crucial role in mixing and vertical transport in many
+    geophysical and astrophysical fliud dynamics. 
+    \item In many geophysical flows, both stratification and rotation influence
+    dynamics. Some popular examples are the oceans' thermocline, and the Solar
+    Tachocline. 
+\end{itemize}
+
+\section{Motivation 2}
+\begin{itemize}
+    \item This problem is particularly interesting because of the competing
+    nature of stratification and rotation.
+    \item Stably stratified flows are typically characterized by strong
+    anisotropy, where pancake structures are formed with an aspect ratio
+    controlled by the Froude number. 
+    \item Rotating flows, by contrast, often form tall cylindrical vorticies
+    along the axis of rotation. 
+    \item Using DNS, we attempt to study these competing dynamics and their
+    affect on mixing in the flow. 
+\end{itemize}
+
+\section{Schematic}
+\begin{itemize}
+    \item Our DNS will use a tripply periodic domain with horizontal lengths of
+    $4\pi$ in x and y, and a vertical length of $\pi$. 
+    \item This domain will have a linear background Temperature profile which is
+    hot at the top and cool at the bottom providing stable stratification. 
+    \item The rotation axis will be aligned with the z-axis and gravity which
+    effectively means we are studying the effect of rotation at the poles. 
+\end{itemize}
+
+\section{Governing Equations}
+\begin{itemize}
+    \item Our governing equations are the standard incompressible Boussinesque
+    equations which have been nondimensionalized
+    using a characteristic velocity $U$, a large-eddy horizontal length scale
+    $L$, a buoyancy frequency $N$, planetary angular velocity $\Omega$, and
+    viscous and thermal diffusivity coefficients $\nu$ and $\kappa$
+    respectively. 
+    \item We are able to define the Reynolds, Peclet, Froude, and Rossby numbers
+    according to this nondimensionalization. And in the DNS that follow, we have
+    fixed the Reynolds number to 600 and Peclet number to $60$, which implies a
+    Prandtl number of $0.1$. 
+\end{itemize}
+
+\section{Forcing Mechanism}
+\begin{itemize}
+    \item Finally, we employ a stochastic forcing mechanism which is purely
+    horizontal and divergence free. 
+    \item This forcing will be employeed in spectral space and will therefore be
+    dependent on the wavenumber. Specifically, we chose only to force horizontal
+    wavenumbers which are in absolute value less than or equal to $\sqrt{2}$,
+    which implies a minimum forcing lengthscale of a little less than half of
+    the domain.
+    \item The stochastic process used is a Gaussian process prescribed to be of
+    amplitude 1 and correlation timescale 1. 
+    \item (Optional) similar forcing mechanisms have been used by several
+    studies of stratified turbulence in the past c.f. Waite and Bartello
+    (2004)/(2006)
+\end{itemize}
+
+\section{Non-rotating Stratified Turbulence}
+\begin{itemize}
+    \item Before studing the effect of rotation, we conducted DNS in order to
+    validate this forcing mechanism as we have employeed it. 
+    \item The images on this plot show the x-component of the velocity field
+    along the top of the domain and the front of the domain in the top and
+    bottom rows respectively. Note that the strength of the stratification
+    increases from left to right. 
+    \item Consistent with prior studies of stratified turbulence, we see that
+    the flow becomes increasingly anisotropic as the Froude number decreases. 
+    \item Now that we have confirmed that this forcing mechanism produces
+    stratified turbulence we are ready to study the effect of rotation. 
+\end{itemize}
+
+\section{Rotating Stratified Turbulence at Fixed $Fr = 0.18$}
+\begin{itemize}
+    \item Here you see the vertical component of the vorticity field
+    along the top of the domain for simulations with varying rotation rate. Note
+    that the larger the inverse Rossby number, the more rapidly rotating the
+    flow is. 
+    \item Notice that in the more weakly rotating simulations (top row), there do not
+    appear to be any stable structures which retain their form. For the more
+    rapidly rotating simulations (bottom row), a stable vortex has appeared
+    corresponding to the areas of strong vertical vortcity shown in red. 
+\end{itemize}
+
+\section{Vertically-Invariant structures in the flow ($Fr = 0.18$)}
+\begin{itemize}
+    \item Further investigation of these vortices reveals that they are indeed
+    vertically invariant, that is the vortex penetrates the entire vertical extent
+    of the domain. 
+    \item Here you see volume renderings of the vertical vorticity shaded
+    according to a gaussian transfer function visible in the colorbar on each plot. 
+    \item Notice that in the weakly rotating simulation (left) there does not
+    appear to be any vortex in the flow, in the moderately rotating simulation
+    (middle),
+    the vortex appears to be vertically invariant, but the regions outside of
+    the vortex are seemingly still turbulent and have non-uniform vertical
+    structures. Finally, in the rapidly rotating simulation (right), the region outside
+    of the main cyclonic vortex seems to have formed into an anti-cyclone which
+    exhibits weak vertical variance. 
+    \item What this seems to indicate is that as the rotation rate increases,
+    more energy is being put into large-scale horizontal modes of the velocity. 
+\end{itemize}
+
+\section{Inverse energy Cascade ($Fr = 0.18$)}
+\begin{itemize}
+    \item This suspicion is confirmed by the energy spectra for the horizontal
+    wavenumbers of the flow. 
+    \item Each plot has the absolute horizontal wavenumber along the x-axis and
+    the energy along the y-axis. Furthemore, the horizontal energy is shown in red, and the vertical
+    energy is shown in blue. Each plot has a red line which corresponds to a
+    $|\bs{k}_h|^{-5/3}$ energy spectrum, and a blue dashed line which
+    corresponds to the smallest horizontal wavenumber which is forced in each
+    simulation. 
+    \item Inspecting these spectra, we deduce that the simulation with inverse
+    Rossby of 1, has an energy spectrum very similar to the non-rotating case
+    and this confirms that the effect of rotation on this simulation is minimal. 
+    \item For the two spectra presented from higher inverse Rossby number, we
+    see an increase of energy in the smallest horizontal wavenumbers, indicative
+    of an inverse energy cascade. Furthermore, we see that for the simulation
+    with the highest inverse rossby number shown the horizontal energy spectrum
+    seems to follow the $|\bs{k}_h|^{-5/3}$ very nicely (with the exception of
+    the forcing also providing some additional energy). 
+\end{itemize}
+
+\section{R.M.S. Data}
+\begin{itemize}
+    \item transition sentence
+    \item These plots depict time-averaged rms quantities of the total
+    horizontal velocity (left) and the vertical velocity (right) from different
+    simulations as they vary with inverse Rossby number. The series of blue
+    points correspond to the simulations with $Fr = 0.18$ and the points in red
+    correspond to the simulations with $Fr = 0.1$. Finally, the full circles
+    represent data taken from simulations which are statistically stationary,
+    and the hollow circles represent data taken from simulations which had not
+    yet reached a statistically stationary state. 
+    \item As expected due to the inverse energy cascade, the horizontal rms
+    velocity seems to increase proportionally to the inverse rossby number and
+    doesn't seem to depend on the Froude number.
+    \item The vertical velocity which for small inverse Rossby number, is
+    dependent on the Froude number, seems to become less dependent on the
+    Froude number as the inverse Rossby number inreases. The data suggests that
+    for moderate rotation rates the vertical rms velocity is roughly constant
+    and may decrease for strong rotation rate. 
+    \item This is a bit odd at first, since as the rotation rate increases we
+    expect there to be less vertical energy in the flow. 
+\end{itemize}
+
+\section{Vertically-Averaged Flow}
+\begin{itemize}
+    \item In order to investigate this further, we used a vertical average to
+    understand how the vortices affect the flow. 
+    \item Here we show the vertically averaged planetary vorticity (top row) and
+    vertical velocity squared (bottom row) from simulations of varying rotation
+    rates. 
+    \item For the weakly rotating simulation (left) there doesn't appear to be
+    any correlation between the planetary vorticity and squared vertical
+    velocity. For the moderately rotating simulation (middle), in the vortex,
+    where the planetary vorticity is strongest, there seems to be a void in the
+    squared vertical velocity. And in the stronger rotating simulation (right),
+    vertical motion seems to be entirely restricted to the anti-cyclone which
+    coresponds to the region of near zero planetary vorticity. 
+    \item This gives us a much better understanding of where vertical motions
+    can take place in the flow. 
+\end{itemize}
+
+\section{Temperature Transport and Mixing in the Flow}
+\begin{itemize}
+    \item Next we see if the Temperature transport and mixing are affected by
+    the vortex in the same way. 
+    \item Similar to the plot of the vertical rms velocity shown earlier, both
+    the Temperature Flux (left), and mixing efficiency (right) seem to remain constant for
+    weak and moderate rotation rates. This is likely due to the fact that the
+    volume fraction of the domain which inhibit vertical motions is still
+    relatively small.  
+    \item I should note that the mixing efficiency for these simulations,
+    is rather high, and thats simply because we are in the Low Prandtl Number
+    limit (i.e. the flow is very thermally diffusive)
+\end{itemize}
+
+\section{Correspondance between Planetary Vorticity and Mixing}
+\begin{itemize}
+    \item To confirm the suspicion that mixing is inhibitted by the vortex core
+    and vertically-invariant structures within the flow, we compare the
+    vertically averaged planetary vorticity to the thermal dissipation within
+    the flow. 
+    \item Similar to the plots of the squared vertical velocity, we see that
+    thermal dissipation is inhibitted within the vortex core for the
+    moderately rotating simulation (middle) and is strictly limited to the
+    anti-cyclone for the strongly rotating simulation (right). 
+\end{itemize}
+
+\section{Summary}
+\begin{itemize}
+    \item To conclude, what we have learned from this work is the following:
+    \item For $Ro \le 1$, there is no significant change from the non-rotating
+    DNS. 
+    \item For $1 > Ro > Fr$, the flow becomes increasingly two dimensional and
+    vertical mixing is localized to regions of low planetary vorticity. 
+    \item For particularly low Rossby numbers, the cyclones are especially
+    stable, and mixing is exclusively restricted to the anti-cyclones
+    within the flow. 
+    \item For $Ro > Fr$, the mixing efficiency is approximately constant. 
+\end{itemize}
+
+\end{document}
+
+

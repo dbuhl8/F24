@@ -2,7 +2,7 @@ load "paddim_v3_rotation.dat"
 set terminal postscript enh col "Times-Roman,30"
 set output "bflux_plot.eps"
 set xlabel "1/Ro"
-set ylabel "wT/(Fr^2)" rotate by 0
+set ylabel "|wT|/(Fr^2)" rotate by 0
 set format y "10^{%T}"
 set log xy
 set xrange [0.4:5]
