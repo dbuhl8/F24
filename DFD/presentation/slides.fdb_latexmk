@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1732501494 "slides.tex" "slides.pdf" "slides" 1732501494
+["pdflatex"] 1732519512 "slides.tex" "slides.pdf" "slides" 1732519512
   "/etc/texmf/web2c/texmf.cnf" 1698280066 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -284,10 +284,10 @@
   "images/vortz_Om10_vr2.png" 1732047721 438627 fb16138d367ebb6bcc873f0f4fea7c44 ""
   "images/vortz_Om2_vr2.png" 1732047718 627788 f5ac185ebff5399289602d1c58c1d366 ""
   "images/wrms_plot.pdf" 1732171312 9360 d2792721fc21325917375eb60ab1892d ""
-  "slides.aux" 1732501149 3246 7d666d3ab2addb1092c54a1fba6a8f19 "pdflatex"
-  "slides.nav" 1732501149 1574 f5abf7444d939a8c2cd188b6df8c9c87 "pdflatex"
-  "slides.out" 1732501148 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "slides.tex" 1732501491 15920 9c4e7962f39dcee5aa51921e8781eaed ""
+  "slides.aux" 1732519467 3246 7d666d3ab2addb1092c54a1fba6a8f19 "pdflatex"
+  "slides.nav" 1732519467 1574 f5abf7444d939a8c2cd188b6df8c9c87 "pdflatex"
+  "slides.out" 1732519466 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "slides.tex" 1732519510 15995 1f00e7d91d2d2db8b5aa56784a7bcdc8 ""
   (generated)
   "slides.aux"
   "slides.log"

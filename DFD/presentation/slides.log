@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.17)  24 NOV 2024 18:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.17)  24 NOV 2024 23:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -770,42 +770,42 @@ Package pdftex.def Info: images/schematic.pdf  used on input line 172.
 <images/XYB1ux.png, id=266, 576.65437pt x 578.16pt>
 File: images/XYB1ux.png Graphic file (type png)
 <use images/XYB1ux.png>
-Package pdftex.def Info: images/XYB1ux.png  used on input line 282.
+Package pdftex.def Info: images/XYB1ux.png  used on input line 285.
 (pdftex.def)             Requested size: 72.2133pt x 72.40215pt.
 <images/XZB1ux.png, id=267, 575.90157pt x 142.28156pt>
 File: images/XZB1ux.png Graphic file (type png)
 <use images/XZB1ux.png>
-Package pdftex.def Info: images/XZB1ux.png  used on input line 282.
+Package pdftex.def Info: images/XZB1ux.png  used on input line 285.
 (pdftex.def)             Requested size: 72.2133pt x 17.83942pt.
 <images/XYB10ux.png, id=268, 575.90157pt x 578.16pt>
 File: images/XYB10ux.png Graphic file (type png)
 <use images/XYB10ux.png>
-Package pdftex.def Info: images/XYB10ux.png  used on input line 282.
+Package pdftex.def Info: images/XYB10ux.png  used on input line 285.
 (pdftex.def)             Requested size: 72.2133pt x 72.49037pt.
 <images/XZB10ux.png, id=269, 575.90157pt x 142.28156pt>
 File: images/XZB10ux.png Graphic file (type png)
 <use images/XZB10ux.png>
-Package pdftex.def Info: images/XZB10ux.png  used on input line 282.
+Package pdftex.def Info: images/XZB10ux.png  used on input line 285.
 (pdftex.def)             Requested size: 72.2133pt x 17.83942pt.
 <images/XYB100ux.png, id=270, 578.91281pt x 577.40718pt>
 File: images/XYB100ux.png Graphic file (type png)
 <use images/XYB100ux.png>
-Package pdftex.def Info: images/XYB100ux.png  used on input line 282.
+Package pdftex.def Info: images/XYB100ux.png  used on input line 285.
 (pdftex.def)             Requested size: 72.2133pt x 72.02594pt.
 <images/XZB100ux.png, id=271, 577.40718pt x 143.03438pt>
 File: images/XZB100ux.png Graphic file (type png)
 <use images/XZB100ux.png>
-Package pdftex.def Info: images/XZB100ux.png  used on input line 282.
+Package pdftex.def Info: images/XZB100ux.png  used on input line 285.
 (pdftex.def)             Requested size: 72.2133pt x 17.88797pt.
 <images/XYB300ux.png, id=272, 574.39594pt x 572.89032pt>
 File: images/XYB300ux.png Graphic file (type png)
 <use images/XYB300ux.png>
-Package pdftex.def Info: images/XYB300ux.png  used on input line 282.
+Package pdftex.def Info: images/XYB300ux.png  used on input line 285.
 (pdftex.def)             Requested size: 71.49156pt x 71.2964pt.
 <images/XZB300ux.png, id=273, 575.90157pt x 145.29282pt>
 File: images/XZB300ux.png Graphic file (type png)
 <use images/XZB300ux.png>
-Package pdftex.def Info: images/XZB300ux.png  used on input line 282.
+Package pdftex.def Info: images/XZB300ux.png  used on input line 285.
 (pdftex.def)             Requested size: 71.49156pt x 18.03519pt.
  [7
 
@@ -813,45 +813,45 @@ Package pdftex.def Info: images/XZB300ux.png  used on input line 282.
 <images/SC_Om0.5B30_XY.png, id=307, 715.92468pt x 703.12688pt>
 File: images/SC_Om0.5B30_XY.png Graphic file (type png)
 <use images/SC_Om0.5B30_XY.png>
-Package pdftex.def Info: images/SC_Om0.5B30_XY.png  used on input line 316.
+Package pdftex.def Info: images/SC_Om0.5B30_XY.png  used on input line 319.
 (pdftex.def)             Requested size: 81.12527pt x 79.67235pt.
  <./images/SC_Om0.5B30_XY.png>
 File: images/SC_Om0.5B30_XY.png Graphic file (type png)
 <use images/SC_Om0.5B30_XY.png>
-Package pdftex.def Info: images/SC_Om0.5B30_XY.png  used on input line 316.
+Package pdftex.def Info: images/SC_Om0.5B30_XY.png  used on input line 319.
 (pdftex.def)             Requested size: 81.12527pt x 79.67235pt.
 <<images/Om2B30_XY.mp4>>
 <images/SC_Om2B30_XY.png, id=319, 718.93594pt x 705.38531pt>
 File: images/SC_Om2B30_XY.png Graphic file (type png)
 <use images/SC_Om2B30_XY.png>
-Package pdftex.def Info: images/SC_Om2B30_XY.png  used on input line 316.
+Package pdftex.def Info: images/SC_Om2B30_XY.png  used on input line 319.
 (pdftex.def)             Requested size: 81.12527pt x 79.59459pt.
  <./images/SC_Om2B30_XY.png>
 File: images/SC_Om2B30_XY.png Graphic file (type png)
 <use images/SC_Om2B30_XY.png>
-Package pdftex.def Info: images/SC_Om2B30_XY.png  used on input line 316.
+Package pdftex.def Info: images/SC_Om2B30_XY.png  used on input line 319.
 (pdftex.def)             Requested size: 81.12527pt x 79.59459pt.
 <<images/Om1B30_XY.mp4>>
 <images/SC_Om1B30_XY.png, id=330, 715.92468pt x 703.12688pt>
 File: images/SC_Om1B30_XY.png Graphic file (type png)
 <use images/SC_Om1B30_XY.png>
-Package pdftex.def Info: images/SC_Om1B30_XY.png  used on input line 316.
+Package pdftex.def Info: images/SC_Om1B30_XY.png  used on input line 319.
 (pdftex.def)             Requested size: 81.12527pt x 79.67235pt.
  <./images/SC_Om1B30_XY.png>
 File: images/SC_Om1B30_XY.png Graphic file (type png)
 <use images/SC_Om1B30_XY.png>
-Package pdftex.def Info: images/SC_Om1B30_XY.png  used on input line 316.
+Package pdftex.def Info: images/SC_Om1B30_XY.png  used on input line 319.
 (pdftex.def)             Requested size: 81.12527pt x 79.67235pt.
 <<images/Om5B30_XY.mp4>>
 <images/SC_Om5B30_XY.png, id=341, 715.92468pt x 703.12688pt>
 File: images/SC_Om5B30_XY.png Graphic file (type png)
 <use images/SC_Om5B30_XY.png>
-Package pdftex.def Info: images/SC_Om5B30_XY.png  used on input line 316.
+Package pdftex.def Info: images/SC_Om5B30_XY.png  used on input line 319.
 (pdftex.def)             Requested size: 81.12527pt x 79.67235pt.
  <./images/SC_Om5B30_XY.png>
 File: images/SC_Om5B30_XY.png Graphic file (type png)
 <use images/SC_Om5B30_XY.png>
-Package pdftex.def Info: images/SC_Om5B30_XY.png  used on input line 316.
+Package pdftex.def Info: images/SC_Om5B30_XY.png  used on input line 319.
 (pdftex.def)             Requested size: 81.12527pt x 79.67235pt.
  [8
 
@@ -859,17 +859,17 @@ Package pdftex.def Info: images/SC_Om5B30_XY.png  used on input line 316.
 <images/vortz_Om0.5_vr2.png, id=373, 721.19438pt x 694.84593pt>
 File: images/vortz_Om0.5_vr2.png Graphic file (type png)
 <use images/vortz_Om0.5_vr2.png>
-Package pdftex.def Info: images/vortz_Om0.5_vr2.png  used on input line 338.
+Package pdftex.def Info: images/vortz_Om0.5_vr2.png  used on input line 341.
 (pdftex.def)             Requested size: 90.49585pt x 87.1842pt.
 <images/vortz_Om2_vr2.png, id=374, 722.7pt x 688.82344pt>
 File: images/vortz_Om2_vr2.png Graphic file (type png)
 <use images/vortz_Om2_vr2.png>
-Package pdftex.def Info: images/vortz_Om2_vr2.png  used on input line 338.
+Package pdftex.def Info: images/vortz_Om2_vr2.png  used on input line 341.
 (pdftex.def)             Requested size: 90.49585pt x 86.24986pt.
 <images/vortz_Om10_vr2.png, id=375, 721.19438pt x 693.34032pt>
 File: images/vortz_Om10_vr2.png Graphic file (type png)
 <use images/vortz_Om10_vr2.png>
-Package pdftex.def Info: images/vortz_Om10_vr2.png  used on input line 338.
+Package pdftex.def Info: images/vortz_Om10_vr2.png  used on input line 341.
 (pdftex.def)             Requested size: 90.49585pt x 86.99529pt.
  [9
 
@@ -877,22 +877,22 @@ Package pdftex.def Info: images/vortz_Om10_vr2.png  used on input line 338.
 <images/B30Spec.pdf, id=403, 590.90758pt x 414.81975pt>
 File: images/B30Spec.pdf Graphic file (type pdf)
 <use images/B30Spec.pdf>
-Package pdftex.def Info: images/B30Spec.pdf  used on input line 366.
+Package pdftex.def Info: images/B30Spec.pdf  used on input line 369.
 (pdftex.def)             Requested size: 128.63391pt x 90.29851pt.
 <images/Om1Spec.pdf, id=404, 645.79268pt x 416.43584pt>
 File: images/Om1Spec.pdf Graphic file (type pdf)
 <use images/Om1Spec.pdf>
-Package pdftex.def Info: images/Om1Spec.pdf  used on input line 366.
+Package pdftex.def Info: images/Om1Spec.pdf  used on input line 369.
 (pdftex.def)             Requested size: 139.94261pt x 90.23727pt.
 <images/Om2Spec.pdf, id=405, 644.98969pt x 415.63278pt>
 File: images/Om2Spec.pdf Graphic file (type pdf)
 <use images/Om2Spec.pdf>
-Package pdftex.def Info: images/Om2Spec.pdf  used on input line 366.
+Package pdftex.def Info: images/Om2Spec.pdf  used on input line 369.
 (pdftex.def)             Requested size: 132.8744pt x 85.62384pt.
 <images/Om5Spec.pdf, id=406, 649.02472pt x 422.0869pt>
 File: images/Om5Spec.pdf Graphic file (type pdf)
 <use images/Om5Spec.pdf>
-Package pdftex.def Info: images/Om5Spec.pdf  used on input line 366.
+Package pdftex.def Info: images/Om5Spec.pdf  used on input line 369.
 (pdftex.def)             Requested size: 135.70212pt x 88.24799pt.
  [10
 
@@ -900,12 +900,12 @@ Package pdftex.def Info: images/Om5Spec.pdf  used on input line 366.
 <images/urms_plot.pdf, id=458, 616.74422pt x 455.18053pt>
 File: images/urms_plot.pdf Graphic file (type pdf)
 <use images/urms_plot.pdf>
-Package pdftex.def Info: images/urms_plot.pdf  used on input line 380.
+Package pdftex.def Info: images/urms_plot.pdf  used on input line 383.
 (pdftex.def)             Requested size: 150.57372pt x 111.12778pt.
 <images/wrms_plot.pdf, id=459, 588.48863pt x 464.86674pt>
 File: images/wrms_plot.pdf Graphic file (type pdf)
 <use images/wrms_plot.pdf>
-Package pdftex.def Info: images/wrms_plot.pdf  used on input line 380.
+Package pdftex.def Info: images/wrms_plot.pdf  used on input line 383.
 (pdftex.def)             Requested size: 144.55177pt x 114.18062pt.
  [11
 
@@ -913,38 +913,38 @@ Package pdftex.def Info: images/wrms_plot.pdf  used on input line 380.
 <images/Om1B30_vortz_bar.pdf, id=498, 338.09312pt x 259.29878pt>
 File: images/Om1B30_vortz_bar.pdf Graphic file (type pdf)
 <use images/Om1B30_vortz_bar.pdf>
-Package pdftex.def Info: images/Om1B30_vortz_bar.pdf  used on input line 422.
+Package pdftex.def Info: images/Om1B30_vortz_bar.pdf  used on input line 425.
 (pdftex.def)             Requested size: 92.1879pt x 70.704pt.
 <images/Om3B30_vortz_bar.pdf, id=499, 337.03917pt x 255.12318pt>
 File: images/Om3B30_vortz_bar.pdf Graphic file (type pdf)
 <use images/Om3B30_vortz_bar.pdf>
-Package pdftex.def Info: images/Om3B30_vortz_bar.pdf  used on input line 422.
+Package pdftex.def Info: images/Om3B30_vortz_bar.pdf  used on input line 425.
 (pdftex.def)             Requested size: 92.1879pt x 69.78342pt.
 <images/Om10B30_vortz_bar.pdf, id=500, 337.03914pt x 255.12318pt>
 File: images/Om10B30_vortz_bar.pdf Graphic file (type pdf)
 <use images/Om10B30_vortz_bar.pdf>
-Package pdftex.def Info: images/Om10B30_vortz_bar.pdf  used on input line 422.
+Package pdftex.def Info: images/Om10B30_vortz_bar.pdf  used on input line 425.
 (pdftex.def)             Requested size: 92.1879pt x 69.78342pt.
 <images/Om1B30_uzrms_bar.pdf, id=501, 341.22482pt x 250.9375pt>
 File: images/Om1B30_uzrms_bar.pdf Graphic file (type pdf)
 <use images/Om1B30_uzrms_bar.pdf>
-Package pdftex.def Info: images/Om1B30_uzrms_bar.pdf  used on input line 422.
+Package pdftex.def Info: images/Om1B30_uzrms_bar.pdf  used on input line 425.
 (pdftex.def)             Requested size: 92.1879pt x 67.79614pt.
 <images/Om3B30_uzrms_bar.pdf, id=502, 340.03937pt x 248.82965pt>
 File: images/Om3B30_uzrms_bar.pdf Graphic file (type pdf)
 <use images/Om3B30_uzrms_bar.pdf>
-Package pdftex.def Info: images/Om3B30_uzrms_bar.pdf  used on input line 422.
+Package pdftex.def Info: images/Om3B30_uzrms_bar.pdf  used on input line 425.
 (pdftex.def)             Requested size: 92.1879pt x 67.45827pt.
 <images/Om10B30_uzrms_bar.pdf, id=503, 343.18114pt x 251.98141pt>
 File: images/Om10B30_uzrms_bar.pdf Graphic file (type pdf)
 <use images/Om10B30_uzrms_bar.pdf>
-Package pdftex.def Info: images/Om10B30_uzrms_bar.pdf  used on input line 422.
+Package pdftex.def Info: images/Om10B30_uzrms_bar.pdf  used on input line 425.
 (pdftex.def)             Requested size: 92.1879pt x 67.68599pt.
 
-./slides.tex:422: Extra }, or forgotten $.
+./slides.tex:425: Extra }, or forgotten $.
 \insertframetitle ...frametitle continuation}\fi }
                                                   
-l.422 \end{frame}
+l.425 \end{frame}
                  
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -952,18 +952,18 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./slides.tex:422: Missing $ inserted.
+./slides.tex:425: Missing $ inserted.
 <inserted text> 
                 $
-l.422 \end{frame}
+l.425 \end{frame}
                  
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./slides.tex:422: Missing } inserted.
+./slides.tex:425: Missing } inserted.
 <inserted text> 
                 }
-l.422 \end{frame}
+l.425 \end{frame}
                  
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -977,39 +977,39 @@ my insertion and my current dilemma will both disappear.
 <images/bflux_plot.pdf, id=673, 635.40388pt x 453.30353pt>
 File: images/bflux_plot.pdf Graphic file (type pdf)
 <use images/bflux_plot.pdf>
-Package pdftex.def Info: images/bflux_plot.pdf  used on input line 449.
+Package pdftex.def Info: images/bflux_plot.pdf  used on input line 452.
 (pdftex.def)             Requested size: 150.57372pt x 107.41861pt.
 <images/mixing_plot.pdf, id=674, 577.98938pt x 457.59961pt>
 File: images/mixing_plot.pdf Graphic file (type pdf)
 <use images/mixing_plot.pdf>
-Package pdftex.def Info: images/mixing_plot.pdf  used on input line 449.
+Package pdftex.def Info: images/mixing_plot.pdf  used on input line 452.
 (pdftex.def)             Requested size: 137.02263pt x 108.47855pt.
  [13
 
  <./images/bflux_plot.pdf, page is rotated 90 degrees> <./images/mixing_plot.pdf, page is rotated 90 degrees>]
 File: images/Om1B30_vortz_bar.pdf Graphic file (type pdf)
 <use images/Om1B30_vortz_bar.pdf>
-Package pdftex.def Info: images/Om1B30_vortz_bar.pdf  used on input line 522.
+Package pdftex.def Info: images/Om1B30_vortz_bar.pdf  used on input line 525.
 (pdftex.def)             Requested size: 92.1879pt x 70.704pt.
 File: images/Om3B30_vortz_bar.pdf Graphic file (type pdf)
 <use images/Om3B30_vortz_bar.pdf>
-Package pdftex.def Info: images/Om3B30_vortz_bar.pdf  used on input line 522.
+Package pdftex.def Info: images/Om3B30_vortz_bar.pdf  used on input line 525.
 (pdftex.def)             Requested size: 92.1879pt x 69.78342pt.
 File: images/Om10B30_vortz_bar.pdf Graphic file (type pdf)
 <use images/Om10B30_vortz_bar.pdf>
-Package pdftex.def Info: images/Om10B30_vortz_bar.pdf  used on input line 522.
+Package pdftex.def Info: images/Om10B30_vortz_bar.pdf  used on input line 525.
 (pdftex.def)             Requested size: 92.1879pt x 69.78342pt.
 File: images/Om1B30_uzrms_bar.pdf Graphic file (type pdf)
 <use images/Om1B30_uzrms_bar.pdf>
-Package pdftex.def Info: images/Om1B30_uzrms_bar.pdf  used on input line 522.
+Package pdftex.def Info: images/Om1B30_uzrms_bar.pdf  used on input line 525.
 (pdftex.def)             Requested size: 92.1879pt x 67.79614pt.
 File: images/Om3B30_uzrms_bar.pdf Graphic file (type pdf)
 <use images/Om3B30_uzrms_bar.pdf>
-Package pdftex.def Info: images/Om3B30_uzrms_bar.pdf  used on input line 522.
+Package pdftex.def Info: images/Om3B30_uzrms_bar.pdf  used on input line 525.
 (pdftex.def)             Requested size: 92.1879pt x 67.45827pt.
 File: images/Om10B30_uzrms_bar.pdf Graphic file (type pdf)
 <use images/Om10B30_uzrms_bar.pdf>
-Package pdftex.def Info: images/Om10B30_uzrms_bar.pdf  used on input line 522.
+Package pdftex.def Info: images/Om10B30_uzrms_bar.pdf  used on input line 525.
 (pdftex.def)             Requested size: 92.1879pt x 67.68599pt.
  [14
 
@@ -1038,7 +1038,7 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  99i,15n,104p,442b,582s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on slides.pdf (15 pages, 26490010 bytes).
+Output written on slides.pdf (15 pages, 26490237 bytes).
 PDF statistics:
  875 PDF objects out of 1000 (max. 8388607)
  682 compressed objects within 7 object streams
