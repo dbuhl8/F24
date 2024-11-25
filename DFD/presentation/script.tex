@@ -20,7 +20,7 @@
 \begin{document}
 
 \title{The Effects of Rotation on Stratified Turbulence}
-\author{Dante Buhl \\{\small Advised by: Pascale Garaud}}
+\author{\small \textbf{Dante Buhl} Pascale Garaud, Hongyun Wang}
 \date{November 25, 2024}
 
 
@@ -75,13 +75,16 @@
 \maketitle 
 
 \section{Intro Slide}
+\begin{itemize}
+    \item Mention advisor/collaborator
+\end{itemize}
 
 \section{Motivation 1}
 \begin{itemize}
-    \item We are studying rotating stratified turbulence, as stratified
-    turbulence plays a crucial role in mixing and vertical transport in many
-    geophysical and astrophysical fliud dynamics. 
-    \item In many geophysical flows, both stratification and rotation influence
+    \item This talk is motivated by the phenomenon of stratified turbulence,
+    which plays a crucial role in mixing and vertical transport in many
+    geophysical and astrophysical flows. 
+    \item In many such flows, both stratification and rotation influence
     dynamics. Some popular examples are the oceans' thermocline, and the Solar
     Tachocline. 
 \end{itemize}
@@ -134,7 +137,7 @@
     the domain.
     \item The stochastic process used is a Gaussian process prescribed to be of
     amplitude 1 and correlation timescale 1. 
-    \item (Optional) similar forcing mechanisms have been used by several
+    \item Similar forcing mechanisms have been used by prior
     studies of stratified turbulence in the past c.f. Waite and Bartello
     (2004)/(2006)
 \end{itemize}
@@ -143,12 +146,11 @@
 \begin{itemize}
     \item Before studing the effect of rotation, we conducted DNS in order to
     validate this forcing mechanism as we have employeed it. 
-    \item The images on this plot show the x-component of the velocity field
-    along the top of the domain and the front of the domain in the top and
-    bottom rows respectively. Note that the strength of the stratification
-    increases from left to right. 
+    \item The images on this plot show a horizontal component of the velocity field
+    along the top of the domain (top row) and the front of the domain (bottom
+    row). Note that the strength of the stratification increases from left to right. 
     \item Consistent with prior studies of stratified turbulence, we see that
-    the flow becomes increasingly anisotropic as the Froude number decreases. 
+    the aspect ratio of the flow decreases with the Froude number. 
     \item Now that we have confirmed that this forcing mechanism produces
     stratified turbulence we are ready to study the effect of rotation. 
 \end{itemize}
@@ -159,113 +161,89 @@
     along the top of the domain for simulations with varying rotation rate. Note
     that the larger the inverse Rossby number, the more rapidly rotating the
     flow is. 
-    \item Notice that in the more weakly rotating simulations (top row), there do not
-    appear to be any stable structures which retain their form. For the more
-    rapidly rotating simulations (bottom row), a stable vortex has appeared
-    corresponding to the areas of strong vertical vortcity shown in red. 
+    \item Notice that in the more weakly rotating simulations, there do not
+    appear to be any stable structures. In the more
+    rapidly rotating simulations, a stable vortex with a large horizontal
+    lengthscale has formed and seems to become domain filling. 
 \end{itemize}
 
 \section{Vertically-Invariant structures in the flow ($Fr = 0.18$)}
 \begin{itemize}
-    \item Further investigation of these vortices reveals that they are indeed
-    vertically invariant, that is the vortex penetrates the entire vertical extent
-    of the domain. 
-    \item Here you see volume renderings of the vertical vorticity shaded
-    according to a gaussian transfer function visible in the colorbar on each plot. 
-    \item Notice that in the weakly rotating simulation (left) there does not
-    appear to be any vortex in the flow, in the moderately rotating simulation
+
+    \item Volume renderings of the vertical vorticity reveal that these are
+    vertically invariant cyclones which take up the entire vertical extent of
+    the domain. 
+    \item Notice that in the slowly rotating simulation (left) there does not
+    appear to be any cyclone in the flow, in the moderately rotating simulation
     (middle),
-    the vortex appears to be vertically invariant, but the regions outside of
-    the vortex are seemingly still turbulent and have non-uniform vertical
-    structures. Finally, in the rapidly rotating simulation (right), the region outside
+    the cyclone appears to be vertically invariant, but the regions outside are still
+    turbulent and have non-uniform vertical structure. 
+    Finally, in the rapidly rotating simulation (right), the region outside
     of the main cyclonic vortex seems to have formed into an anti-cyclone which
-    exhibits weak vertical variance. 
-    \item What this seems to indicate is that as the rotation rate increases,
-    more energy is being put into large-scale horizontal modes of the velocity. 
+    exhibits decreased vertical variance. 
+    \item This reveals that more energy is being put into large-scale horizontal
+        modes as the rotation rate increases. 
 \end{itemize}
 
 \section{Inverse energy Cascade ($Fr = 0.18$)}
 \begin{itemize}
-    \item This suspicion is confirmed by the energy spectra for the horizontal
-    wavenumbers of the flow. 
-    \item Each plot has the absolute horizontal wavenumber along the x-axis and
-    the energy along the y-axis. Furthemore, the horizontal energy is shown in red, and the vertical
-    energy is shown in blue. Each plot has a red line which corresponds to a
-    $|\bs{k}_h|^{-5/3}$ energy spectrum, and a blue dashed line which
-    corresponds to the smallest horizontal wavenumber which is forced in each
-    simulation. 
-    \item Inspecting these spectra, we deduce that the simulation with inverse
-    Rossby of 1, has an energy spectrum very similar to the non-rotating case
-    and this confirms that the effect of rotation on this simulation is minimal. 
-    \item For the two spectra presented from higher inverse Rossby number, we
-    see an increase of energy in the smallest horizontal wavenumbers, indicative
-    of an inverse energy cascade. Furthermore, we see that for the simulation
-    with the highest inverse rossby number shown the horizontal energy spectrum
-    seems to follow the $|\bs{k}_h|^{-5/3}$ very nicely (with the exception of
-    the forcing also providing some additional energy). 
+    \item This suspicion is confirmed by plots of the energy spectra of the flow. 
+    \item These are plots of the horizontal and vertical energies against the total
+        horizontal wavenumber showon in red and blue respectively. In each plot
+        there is a red $|\bs{k}_h|^{-3}$ spectrum overplotted and a dashed blue line
+        signifying the smallest forced wavenu,ber. 
+    \item There are two essential takeaways from these plots, first that the
+        slowly rotating flow seems to be negligably affected, and that the
+        rapidly rotating flows experience an inverse energy cascade, gathering
+        energy at the smallest horizontal wavenumbers. 
 \end{itemize}
 
 \section{R.M.S. Data}
 \begin{itemize}
-    \item transition sentence
-    \item These plots depict time-averaged rms quantities of the total
-    horizontal velocity (left) and the vertical velocity (right) from different
-    simulations as they vary with inverse Rossby number. The series of blue
-    points correspond to the simulations with $Fr = 0.18$ and the points in red
-    correspond to the simulations with $Fr = 0.1$. Finally, the full circles
-    represent data taken from simulations which are statistically stationary,
-    and the hollow circles represent data taken from simulations which had not
-    yet reached a statistically stationary state. 
-    \item As expected due to the inverse energy cascade, the horizontal rms
-    velocity seems to increase proportionally to the inverse rossby number and
-    doesn't seem to depend on the Froude number.
-    \item The vertical velocity which for small inverse Rossby number, is
-    dependent on the Froude number, seems to become less dependent on the
-    Froude number as the inverse Rossby number inreases. The data suggests that
-    for moderate rotation rates the vertical rms velocity is roughly constant
-    and may decrease for strong rotation rate. 
-    \item This is a bit odd at first, since as the rotation rate increases we
-    expect there to be less vertical energy in the flow. 
+    \item Looking at some of the more quantitative data, we also compare the
+    total horizontal and vertical rms velocities for different Froude and Rossby
+    numbers. The solid circles on these plots represent time-averaged data from
+    a statistically-stationary state, while the open circles are taken from
+    non-stationary states. Higher inverse Rossby number data is not included on
+    this plot as we do not believe it is close to a stationary state yet. 
+    \item The total horizontal velocity seems to increase proportionally to the 
+    inverse rossby number starting at $Ro = 1$ for both Froude numbers. 
+    \item The vertical velocity remains roughly constant, $\to$ interesting
+    because its dependence on the Froude number becomes less
+    dominant as the inverse Rossby number increases, and the appearance of
+    cyclones suggest there should be less vertical movement in the flow.
 \end{itemize}
 
 \section{Vertically-Averaged Flow}
 \begin{itemize}
-    \item In order to investigate this further, we used a vertical average to
-    understand how the vortices affect the flow. 
-    \item Here we show the vertically averaged planetary vorticity (top row) and
-    vertical velocity squared (bottom row) from simulations of varying rotation
+    \item To investigate this further, we used a vertical average to
+    understand how the cyclones affect mixing and vertical transport in the flow. 
+    \item Here we show the vertically averaged total vorticity (top row) and
+    squared vertical velocity (bottom row) from simulations of varying rotation
     rates. 
-    \item For the weakly rotating simulation (left) there doesn't appear to be
-    any correlation between the planetary vorticity and squared vertical
-    velocity. For the moderately rotating simulation (middle), in the vortex,
-    where the planetary vorticity is strongest, there seems to be a void in the
-    squared vertical velocity. And in the stronger rotating simulation (right),
-    vertical motion seems to be entirely restricted to the anti-cyclone which
-    coresponds to the region of near zero planetary vorticity. 
-    \item This gives us a much better understanding of where vertical motions
-    can take place in the flow. 
+    \item The weakly rotating simulation (left) doesn't appear to have any interesting
+    correlation between vorticity and vert velocity which is what we expect as
+    there is no stable cyclone in the flow. The moderately rotating simulation
+    (middle), demonstrates a void in the vertical velocity precisely where the
+    cyclone is concentrated. Finally, the rapidly rotating simulation appears to
+    have little to no vertical motions except where the total vorticity is near
+    zero. This corresponds to an anti-cyclone which forms in the rapidly
+    rotating simulations. 
 \end{itemize}
 
-\section{Temperature Transport and Mixing in the Flow}
+\section{Thermal Dissipation and Mixing in the Flow}
 \begin{itemize}
-    \item Next we see if the Temperature transport and mixing are affected by
-    the vortex in the same way. 
-    \item Similar to the plot of the vertical rms velocity shown earlier, both
-    the Temperature Flux (left), and mixing efficiency (right) seem to remain constant for
-    weak and moderate rotation rates. This is likely due to the fact that the
-    volume fraction of the domain which inhibit vertical motions is still
-    relatively small.  
+    \item The next item to investigate if thermal dissipation and mixing are
+    affected in the same way. 
+    Similar to vertical velocity, the rms Temperature Flux (left), and mixing
+    efficiency (right) seem to remain constant for weak and moderate rotation rates. 
     \item I should note that the mixing efficiency for these simulations,
     is rather high, and thats simply because we are in the Low Prandtl Number
     limit (i.e. the flow is very thermally diffusive)
 \end{itemize}
 
-\section{Correspondance between Planetary Vorticity and Mixing}
+\section{Correspondance between Total Vorticity and Mixing}
 \begin{itemize}
-    \item To confirm the suspicion that mixing is inhibitted by the vortex core
-    and vertically-invariant structures within the flow, we compare the
-    vertically averaged planetary vorticity to the thermal dissipation within
-    the flow. 
     \item Similar to the plots of the squared vertical velocity, we see that
     thermal dissipation is inhibitted within the vortex core for the
     moderately rotating simulation (middle) and is strictly limited to the
