@@ -103,9 +103,59 @@ ODE A:
             \caption{Numerical Solution for differing $\epsilon$ using `ode45'}
             \label{fig:ODEA_num_sol}
         \end{figure}
-    \item explanation
-    \item lowest order uniformly converging solution
-    \item Compare the numerical and analytical solutions for $\epsilon = 0.01$. 
+    \item For this problem, we will use the multiscale method as it seems that
+    the amplitude of the sine wave seems to decay on a timescale which is
+    dependent on epsilon (on a longer time series it is clear that all three
+    solutions decay). 
+    \item To find the lowest order solution we first begin with the multiscale
+    method. 
+    \begin{gather*}
+        \ts = \epsilon t, \quad \tf =  t\\
+        \ppts{} = \frac{dt}{d\ts}\ppt{}, \quad \pptf{} = \ppt{}
+    \end{gather*}
+    \begin{gather*}
+        \left(\epsilon\ppts{} + \pptf{}\right)\left(\epsilon\ppts{} + \pptf{}\right)[f_0
+        +\epsilon f_1 + \cdots] =\\
+        -(f_0 +\epsilon f_1 + \cdots) -
+        \epsilon (f_0 + \epsilon f_1 + \cdots)^2\left(\epsilon \ppts{} +
+        \pptf{}\right)[f_0 + \epsilon f_1 + \cdots]\\
+        f_0 (0) = 1, \quad f_i(0) = 0, \enspace \forall i \ge 1, \quad \ppt{f_i} =
+        0, \enspace
+        \forall i \ge 0
+    \end{gather*}
+    \begin{gather*}
+        O(\epsilon^0): \quad \frac{\partial^2f_0}{\partial \tf^2} = -f_0
+        \implies f_0 = cos(\tf)g(\ts)\\
+        O(\epsilon): \quad \frac{\partial^2f_1}{\partial \tf^2}
+        -2\ppts{g}\sin(\tf) = -f_1 + \cos^2(\tf)\sin(\tf)g^3(\ts)
+    \end{gather*}
+    The term $\cos^2(\tf)\sin(\tf)$ in the $O(\epsilon)$ equation produces a
+    secular term. Using some trig identities we find that thie reduces to:
+    \begin{gather*}
+        \cos^2(\tf)\sin(\tf) = \frac{1}{4}\sin(\tf) + \frac{1}{4}\sin(3\tf)
+    \end{gather*}
+    We solve for $g(\ts)$ in order to eliminate this secular term. (Notice that
+    a partial derivative in this case becomes a regular derivative since g only
+    depends on $\ts$). 
+    \begin{gather*}
+        -2\frac{dg}{d\ts}\sin(\tf) = \frac{1}{4}\sin(\tf)g^3(\ts)\\
+        \frac{dg}{g^3} = -\frac{d\ts}{8}\\
+        -\frac{1}{2g^2} = -\frac{\ts}{8} + c\\
+        g = \left(\frac{\ts}{4} + c\right)^{-1/2}\\
+        g = \left(\frac{\ts}{4} + 1\right)^{-1/2}, \quad \textbf{IC}\\
+        f_0 = \left(\frac{\ts}{4} + 1\right)^{-1/2}\sin(\tf)
+    \end{gather*}
+    This choice of $f_0$ successfully eliminates the secular term allowing $f_1$
+    to be bounded and therefore producing a uniform expansion. Thus the lowest
+    order solution needed is $O(1)$. 
+    \item Compare the numerical and analytical solutions for $\epsilon = 0.01$.
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{images/ODEA_sol.png}
+            \caption*{Comparison between numerical and asymptotic solutions for
+            $\epsilon = 0.01$}
+        \end{figure}
+    
 \end{enumerate}
 
 \vspace{20pt}
@@ -125,10 +175,18 @@ ODE B:
             \caption{Numerical Solution for differing $\epsilon$ using `ode45'}
             \label{fig:ODEB_num_sol}
         \end{figure}
-
-    \item explanation
+    \item I will solve this problem using the method of strained coordinates
+    since the numerical solution suggests that $\epsilon$ will affect the
+    periodicity of the solution rather than the amplitude. 
     \item lowest order uniformly converging solution
     \item Compare the numerical and analytical solutions for $\epsilon = 0.01$. 
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{images/ODEB_sol.png}
+            \caption*{Comparison between numerical and asymptotic solutions for
+            $\epsilon = 0.01$}
+        \end{figure}
+
 \end{enumerate}
 
 \vspace{20pt}
@@ -149,9 +207,18 @@ ODE C:
             the shooting method and `ode45'}
             \label{fig:ODEC_num_sol}
         \end{figure}
-    \item explanation
+    \item For this problem, I will use the Boundary Layer method as this PDE has
+    2 (Boundary) conditions as well as the fact that the second order term in
+    the ODE disappears as $\epsilon \to 0$ creating a Boundary Layer problem.
     \item lowest order uniformly converging solution
     \item Compare the numerical and analytical solutions for $\epsilon = 0.01$. 
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{images/ODEC_sol.png}
+            \caption*{Comparison between numerical and asymptotic solutions for
+            $\epsilon = 0.01$}
+        \end{figure}
+
 \end{enumerate}
 
 \vspace{10pt}
@@ -167,6 +234,13 @@ limite where the eigenvalue $\lambda$ is very large and positive.
 \begin{gather*}
     \frac{d^2f}{dt^2} + \lambda(x+1)^2f = 0 \quad \text{with } f(1) = 0, f(2) =
     0
+\end{gather*}
+
+We begin solving this proble using WKB theory and following the procedure
+described in the notes. First we put this problem in SL form. 
+\begin{gather*}
+    \frac{d}{dt}\left(\frac{df}{dt}\right) = -\lambda(x+1)^2f, \quad p(x) = 1,
+    \quad q(x) = 0, \quad w(x) = (x+1)^2
 \end{gather*}
 
 \end{document}

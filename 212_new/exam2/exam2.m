@@ -11,13 +11,16 @@ t = 0:0.00001:50;
 
 s = size(y1);
 
-plot(t,y1(:,1),'red',t,y2(:,1),'blue',t,y3(:,1),'black')
+%plot(t,y1(:,1),'red',t,y2(:,1),'blue',t,y3(:,1),'black')
+plot(t,y2(:,1),'blue')
 hold on
 %asym = @(x, ep) cos(x) + ep*(-x.*cos(x)/8 - sin(3*x)/32 + 7*sin(x)/32)
 asym = @(x, ep) cos(x).*((ep*x/4 + 1).^(-0.5))
-plot(t,asym(t,0.1),'r--',t,asym(t,0.01),'b--',t,asym(t,0.001),'k--',LineWidth=2)
-legend('$\epsilon = 0.1$', '$\epsilon = 0.01$', '$\epsilon = 0.001$', 'Interpreter', 'latex', 'FontSize', 20)
-ylim([-1 1.5])
+%plot(t,asym(t,0.1),'r--',t,asym(t,0.01),'b--',t,asym(t,0.001),'k--',LineWidth=2)
+plot(t,asym(t,0.01),'b--',LineWidth=2)
+%legend('$\epsilon = 0.1$', '$\epsilon = 0.01$', '$\epsilon = 0.001$', 'Interpreter', 'latex', 'FontSize', 20)
+legend('Numerical', 'Asymptotic', 'Interpreter', 'latex', 'FontSize', 20)
+ylim([-1 1.2])
 xlabel('Time', 'FontSize', 20)
 title('ODE A', 'FontSize', 20)
 saveas(gcf,'ODEA.pdf')
@@ -34,11 +37,19 @@ figure();
 [t,y2] = ode45(@odeB2, t, [1 0]);
 [t,y3] = ode45(@odeB3, t, [1 0]);
 
-plot(t,y1(:,1),'red',t,y2(:,1),'blue',t,y3(:,1),'black')
+%plot(t,y1(:,1),'red',t,y2(:,1),'blue',t,y3(:,1),'black')
+%hold on
+%asym = @(x, ep) cos((1+ep/16)*x)
+%plot(t,asym(t,0.1),'r--',t,asym(t,0.01),'b--',t,asym(t,0.001),'k--',LineWidth=2)
+%legend('$\epsilon = 0.1$', '$\epsilon = 0.01$', '$\epsilon = 0.001$', 'Interpreter', 'latex', 'FontSize', 20)
+plot(t,y2(:,1),'blue')
 hold on
+%asym = @(x, ep) cos(x) + ep*(-x.*cos(x)/8 - sin(3*x)/32 + 7*sin(x)/32)
 asym = @(x, ep) cos((1+ep/16)*x)
-plot(t,asym(t,0.1),'r--',t,asym(t,0.01),'b--',t,asym(t,0.001),'k--',LineWidth=2)
-legend('$\epsilon = 0.1$', '$\epsilon = 0.01$', '$\epsilon = 0.001$', 'Interpreter', 'latex', 'FontSize', 20)
+%plot(t,asym(t,0.1),'r--',t,asym(t,0.01),'b--',t,asym(t,0.001),'k--',LineWidth=2)
+plot(t,asym(t,0.01),'b--',LineWidth=2)
+%legend('$\epsilon = 0.1$', '$\epsilon = 0.01$', '$\epsilon = 0.001$', 'Interpreter', 'latex', 'FontSize', 20)
+legend('Numerical', 'Asymptotic', 'Interpreter', 'latex', 'FontSize', 20)
 ylim([-1 1.5])
 %xlim([900,1000])
 xlabel('Time', 'FontSize', 20)
@@ -99,11 +110,19 @@ while (eb > 10^(-7))
 end 
 
 
-asym = @(x, ep) (1 - 2*exp(1.5))*exp(-x/ep) + 2*exp(1.5 -(x.^2)/2 - x)
-plot(t,y1b(:,1),'red',t,y2b(:,1),'blue',t,y3b(:,1),'green')
+%asym = @(x, ep) (1 - 2*exp(1.5))*exp(-x/ep) + 2*exp(1.5 -(x.^2)/2 - x)
+%plot(t,y1b(:,1),'red',t,y2b(:,1),'blue',t,y3b(:,1),'green')
+%hold on
+%plot(t,asym(t,0.1),'r--',t,asym(t,0.01),'b--',t,asym(t,0.001),'k--',LineWidth=2)
+%legend('$\epsilon = 0.1$', '$\epsilon = 0.01$', '$\epsilon = 0.001$', 'Interpreter', 'latex', 'FontSize', 20)
+plot(t,y2b(:,1),'blue')
 hold on
-plot(t,asym(t,0.1),'r--',t,asym(t,0.01),'b--',t,asym(t,0.001),'k--',LineWidth=2)
-legend('$\epsilon = 0.1$', '$\epsilon = 0.01$', '$\epsilon = 0.001$', 'Interpreter', 'latex', 'FontSize', 20)
+%asym = @(x, ep) cos(x) + ep*(-x.*cos(x)/8 - sin(3*x)/32 + 7*sin(x)/32)
+asym = @(x, ep) (1 - 2*exp(1.5))*exp(-x/ep) + 2*exp(1.5 -(x.^2)/2 - x)
+%plot(t,asym(t,0.1),'r--',t,asym(t,0.01),'b--',t,asym(t,0.001),'k--',LineWidth=2)
+plot(t,asym(t,0.01),'b--',LineWidth=2)
+%legend('$\epsilon = 0.1$', '$\epsilon = 0.01$', '$\epsilon = 0.001$', 'Interpreter', 'latex', 'FontSize', 20)
+legend('Numerical', 'Asymptotic', 'Interpreter', 'latex', 'FontSize', 20)
 %ylim([-1 1.5])
 xlabel('Time', 'FontSize', 20)
 title('ODE C', 'FontSize', 20)
