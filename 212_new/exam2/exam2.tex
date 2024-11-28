@@ -99,7 +99,7 @@ ODE A:
     \item See Figure \ref{fig:ODEA_num_sol}
         \begin{figure}[ht]
             \centering
-            \includegraphics[width=\textwidth]{images/ODEA.png}
+            \includegraphics[width=.8\textwidth]{images/ODEA.png}
             \caption{Numerical Solution for differing $\epsilon$ using `ode45'}
             \label{fig:ODEA_num_sol}
         \end{figure}
@@ -148,12 +148,16 @@ ODE A:
     This choice of $f_0$ successfully eliminates the secular term allowing $f_1$
     to be bounded and therefore producing a uniform expansion. Thus the lowest
     order solution needed is $O(1)$. 
-    \item Compare the numerical and analytical solutions for $\epsilon = 0.01$.
-        \begin{figure}
+    \item The numerical and asymptotic solutions align very nicely for this
+    problem (see Figure \ref{fig:ODEA_comp}). Although the solution for
+    $\epsilon = 0.01$ decays very slowly, its decline is visible within 50 time
+    units. 
+        \begin{figure}[ht]
             \centering
-            \includegraphics[width=\textwidth]{images/ODEA_sol.png}
-            \caption*{Comparison between numerical and asymptotic solutions for
+            \includegraphics[width=.8\textwidth]{images/ODEA_sol.png}
+            \caption{Comparison between numerical and asymptotic solutions for
             $\epsilon = 0.01$}
+            \label{fig:ODEA_comp}
         \end{figure}
     
 \end{enumerate}
@@ -171,20 +175,54 @@ ODE B:
     \item See Figure \ref{fig:ODEB_num_sol}
         \begin{figure}[ht]
             \centering
-            \includegraphics[width=\textwidth]{images/ODEB.png}
+            \includegraphics[width=.8\textwidth]{images/ODEB.png}
             \caption{Numerical Solution for differing $\epsilon$ using `ode45'}
             \label{fig:ODEB_num_sol}
         \end{figure}
     \item I will solve this problem using the method of strained coordinates
     since the numerical solution suggests that $\epsilon$ will affect the
     periodicity of the solution rather than the amplitude. 
-    \item lowest order uniformly converging solution
-    \item Compare the numerical and analytical solutions for $\epsilon = 0.01$. 
+    \item In order to solve this problem we introduce $\tau = t + \epsilon w_1 t
+    + O(\epsilon^2)$. We substitute this into the ODE,
+    \begin{gather*}
+        \frac{d}{dt} = (1 + \epsilon w_1 + O(\epsilon^2))\frac{d}{d\tau}\\
+        (1 + 2\epsilon w_1 + \epsilon^2(w_1 + 2w_2) +
+        O(\epsilon^3))\frac{d^2f}{d\tau^2} = \\- (f_0 + \epsilon f_1 +
+        O(\epsilon^2) - \epsilon (f_0 + \epsilon f_1 + O(\epsilon^2))(1 +
+        \epsilon w_1 + O(\epsilon^2))^4\left(\frac{d}{d\tau}(f_0 + \epsilon f_1
+        + O(\epsilon^2))\right)\\
+        f_0(0) = 1, \quad f_i(0) = 0 \enspace \forall i \ge 1,\quad
+        \frac{df_i}{d\tau} = 0 \enspace \forall i
+        \ge 0\\
+        O(\epsilon^0): \quad \frac{d^2f_0}{d\tau^2} = -f_0 \implies f_0 =
+        \cos(\tau)\\
+        O(\epsilon^1): \quad \frac{d^2f_1}{d\tau^2} + w_1\frac{df_0}{d\tau}=
+        -f_1 - \epsilon f_0f_0'^4 \\
+        O(\epsilon^1): \quad \frac{d^2f_1}{d\tau^2} - 2w_1\cos(\tau) =
+        -f_1 - \epsilon \cos(\tau)\sin^4(\tau)
+    \end{gather*}
+    Here the term $\cos(\tau)\sin^4(\tau)$ will produce a secular term causing
+    non-uniformity. In order to eliminate the secular term we use a trig
+    identity and then fix $w_1$ in order to eliminate this term. 
+    \begin{gather*}
+        \cos(\tau)\sin^4(\tau) = \frac{1}{8}\cos(\tau) - \frac{3}{16}\cos(3\tau) +
+        \frac{1}{16}\cos(5\tau)\\
+        -2w_1\cos(\tau) = -\frac{1}{8}\cos(\tau) \implies w_1 = \frac{1}{16}\\
+        \tau = t + \frac{\epsilon}{16}t + O(\epsilon^2)
+    \end{gather*}
+    We have now found $\tau$ to order $\epsilon$ in such a way that $f_1$ is
+    bounded and therefore the first order expansion is uniform. 
+    \begin{gather*}
+        f_0 = \cos\left(t + \frac{\epsilon t}{16}\right)
+    \end{gather*} 
+    \item As seen in Figure \ref{fig:ODEB_comp}, the asymptotic solution follows
+    the numerical solution. 
         \begin{figure}
             \centering
-            \includegraphics[width=\textwidth]{images/ODEB_sol.png}
-            \caption*{Comparison between numerical and asymptotic solutions for
+            \includegraphics[width=.8\textwidth]{images/ODEB_sol.png}
+            \caption{Comparison between numerical and asymptotic solutions for
             $\epsilon = 0.01$}
+            \label{fig:ODEB_comp}
         \end{figure}
 
 \end{enumerate}
@@ -202,7 +240,7 @@ ODE C:
     \item See Figure \ref{fig:ODEC_num_sol}
         \begin{figure}[ht]
             \centering
-            \includegraphics[width=\textwidth]{images/ODEC.png}
+            \includegraphics[width=.8\textwidth]{images/ODEC.png}
             \caption{Numerical Solution for differing $\epsilon$ obtained using
             the shooting method and `ode45'}
             \label{fig:ODEC_num_sol}
@@ -210,13 +248,70 @@ ODE C:
     \item For this problem, I will use the Boundary Layer method as this PDE has
     2 (Boundary) conditions as well as the fact that the second order term in
     the ODE disappears as $\epsilon \to 0$ creating a Boundary Layer problem.
-    \item lowest order uniformly converging solution
-    \item Compare the numerical and analytical solutions for $\epsilon = 0.01$. 
+    \item First we find the outer solution by setting $\epsilon = 0$, 
+    \begin{gather*}
+        \frac{df_{out}}{dt} = - (t+1)f_{out}, \quad f(1) = 2\\
+        \frac{df_{out}}{f} = - (t+1)dt\\
+        \ln|f_{out}| = -\frac{t^2}{2} - t + c\\
+        f_{out}(t) = Ce^{-t^2/2 - t}\\
+        \textbf{IC} \to f_{out}(t) = 2e^{-t^2/2 - t + 3/2}
+    \end{gather*}
+    This completes the outer solution. Next we must begin the inner solution by
+    determining the dominant balance. First we set $t = s\epsilon^{\alpha}$. 
+
+    \bmp{.47}
+        \begin{gather*}
+            \epsilon^{1-2\alpha}\frac{d^2f_{in}}{ds^2} \approx
+            -\epsilon^{-\alpha}\frac{df_{in}}{ds} \\
+            f_{in} = O(1) \implies \alpha = 1\\
+            (s\epsilon + 1)f_{in} \ll O(\epsilon^{-1})
+        \end{gather*}
+        This method is self-consistent. 
+    \emp
+    \bmp{.47}
+        \begin{gather*}
+            \epsilon^{1-2\alpha}\frac{d^2f_{in}}{ds^2} \approx
+            -(se^{\alpha} +1)f_{in}\\
+            f_{in} = O(1) \implies \alpha = \frac{1}{3}\\
+            \epsilon^{-1/3}\frac{df_{in}}{ds} \gg O(\epsilon^{1/3})
+        \end{gather*}
+        This method is not self consistent; the term it disregards becomes the
+        most dominant term in the equation. 
+    \emp
+
+    Thus we proceed with $\alpha = 1$ and disregarding $(s\epsilon +1)f$ from
+    the equation. 
+
+    \begin{gather*}
+        \frac{d^2f_{in}}{ds^2} = -\frac{df_{in}}{ds}\\
+        \frac{df_{in}}{ds} = c_1e^{-s}\\
+        f_{in}(s) = -c_1e^{-s} + c_2\\
+        f_{in}(0) = 1 \implies c_1 = 1 - c_2
+    \end{gather*}
+    From here we proceed with Prandtl's matching condition.
+    \begin{gather*}
+        \lim_{s\to\infty} f_{in}(s) = \lim_{x\to0} f_{out}(x)\\
+        c_2 = 2e^{3/2} \implies c_1 = 1 - 2e^{3/2}\\
+        f_{in} = (1 - 2e^{3/2})e^{-t/\epsilon} + 2e^{3/2}
+    \end{gather*}
+    Finally we write the composite solution. 
+    \begin{gather*}
+        f = f_{in} + f_{out} - L\\
+        f = (1 - 2e^{3/2})e^{-t/\epsilon} + 2e^{-t^2/2 - t + 3/2}
+    \end{gather*}
+
+    \item As seen in Figure \ref{fig:ODEC_comp}, the solution approximates the
+    numerical solution very closely. It should be noted that the Boundary Layer
+    method often produces some degree of error which qualitatively decreases with
+    $\epsilon$. For example, the error for $\epsilon = 0.1$ is quite large,
+    however, the error for $\epsilon = 0.001$ is not noticeable to the eye on
+    the plot. 
         \begin{figure}
             \centering
-            \includegraphics[width=\textwidth]{images/ODEC_sol.png}
-            \caption*{Comparison between numerical and asymptotic solutions for
+            \includegraphics[width=.8\textwidth]{images/ODEC_sol.png}
+            \caption{Comparison between numerical and asymptotic solutions for
             $\epsilon = 0.01$}
+            \label{fig:ODEC_comp}
         \end{figure}
 
 \end{enumerate}
