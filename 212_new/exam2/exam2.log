@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.17)  27 NOV 2024 19:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.17)  27 NOV 2024 20:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -653,23 +653,33 @@ l.321 \hline
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
-[6 <./images/ODEC.png (PNG copy)>] [7 <./images/ODEC_sol.png (PNG copy)>] (./exam2.aux)
+
+Overfull \hbox (12.0223pt too wide) detected at line 359
+[]
+ []
+
+[6 <./images/ODEC.png (PNG copy)>]
+Overfull \hbox (5.61003pt too wide) in paragraph at lines 363--381
+[]$[]$$[]$ 
+ []
+
+[7 <./images/ODEC_sol.png (PNG copy)>] [8] (./exam2.aux)
 Package rerunfilecheck Info: File `exam2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 22799 strings out of 480247
- 420929 string characters out of 5896151
+ 22800 strings out of 480247
+ 420935 string characters out of 5896151
  692713 words of memory out of 5000000
  40333 multiletter control sequences out of 15000+600000
  477747 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,11n,80p,434b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on exam2.pdf (7 pages, 313103 bytes).
+Output written on exam2.pdf (8 pages, 319209 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
+ 149 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
+ 33 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

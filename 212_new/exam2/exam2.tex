@@ -46,8 +46,8 @@
 \newcommand{\grad}{\nabla}
 \newcommand{\grads}{\nabla_s}
 \newcommand{\gradf}{\nabla_f}
-\newcommand{\xs}{\bs{x}_s}
-\newcommand{\xf}{\bs{x}_f}
+\newcommand{\xs}{x_s}
+\newcommand{\xf}{x_f}
 \newcommand{\ts}{t_s}
 \newcommand{\tf}{t_f}
 \newcommand{\pt}{\partial t}
@@ -279,7 +279,7 @@ ODE C:
         most dominant term in the equation. 
     \emp
 
-    Thus we proceed with $\alpha = 1$ and disregarding $(s\epsilon +1)f$ from
+    Thus we proceed with $\alpha = 1$ and disregard $(s\epsilon +1)f$ from
     the equation. 
 
     \begin{gather*}
@@ -300,7 +300,7 @@ ODE C:
         f = (1 - 2e^{3/2})e^{-t/\epsilon} + 2e^{-t^2/2 - t + 3/2}
     \end{gather*}
 
-    \item As seen in Figure \ref{fig:ODEC_comp}, the solution approximates the
+    \item As seen in Figure \ref{fig:ODEC_comp}, the asymptotic solution approximates the
     numerical solution very closely. It should be noted that the Boundary Layer
     method often produces some degree of error which qualitatively decreases with
     $\epsilon$. For example, the error for $\epsilon = 0.1$ is quite large,
@@ -328,7 +328,7 @@ limite where the eigenvalue $\lambda$ is very large and positive.
 
 \begin{gather*}
     \frac{d^2f}{dt^2} + \lambda(x+1)^2f = 0 \quad \text{with } f(1) = 0, f(2) =
-    0
+    0\\
 \end{gather*}
 
 We begin solving this proble using WKB theory and following the procedure
@@ -337,6 +337,58 @@ described in the notes. First we put this problem in SL form.
     \frac{d}{dt}\left(\frac{df}{dt}\right) = -\lambda(x+1)^2f, \quad p(x) = 1,
     \quad q(x) = 0, \quad w(x) = (x+1)^2
 \end{gather*}
+The first step is to take $\lambda = 1/\epsilon^2$ and introduce the WKB
+rescaling of $x_f = g(x)/\epsilon$. 
+
+\begin{gather*}
+    \left(\frac{\partial}{\partial \ts} + \frac{g'(x_s)}{\epsilon}
+    \frac{\partial}{\partial \xf}\right)\left(\frac{\partial f}{\partial \xs} +
+    \frac{g'(x_s)}{\epsilon}
+    \frac{\partial f}{\partial \xf}\right) = -\frac{(\xs+1)^2}{\epsilon^2}f\\
+    O(\epsilon^{-2}): \quad \frac{g'^2(\xs)}{\epsilon^2}\frac{\partial^2 f_0}{\partial \xf^2} = -
+    \frac{(\xs+1)^2}{\epsilon^2}f_0 \implies g'(\xs) = (\xs+1)\\
+    f_0 = a(\xs)\cos(\xf) + b(\xs)\sin(xf), \quad g(x_s) = \frac{\xs^2}{2} + \xs
+    - \frac{3}{2}\\
+    O(\epsilon^{-1}): \quad 2(x+1)\frac{\partial^2 f_0}{\partial
+    \xs\partial\xf} + \frac{\partial f}{\partial xf} +
+    (\xs+1)^2 \frac{\partial^2f_1}{\partial xf^2} = 
+    - (\xs+1)^2f_1\\
+    2(\xs+1)\left(-a'(\xs)\sin(\xf) + b'(\xs)\cos(\xf)\right) +
+    \left(-a(\xs)\sin(\xf) + b(\xs)\cos(\xf)\right) +
+    (\xs+1)^2\frac{\partial^2f_1}{\partial \xf^2} = -(\xs+1)^2f_1
+\end{gather*}
+We have sources of secular terms in this equation and in order to eliminate
+those terms we require the following equations hold:
+
+\bmp{.49}
+    \begin{gather*}
+        2(\xs+1)a'(\xs) = -a(\xs)\\
+        a'(\xs) = -\frac{a(\xs)}{2(\xs+1)}\\
+        \frac{da}{a} = -\frac{\xs}{2(\xs+1)}\\
+        \ln|a| = -\frac{1}{2}\ln|\xs+1| + c\\
+        a = A(\xs+1)^{-1/2}
+    \end{gather*}
+\emp
+\bmp{.49}
+    \begin{gather*}
+        2(\xs+1)b'(\xs) = -b(\xs)\\
+        b'(\xs) = -\frac{b(\xs)}{2(x+1)}\\
+        \frac{db}{b} = -\frac{\xs}{2(\xs+1)}\\
+        \ln|b| = -\frac{1}{2}\ln|\xs+1| + c\\
+        b = B(\xs+1)^{-1/2}
+    \end{gather*}
+\emp
+
+Thus we have 
+
+\begin{gather*}
+    f_0 = v_n = (x+1)^{-1/2}\left(A\cos\left(\frac{x^2/2 + x - 3/2}{\epsilon}\right) +
+    B\sin\left(\frac{x^2/2 + x - 3/2}{\epsilon}\right)\right)\\
+    \textbf{BC} \to A = 0, \quad \epsilon = \frac{5}{2n\pi}\\
+    \lambda_n = \frac{4n^2\pi^2}{25}
+\end{gather*}
+For this problem we can approximate the eigenfunctions $v_n$ with $f_0$ and the
+corresponding eigenvalue with $\lambda_n$ when the eigenvalues are very large. 
 
 \end{document}
 
