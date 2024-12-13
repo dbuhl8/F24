@@ -2,7 +2,7 @@ program avg_files
 
   implicit none
 
-  integer, parameter :: num_files=9, num_lines=90
+  integer, parameter :: num_files=13, num_lines=95
   integer :: i, j
   real :: time_per_step
   real, dimension(num_files):: avg_tpt
@@ -11,8 +11,9 @@ program avg_files
   
   files = [character(len=12) :: "lr64.dat", &
     "lr128.dat", "lr256.dat", "lr512.dat", "lr1024.dat", &
-    "hr256.dat", "hr512.dat", "hr1024.dat", "hr2048.dat"]
-  np = [64, 128, 256, 512, 1024, 256, 512, 1024, 2048]
+    "hr256.dat", "hr512.dat", "hr1024.dat", "hr2048.dat",&
+    "llr32.dat", "llr64.dat", "llr128.dat", "llr256.dat"]
+  np = [64, 128, 256, 512, 1024, 256, 512, 1024, 2048, 32, 64, 128, 256]
 
   time_per_step = 0.
   avg_tpt = 0.
@@ -33,7 +34,12 @@ program avg_files
   end do 
   write(30,*) 
   write(30,*) 
-  do i = 6, num_files
+  do i = 6, 9
+    write(30, "(I4,F8.3)")  np(i), avg_tpt(i)
+  end do 
+  write(30,*) 
+  write(30,*) 
+  do i = 10, num_files
     write(30, "(I4,F8.3)")  np(i), avg_tpt(i)
   end do 
   close(30)   

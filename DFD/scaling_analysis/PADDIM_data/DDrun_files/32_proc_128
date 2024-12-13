@@ -1,0 +1,231 @@
+ Retain x-modes with harmonic degrees up to Lmax =         128
+ Retain y-modes with harmonic degrees up to Mmax =         128
+ Retain z-modes with harmonic degrees up to Nmax =          32
+ Dealiasing of Fourier modes ? T
+ Length (x-direction) of the box =   12.5663706144000     
+ Width (y-direction) of the box =   12.5663706144000     
+ Height (z-direction) of the box =   3.14159265359000     
+ Initial time step size =  5.000000000000000E-005
+ Maximum time step size =  1.000000000000000E-003
+ CFL-Safety factor =  0.900000000000000     
+ Lorentz force coefficient =  0.000000000000000E+000
+ Magnetic diffusion coefficient =  0.000000000000000E+000
+ Number of time steps =         100
+ Write out every nth time step, n=     5000000
+ DEBUGGING: gets through read_parameter without error ! DB
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+         384         384          96 N
+FFTW wisdom import from file FFTW_WISDOM_00023 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00012 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00028 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00005 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00017 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00008 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00022 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00015 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00001 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00003 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00011 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00013 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00027 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00020 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00024 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00000 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00010 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00026 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00021 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00019 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00007 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00018 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00002 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00031 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00029 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00006 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00030 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00014 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00009 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00004 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00016 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00025 not succussful
+Figuring out which transform algorithm is fast
+on this machine...
+  -- x-FFTs...
+     ...done
+  -- y-FFTs...
+     ...done
+  -- z-FFTs...
+     ...done
+ Regenerating a new forcing with initial value zero
+ Regenerating a new forcing with initial value zero
+ kinetic Energy: =   1.617243085171990E-010
+ Peak spectrum div(u) =   4.308967933543231E-022
+ urms**2=  1.617243085171990E-010
+ Temp_rms**2=  2.412692662792275E-010
+ Chem_rms**2_  0.000000000000000E+000
+step :      1     0.000 s
+step :      2     0.590 s
+step :      3     0.587 s
+step :      4     0.324 s
+step :      5     0.323 s
+step :      6     0.322 s
+step :      7     0.329 s
+step :      8     0.322 s
+step :      9     0.323 s
+step :     10     0.322 s
+step :     11     0.324 s
+step :     12     0.321 s
+step :     13     0.322 s
+step :     14     0.324 s
+step :     15     0.327 s
+step :     16     0.322 s
+step :     17     0.322 s
+step :     18     0.323 s
+step :     19     0.339 s
+step :     20     0.322 s
+step :     21     0.325 s
+step :     22     0.324 s
+step :     23     0.321 s
+step :     24     0.322 s
+step :     25     0.323 s
+step :     26     0.325 s
+step :     27     0.323 s
+step :     28     0.323 s
+step :     29     0.323 s
+step :     30     0.322 s
+step :     31     0.323 s
+step :     32     0.322 s
+step :     33     0.323 s
+step :     34     0.320 s
+step :     35     0.334 s
+step :     36     0.324 s
+step :     37     0.323 s
+step :     38     0.323 s
+step :     39     0.324 s
+step :     40     0.327 s
+step :     41     0.323 s
+step :     42     0.321 s
+step :     43     0.323 s
+step :     44     0.322 s
+step :     45     0.322 s
+step :     46     0.325 s
+step :     47     0.321 s
+step :     48     0.323 s
+step :     49     0.324 s
+step :     50     0.323 s
+step :     51     0.324 s
+step :     52     0.324 s
+step :     53     0.324 s
+step :     54     0.324 s
+step :     55     0.323 s
+step :     56     0.324 s
+step :     57     0.324 s
+step :     58     0.325 s
+step :     59     0.325 s
+step :     60     0.325 s
+step :     61     0.321 s
+step :     62     0.323 s
+step :     63     0.323 s
+step :     64     0.323 s
+step :     65     0.323 s
+step :     66     0.323 s
+step :     67     0.323 s
+step :     68     0.325 s
+step :     69     0.323 s
+step :     70     0.324 s
+step :     71     0.324 s
+step :     72     0.321 s
+step :     73     0.324 s
+step :     74     0.322 s
+step :     75     0.323 s
+step :     76     0.324 s
+step :     77     0.323 s
+step :     78     0.323 s
+step :     79     0.322 s
+step :     80     0.324 s
+step :     81     0.324 s
+step :     82     0.322 s
+step :     83     0.323 s
+step :     84     0.324 s
+step :     85     0.323 s
+step :     86     0.323 s
+step :     87     0.323 s
+step :     88     0.323 s
+step :     89     0.323 s
+step :     90     0.325 s
+step :     91     0.334 s
+step :     92     0.323 s
+step :     93     0.324 s
+step :     94     0.320 s
+step :     95     0.323 s
+step :     96     0.325 s
+step :     97     0.324 s
+step :     98     0.324 s
+step :     99     0.323 s
+step :    100     0.323 s
+ kinetic Energy: =   6.908477742958418E-006
+ Peak spectrum div(u) =   9.467388459876325E-019
+ urms**2=  6.908477742958418E-006
+ Temp_rms**2=  5.309435775482475E-012
+ Chem_rms**2_  0.000000000000000E+000
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
