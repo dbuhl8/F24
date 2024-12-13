@@ -1,0 +1,327 @@
+ Retain x-modes with harmonic degrees up to Lmax =         256
+ Retain y-modes with harmonic degrees up to Mmax =         256
+ Retain z-modes with harmonic degrees up to Nmax =          64
+ Dealiasing of Fourier modes ? T
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+ Length (x-direction) of the box =   12.5663706144000     
+ Width (y-direction) of the box =   12.5663706144000     
+ Height (z-direction) of the box =   3.14159265359000     
+ Initial time step size =  5.000000000000000E-005
+ Maximum time step size =  1.000000000000000E-003
+ CFL-Safety factor =  0.900000000000000     
+ Lorentz force coefficient =  0.000000000000000E+000
+ Magnetic diffusion coefficient =  0.000000000000000E+000
+ Number of time steps =         100
+ Write out every nth time step, n=     5000000
+ DEBUGGING: gets through read_parameter without error ! DB
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+         768         768         192 N
+FFTW wisdom import from file FFTW_WISDOM_00008 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00041 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00029 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00026 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00006 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00027 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00016 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00060 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00031 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00046 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00056 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00061 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00053 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00002 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00017 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00040 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00014 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00000 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00023 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00013 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00011 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00005 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00019 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00024 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00033 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00039 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00010 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00036 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00050 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00044 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00058 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00022 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00030 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00052 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00018 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00021 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00057 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00001 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00062 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00003 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00063 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00032 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00038 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00055 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00049 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00051 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00047 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00045 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00012 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00043 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00004 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00009 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00054 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00007 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00015 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00025 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00034 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00020 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00037 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00059 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00028 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00035 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00048 not succussful
+FFTW wisdom import from file FFTW_WISDOM_00042 not succussful
+Figuring out which transform algorithm is fast
+on this machine...
+  -- x-FFTs...
+     ...done
+  -- y-FFTs...
+     ...done
+  -- z-FFTs...
+     ...done
+ Regenerating a new forcing with initial value zero
+ Regenerating a new forcing with initial value zero
+ kinetic Energy: =   1.630987649090843E-010
+ Peak spectrum div(u) =   3.179129625218629E-022
+ urms**2=  1.630987649090843E-010
+ Temp_rms**2=  2.440036167544913E-010
+ Chem_rms**2_  0.000000000000000E+000
+step :      1     0.000 s
+step :      2     3.673 s
+step :      3     3.609 s
+step :      4     1.944 s
+step :      5     1.944 s
+step :      6     1.956 s
+step :      7     1.940 s
+step :      8     1.940 s
+step :      9     1.932 s
+step :     10     1.948 s
+step :     11     2.126 s
+step :     12     1.944 s
+step :     13     1.939 s
+step :     14     1.935 s
+step :     15     1.945 s
+step :     16     1.949 s
+step :     17     1.940 s
+step :     18     1.941 s
+step :     19     1.943 s
+step :     20     1.942 s
+step :     21     1.942 s
+step :     22     1.946 s
+step :     23     1.942 s
+step :     24     1.941 s
+step :     25     1.943 s
+step :     26     1.944 s
+step :     27     1.938 s
+step :     28     1.942 s
+step :     29     1.937 s
+step :     30     1.939 s
+step :     31     1.941 s
+step :     32     1.940 s
+step :     33     1.940 s
+step :     34     1.935 s
+step :     35     1.988 s
+step :     36     1.939 s
+step :     37     1.942 s
+step :     38     1.937 s
+step :     39     1.951 s
+step :     40     1.935 s
+step :     41     1.949 s
+step :     42     1.941 s
+step :     43     1.940 s
+step :     44     1.946 s
+step :     45     1.941 s
+step :     46     1.946 s
+step :     47     1.945 s
+step :     48     1.938 s
+step :     49     1.957 s
+step :     50     1.946 s
+step :     51     1.947 s
+step :     52     1.948 s
+step :     53     1.947 s
+step :     54     1.980 s
+step :     55     1.945 s
+step :     56     1.948 s
+step :     57     1.938 s
+step :     58     1.952 s
+step :     59     1.945 s
+step :     60     1.946 s
+step :     61     1.950 s
+step :     62     1.944 s
+step :     63     1.953 s
+step :     64     1.942 s
+step :     65     1.955 s
+step :     66     1.949 s
+step :     67     1.947 s
+step :     68     1.950 s
+step :     69     1.950 s
+step :     70     1.943 s
+step :     71     1.951 s
+step :     72     1.947 s
+step :     73     1.945 s
+step :     74     1.946 s
+step :     75     1.947 s
+step :     76     1.946 s
+step :     77     1.948 s
+step :     78     1.950 s
+step :     79     1.949 s
+step :     80     1.947 s
+step :     81     1.952 s
+step :     82     1.946 s
+step :     83     1.951 s
+step :     84     1.940 s
+step :     85     1.958 s
+step :     86     1.936 s
+step :     87     1.945 s
+step :     88     1.944 s
+step :     89     1.937 s
+step :     90     1.938 s
+step :     91     1.934 s
+step :     92     1.970 s
+step :     93     1.939 s
+step :     94     1.941 s
+step :     95     1.949 s
+step :     96     1.942 s
+step :     97     1.934 s
+step :     98     1.938 s
+step :     99     1.948 s
+step :    100     1.933 s
+ kinetic Energy: =   4.897534817295845E-006
+ Peak spectrum div(u) =   4.511180105982342E-019
+ urms**2=  4.897534817295845E-006
+ Temp_rms**2=  6.660634889946356E-013
+ Chem_rms**2_  0.000000000000000E+000
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
+ Error in read_parameter. Check logs to see why
